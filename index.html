@@ -762,19 +762,13 @@ console.error("Form RSVP tidak ditemukan");
 return;
 }
 
-let sedangKirim = false;
-
 form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-if(sedangKirim) return;
-
-sedangKirim = true;
-
 const nama = document.getElementById("nama").value.trim();
 const hadir = document.getElementById("hadir").value;
-const ucapan = document.getElementById("ucapan").value.trim() || "-";
+const ucapan = document.getElementById("ucapan").value.trim();
 
 const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdhWUfGfok984invI66AYM5gqy2WxlAn9vGXiwIPP5vN1B9fg/formResponse";
 
@@ -788,15 +782,11 @@ fetch(formURL,{
 method:"POST",
 mode:"no-cors",
 body:data
-}).finally(() => {
+});
 
 alert("Terima kasih atas konfirmasi dan doanya 🙏");
 
 form.reset();
-
-sedangKirim = false;
-
-});
 
 });
 
