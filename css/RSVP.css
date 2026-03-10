@@ -1,0 +1,57 @@
+/* ===== RSVP SECTION ===== */
+
+#rsvp{
+padding:60px 20px;
+text-align:center;
+background:#fafafa;
+}
+
+#rsvp h2{
+margin-bottom:20px;
+font-size:32px;
+}
+
+#rsvp input,
+#rsvp select,
+#rsvp textarea{
+
+width:100%;
+max-width:420px;
+margin:10px auto;
+display:block;
+
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+
+font-size:14px;
+
+}
+
+#rsvp textarea{
+height:100px;
+}
+
+#rsvp button{
+
+margin-top:15px;
+padding:12px 30px;
+
+background:#d4af37;
+color:white;
+
+border:none;
+border-radius:25px;
+
+font-size:14px;
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+#rsvp button:hover{
+
+background:#b8962e;
+
+}
