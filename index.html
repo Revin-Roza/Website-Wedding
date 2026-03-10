@@ -709,26 +709,26 @@
 
             const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdhWUfGfok984invI66AYM5gqy2WxlAn9vGXiwIPP5vN1B9fg/formResponse";
 
-            fetch(formURL,{
-            method:"POST",
-            mode:"no-cors",
-            headers:{
-            "Content-Type":"application/x-www-form-urlencoded"
-            },
-            
-            body:
-            "entry.564835127="+encodeURIComponent(nama)+
-            "&entry.843525910="+encodeURIComponent(hadir)+
-            "&entry.1037584452="+encodeURIComponent(ucapan)
-            
-            });
+            fetch(formURL, {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
+  body:
+    "entry.564835127=" +
+    encodeURIComponent(nama) +
+    "&entry.843525910=" +
+    encodeURIComponent(hadir) +
+    "&entry.1037584452=" +
+    encodeURIComponent(ucapan),
+});
             
             alert("Terima kasih atas konfirmasi dan doanya 🙏");
             
             form.reset();
             
             });
-            
           </script>
     </body>
 
