@@ -534,27 +534,30 @@
                     </div>
                 </section>
 
-<!-- Comments Google -->
-            <a class="nav-link" href="#rsvp">
-            <h2>Konfirmasi Kehadiran</h2>
-            <form id="rsvp-form">
-                <input type="text" id="nama" placeholder="Nama Anda" required>
-            <select id="hadir">
-            <option value="Hadir">Hadir</option>
-            <option value="Tidak Hadir">Tidak Hadir</option>
-            <option value="Masih Ragu">Masih Ragu</option>
-            
-            </select>
-            
-            <textarea id="ucapan" placeholder="Ucapan & Doa"></textarea>
-            
-            <button type="submit">Kirim</button>
-            
-            </form>
-            
-            <div id="list-ucapan"></div>
-            
-     </section>
+<!-- RSVP / Konfirmasi Kehadiran -->
+<section id="rsvp">
+
+<h2>Konfirmasi Kehadiran</h2>
+
+<form id="rsvp-form">
+
+<input type="text" id="nama" placeholder="Nama Anda" required>
+
+<select id="hadir">
+<option value="Hadir">Hadir</option>
+<option value="Tidak Hadir">Tidak Hadir</option>
+<option value="Masih Ragu">Masih Ragu</option>
+</select>
+
+<textarea id="ucapan" placeholder="Ucapan & Doa"></textarea>
+
+<button type="submit">Kirim</button>
+
+</form>
+
+<div id="list-ucapan"></div>
+
+</section>
 
                 <!-- Comment -->
                 <section class="bg-light-dark my-0 pb-0 pt-3" id="comment">
@@ -785,32 +788,53 @@ form.reset();
         <!-- Comments Tampilan -->
 <script>
 
-fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQuJmjywyD_0f0tk815ZV59d_LIcMcP6nSQIIkh2-uws9vxlygHQIOvNXhJq6WfyUwjTelXQ7HfFmU0/pub?output=csv")
-.then(response => response.text())
-.then(data => {
+document.addEventListener("DOMContentLoaded", function(){
 
-const rows = data.split("\n").slice(1); 
+const form = document.getElementById("rsvp-form");
 
-let html = "";
+if(!form){
+console.error("Form RSVP tidak ditemukan");
+return;
+}
 
-rows.reverse().forEach(row => {
+form.addEventListener("submit", function(e){
 
-const cols = row.split(",");
+e.preventDefault();
 
-const nama = cols[1];
-const hadir = cols[2];
-const ucapan = cols[3];
+const nama = document.getElementById("nama").value.trim();
+const hadir = document.getElementById("hadir").value;
+const ucapan = document.getElementById("ucapan").value.trim();
 
-html += `
-<div class="ucapan-box">
-<strong>${nama}</strong> (${hadir})<br>
-<p>${ucapan}</p>
-</div>
-`;
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdhWUfGfok984invI66AYM5gqy2WxlAn9vGXiwIPP5vN1B9fg/formResponse";
+
+const data =
+"entry.564835127=" + encodeURIComponent(nama) +
+"&entry.843525910=" + encodeURIComponent(hadir) +
+"&entry.1037584452=" + encodeURIComponent(ucapan);
+
+fetch(formURL,{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"
+},
+body:data
+})
+.then(() => {
+
+alert("Terima kasih atas konfirmasi dan doanya 🙏");
+
+form.reset();
+
+})
+.catch(error => {
+
+console.error("Gagal mengirim RSVP:", error);
+alert("Terjadi kesalahan saat mengirim data");
 
 });
 
-document.getElementById("list-ucapan").innerHTML = html;
+});
 
 });
 
