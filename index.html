@@ -783,22 +783,23 @@ form.reset();
         
         
         <!-- Comments Tampilan -->
- <script>
+<script>
 
 fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQuJmjywyD_0f0tk815ZV59d_LIcMcP6nSQIIkh2-uws9vxlygHQIOvNXhJq6WfyUwjTelXQ7HfFmU0/pub?output=csv")
-.then(res => res.text())
+.then(response => response.text())
 .then(data => {
 
-const json = JSON.parse(data.substr(47).slice(0,-2));
-const rows = json.table.rows;
+const rows = data.split("\n").slice(1); 
 
 let html = "";
 
 rows.reverse().forEach(row => {
 
-const nama = row.c[1]?.v;
-const hadir = row.c[2]?.v;
-const ucapan = row.c[3]?.v;
+const cols = row.split(",");
+
+const nama = cols[1];
+const hadir = cols[2];
+const ucapan = cols[3];
 
 html += `
 <div class="ucapan-box">
