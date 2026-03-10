@@ -19,6 +19,21 @@ html {
     font-family: 'Noto Naskh Arabic', serif !important;
 }
 
+/*Nama Mempelai */
+.nama-mempelai {
+    font-family: "Playfair Display", serif;
+}
+
+/* Judul Section */
+h2 {
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* teks umum */
+body, p {
+    font-family: "lato", sans-serif;
+}
+
 .img-center-crop {
     width: 13rem;
     height: 13rem;
