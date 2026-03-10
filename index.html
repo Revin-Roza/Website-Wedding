@@ -535,19 +535,12 @@
                 </section>
 
 
-
             <!-- Comments Google -->
-            <section id="rsvp">
-                
-            
+            <a class="nav-link" href="#rsvp">
             <h2>Konfirmasi Kehadiran</h2>
-            
             <form id="rsvp-form">
-            
-            <input type="text" id="nama" placeholder="Nama Anda" required>
-            
+                <input type="text" id="nama" placeholder="Nama Anda" required>
             <select id="hadir">
-            
             <option value="Hadir">Hadir</option>
             <option value="Tidak Hadir">Tidak Hadir</option>
             <option value="Masih Ragu">Masih Ragu</option>
@@ -560,7 +553,6 @@
             
             </form>
      </section>
-
                         
                
                         <!-- Pagination -->
@@ -703,40 +695,41 @@
     </div>
 
        <!-- Comments Google Form-->
-            <script>
-            
-            const form = document.getElementById("rsvp-form");
-            
-            form.addEventListener("submit", function(e){
+           <script>
+        
+        const form = document.getElementById("rsvp-form");
+        
+        form.addEventListener("submit", function(e){
             
             e.preventDefault();
             
             const nama = document.getElementById("nama").value;
             const hadir = document.getElementById("hadir").value;
             const ucapan = document.getElementById("ucapan").value;
-            
+
             const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdhWUfGfok984invI66AYM5gqy2WxlAn9vGXiwIPP5vN1B9fg/formResponse";
-            
+
             fetch(formURL,{
             method:"POST",
             mode:"no-cors",
             headers:{
             "Content-Type":"application/x-www-form-urlencoded"
             },
-            body:
             
-            "entry.564835127="+nama+
-            "&entry.843525910="+hadir+
-            "&entry.1037584452="+ucapan
+            body:
+            "entry.564835127="+encodeURIComponent(nama)+
+            "&entry.843525910="+encodeURIComponent(hadir)+
+            "&entry.1037584452="+encodeURIComponent(ucapan)
             
             });
             
             alert("Terima kasih atas konfirmasi dan doanya 🙏");
             
-         form.reset();
-         });
-         </script>
-    
-</body>
+            form.reset();
+            
+            });
+            
+          </script>
+    </body>
 
 </html>
