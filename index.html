@@ -928,30 +928,34 @@ Terima kasih atas doa dan ucapan yang diberikan
     </div>
 
     <!-- Welcome Page -->
- <div class="welcome-page" id="welcome">
-    <div class="glow"></div>
+<div class="loading-page custom-bg-premium" id="welcome" style="opacity: 1;">
+    <div class="vignette-overlay"></div>
     
-    <div class="content">
-      <h2 class="the-wedding">The Wedding Of</h2>
+    <div class="d-flex justify-content-center align-items-center vh-100 position-relative">
+        <div class="d-flex flex-column text-center content-wrapper px-4">
+            
+            <p class="text-uppercase tracking-widest text-accent mb-2">The Wedding Of</p>
+            
+            <div class="image-frame mb-4">
+                <img src="./assets/images/Cover_rr.webp" alt="Revin & Roza" class="img-premium">
+            </div>
 
-      <div class="photo-frame">
-        <img src="./assets/images/Cover_rr.webp" alt="Revin & Roza" id="couple-photo">
-      </div>
+            <h1 class="font-esthetic name-title mb-1">Revin & Roza</h1>
+            
+            <div class="guest-section mt-4">
+                <p class="text-light-muted mb-1" id="guest-name">Kepada Yth Bapak/Ibu/Saudara/i</p>
+                <h3 id="nama-tamu" class="guest-name-text">Nama Tamu</h3>
+            </div>
 
-      <h1 class="couple-name">Revin &amp; Roza</h1>
-      <div class="gold-divider"></div>
-
-      <div class="guest-box">
-        <div class="guest-label">Kepada Yth.</div>
-        <h3 id="nama-tamu">Bapak/Ibu/Saudara/i</h3>
-      </div>
-
-      <button type="button" class="open-btn" onclick="undangan.guest.open(this)">
-        <i class="fa-solid fa-envelope-open"></i>
-        Open Invitation
-      </button>
+            <button type="button" class="btn btn-premium mt-4" onclick="undangan.guest.open(this)">
+                <span class="btn-content">
+                    <i class="fa-solid fa-envelope-open-text me-2"></i> Open Invitation
+                </span>
+            </button>
+            
+        </div>
     </div>
-  </div>
+</div>
 
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
