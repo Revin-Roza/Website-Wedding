@@ -928,21 +928,30 @@ Terima kasih atas doa dan ucapan yang diberikan
     </div>
 
     <!-- Welcome Page -->
-    <div class="loading-page bg-white-black" id="welcome" style="opacity: 0;">
-        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-            <div class="d-flex flex-column text-center">
-                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">The Wedding Of</h2>
+ <div class="welcome-page" id="welcome">
+    <div class="glow"></div>
+    
+    <div class="content">
+      <h2 class="the-wedding">The Wedding Of</h2>
 
-                <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="background" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
+      <div class="photo-frame">
+        <img src="./assets/images/cover_rr.webp" alt="Revin & Roza" id="couple-photo">
+      </div>
 
-                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Revin &amp; Roza</h2>
-                <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
-                <h3 id="nama-tamu"></h3>
+      <h1 class="couple-name">Revin &amp; Roza</h1>
+      <div class="gold-divider"></div>
 
-                <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto" onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open Invitation</button>
-            </div>
-        </div>
+      <div class="guest-box">
+        <div class="guest-label">Kepada Yth.</div>
+        <h3 id="nama-tamu">Bapak/Ibu/Saudara/i</h3>
+      </div>
+
+      <button type="button" class="open-btn" onclick="undangan.guest.open(this)">
+        <i class="fa-solid fa-envelope-open"></i>
+        Open Invitation
+      </button>
     </div>
+  </div>
 
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
