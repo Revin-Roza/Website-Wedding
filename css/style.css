@@ -32,3 +32,48 @@ border-radius:30px;
 background:#a07160;
 }
 
+
+<!-- BG PUTIH --!>
+:root{
+--bg-color:#fffaf7;
+--section-color:#fdf0ea;
+--text-color:#3a3a3a;
+--accent-color:#b48a78;
+}
+
+<!-- BG DARK --!>
+[data-theme="dark"]{
+--bg-color:#1f1f1f;
+--section-color:#2a2a2a;
+--text-color:#f5f5f5;
+--accent-color:#d4a373;
+}
+
+<!-- SWITCH MODE --!>
+body{
+background:var(--bg-color);
+color:var(--text-color);
+}
+
+section{
+background:var(--section-color);
+}
+
+.couple-name{
+color:var(--accent-color);
+}
+
+.btn-wedding{
+background:var(--accent-color);
+color:white;
+}
+
+<!-- AUTO MODE HO --!>
+@media (prefers-color-scheme: dark){
+:root{
+--bg-color:#1f1f1f;
+--section-color:#2a2a2a;
+--text-color:#f5f5f5;
+--accent-color:#d4a373;
+}
+}
