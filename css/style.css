@@ -72,13 +72,25 @@ canvas.sakura {
 */
 .home-section-final {
     position: relative !important;
-    height: 100vh !important;
+    /* Ubah height menjadi min-height agar bisa memanjang jika konten penuh */
+    min-height: 100vh !important; 
+    height: auto !important; 
     width: 100% !important;
-    overflow: hidden !important;
     display: flex !important;
+    flex-direction: column !important; /* Susun ke bawah */
     align-items: center !important;
     justify-content: center !important;
-    background: #000;
+    /* Tambahkan padding bawah yang besar (100px) agar tidak tertutup menu bar */
+    padding: 60px 20px 120px 20px !important; 
+    overflow: visible !important;
+}
+
+/* Memastikan konten utama tidak terlalu lebar */
+.main-content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 400px; /* Batasi lebar agar rapi di tengah */
 }
 
 .main-background {
@@ -242,3 +254,29 @@ canvas.sakura {
     .couple-name-display { font-size: 2.2rem !important; }
     .profile-circle { width: 115px !important; height: 115px !important; }
 }
+
+@media (max-width: 576px) {
+    /* Kecilkan ukuran nama agar hemat ruang */
+    .couple-name-display {
+        font-size: 2.2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Kecilkan ukuran foto profil di Home */
+    .profile-circle {
+        width: 110px !important;
+        height: 110px !important;
+        margin: 15px auto !important;
+    }
+
+    /* Hilangkan Scroll Down di HP karena bikin penuh layar */
+    .scroll-down-hint {
+        display: none !important;
+    }
+    
+    /* Tambahkan jarak pada section Mempelai agar tidak mepet navbar */
+    #mempelai {
+        padding-bottom: 100px !important;
+    }
+}
+
