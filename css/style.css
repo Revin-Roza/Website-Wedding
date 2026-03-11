@@ -416,100 +416,95 @@ RSVP
 
 /* --- SECTION GUESTBOOK --- */
 .guestbook-section {
-  background: linear-gradient(180deg, #4a0404 0%, #2b0202 100%);
+  background: linear-gradient(180deg, #3d0202 0%, #1a0101 100%);
   padding: 60px 20px;
-  color: #ffffff;
 }
 
 .guestbook-title {
   font-family: 'Great Vibes', cursive;
-  color: #f3cf7a;
-  font-size: 2.8rem;
+  color: #d4af37; /* Gold klasik */
+  font-size: 3rem;
   margin-bottom: 5px;
 }
 
 .ucapan-subtitle {
-  color: #ffdada;
-  font-size: 0.85rem;
+  color: #ccc;
+  font-size: 0.9rem;
   margin-bottom: 30px;
-  font-weight: 300;
 }
 
-/* --- CONTAINER UCAPAN (Scrollable) --- */
+/* --- KOTAK UTAMA (GLASS CARD) --- */
 .ucapan-box {
-  max-width: 500px; /* Ukuran box lebih ramping agar elegan */
+  max-width: 450px; /* Ukuran pas untuk mobile & desktop */
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05); /* Efek kaca transparan */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05); /* Transparansi kaca tipis */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  max-height: 450px; /* Batas tinggi box */
+  padding: 15px;
+  max-height: 400px; /* Tinggi maksimal sesuai request */
   overflow-y: auto; /* Fitur Scroll */
-  padding: 20px;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
 }
 
-/* --- CUSTOM SCROLLBAR (Agar tetap estetik) --- */
+/* --- SCROLLBAR STYLE --- */
 .ucapan-box::-webkit-scrollbar {
-  width: 4px;
-}
-.ucapan-box::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  width: 3px;
 }
 .ucapan-box::-webkit-scrollbar-thumb {
-  background: #f3cf7a; /* Warna emas untuk scrollbar */
+  background: rgba(212, 175, 55, 0.5); /* Emas transparan */
   border-radius: 10px;
 }
 
-/* --- ITEM UCAPAN (List) --- */
-.ucapan-list {
-  display: flex;
-  flex-direction: column;
-}
-
+/* --- ITEM KOMENTAR --- */
 .ucapan-item {
-  padding: 15px 5px;
+  padding: 12px 10px;
   text-align: left;
-  /* Pembatas Garis Putus-Putus Transparan */
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15); /* Garis putus-putus transparan */
 }
 
 .ucapan-item:last-child {
-  border-bottom: none; /* Hilangkan garis pada komentar terakhir */
+  border-bottom: none;
 }
 
-/* Detail Nama & Status Hadir */
-.ucapan-item strong {
-  color: #f3cf7a;
-  font-size: 0.9rem; /* Ukuran lebih kecil sesuai request */
-  font-weight: 600;
+/* Nama & Kehadiran (Satu baris) */
+.ucapan-header {
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
-/* Label Hadir (Badge kecil) */
-.ucapan-item .status-hadir {
-  font-size: 0.7rem;
-  background: rgba(243, 207, 122, 0.15);
-  color: #f3cf7a;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-weight: 400;
-  text-transform: italic;
+.nama-tamu {
+  color: #d4af37; /* Nama warna Emas */
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-/* Detail Pesan */
-.ucapan-item p {
-  font-size: 0.85rem; /* Ukuran pesan sedikit lebih kecil agar enak dibaca */
-  line-height: 1.5;
-  color: #f0f0f0;
-  margin: 5px 0 0 0;
+.status-kehadiran {
+  color: #ffffff; /* Status dalam kurung warna putih */
+  font-size: 0.8rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* Isi Pesan */
+.pesan-tamu {
+  color: #e0e0e0; /* Putih sedikit abu agar enak dibaca */
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
   font-weight: 300;
 }
 
-
+/* --- RESPONSIVE ADJUSTMENT --- */
+@media (max-width: 576px) {
+  .ucapan-box {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
 
 
 
