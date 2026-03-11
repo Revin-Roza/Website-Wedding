@@ -1152,24 +1152,6 @@ container.appendChild(card);
         
         </script>
 
-        // ====================== NAMA TAMU DARI URL (?to=) ======================
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const namaTamu = urlParams.get('to');
-
-            if (namaTamu && document.getElementById('nama-tamu')) {
-                const namaBersih = decodeURIComponent(namaTamu).replace(/\+/g, ' ');
-                document.getElementById('nama-tamu').innerText = namaBersih;
-            }
-        });
-  
-    </script>
-window.addEventListener("load", () => {
-  const welcome = document.querySelector(".loading-page");
-  if (welcome) {
-    welcome.classList.add("hide");
-  }
-});
     
 </body>
 </html>
