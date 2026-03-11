@@ -755,8 +755,10 @@ onclick="undangan.util.copy(this)">
   </div>
 </section>
 
-<section id="guestbook" class="py-5 guestbook-section">
-  <div class="container text-center">
+<section id="guestbook" class="guestbook-section">
+  <div class="guestbook-edge-top"></div>
+
+  <div class="container text-center py-5">
     <h2 class="font-esthetic guestbook-title">Ucapan & Doa</h2>
     <p class="ucapan-subtitle">Terima kasih atas doa dan ucapan yang diberikan</p>
     
@@ -765,7 +767,10 @@ onclick="undangan.util.copy(this)">
         </div>
     </div>
   </div>
+
+  <div class="guestbook-edge-bottom"></div>
 </section>
+
 
                 <!-- Comment -->
                 <section class="bg-light-dark my-0 pb-0 pt-3" id="comment">
@@ -1112,6 +1117,36 @@ alert("Berhasil disalin ✓");
 
 }
 </script>
-    
+
+// Pasang ini di bagian script
+const form = document.getElementById('rsvp-form');
+const container = document.getElementById('ucapan-container');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const nama = document.getElementById('nama').value;
+  const hadir = document.getElementById('hadir').value;
+  const ucapan = document.getElementById('ucapan').value;
+
+  const itemBaru = document.createElement('div');
+  itemBaru.className = 'ucapan-item';
+  
+  // Template visual: Nama di kiri, Hadir di kanan
+  itemBaru.innerHTML = `
+    <div class="ucapan-header">
+      <span class="nama-tamu">${nama}</span>
+      <span class="status-kehadiran">(${hadir})</span>
+    </div>
+    <p class="pesan-tamu">${ucapan}</p>
+  `;
+
+  container.prepend(itemBaru);
+  form.reset();
+  document.querySelector('.ucapan-box').scrollTop = 0;
+});
+
+
+
 </body>
 </html>
