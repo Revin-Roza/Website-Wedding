@@ -395,3 +395,29 @@ border-bottom:none;
     }
 </style>
 
+<style>
+    /* Warna Gold Khas */
+    .text-gold-muted {
+        color: #d4a373;
+    }
+
+    /* Animasi Pulse yang Lebih Lembut untuk Logo */
+    .pulse-animation {
+        animation: logo-glow 3s infinite ease-in-out;
+    }
+
+    @keyframes logo-glow {
+        0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
+        50% { transform: scale(1.03); filter: drop-shadow(0 0 20px rgba(212, 163, 115, 0.5)); }
+        100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
+    }
+
+    /* Mencegah pergeseran konten saat progres berjalan */
+    .logo-container {
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
