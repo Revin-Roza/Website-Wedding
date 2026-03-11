@@ -332,131 +332,145 @@ RSVP
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
 
 :root {
-  --primary-gold: #d4af37; /* Warna emas */
-  --bg-dark: #121212;      /* Hitam pekat */
-  --input-bg: #1e2126;     /* Abu-abu gelap input */
-  --text-light: #e0e0e0;
+  --primary-gold: #c5a059;   /* Emas yang lebih kalem/muted */
+  --accent-gold: #ecd08f;    /* Emas terang untuk highlight */
+  --bg-deep: #0f1113;        /* Hitam arang modern */
+  --card-bg: #1a1d21;        /* Background kartu sedikit lebih terang */
+  --text-main: #f0f0f0;      /* Putih gading agar tidak kontras tajam */
+  --text-muted: #a0a0a0;     /* Abu-abu halus untuk subtitle */
+  --glass: rgba(255, 255, 255, 0.03);
 }
 
-/* Section Background */
+/* Base Style */
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Container Section */
 .rsvp-section, .guestbook-section {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  font-family: 'Montserrat', sans-serif;
+  padding: 80px 0;
+  background: radial-gradient(circle at top, #1e2124 0%, #0f1113 100%);
 }
 
-/* Typography */
+/* Typography Modern */
 .font-esthetic {
   font-family: 'Great Vibes', cursive;
   color: var(--primary-gold);
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 8vw, 3.5rem); /* Responsive font size */
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .rsvp-subtitle, .ucapan-subtitle {
+  color: var(--text-muted);
   font-weight: 300;
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-  color: #b0b0b0;
+  letter-spacing: 0.5px;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  font-size: 0.95rem;
 }
 
-/* Form Styling */
+/* Form Design (Clean & Minimalist) */
 .rsvp-form {
-  max-width: 500px;
+  max-width: 450px;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .rsvp-group {
-  text-align: left;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .rsvp-label {
-  display: block;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-gold);
   margin-bottom: 8px;
-  font-weight: 400;
-  color: var(--text-light);
+  display: block;
 }
 
 .rsvp-input {
-  background-color: var(--input-bg) !important;
-  border: 1px solid #333 !important;
+  background-color: var(--glass) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: white !important;
-  border-radius: 20px; /* Membuat input lebih rounded/aesthetic */
-  padding: 12px 20px;
-  transition: all 0.3s ease;
+  border-radius: 12px; /* Tidak terlalu bulat, lebih tegas & modern */
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rsvp-input:focus {
+  background-color: rgba(255, 255, 255, 0.07) !important;
   border-color: var(--primary-gold) !important;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.15);
   outline: none;
 }
 
-.rsvp-input::placeholder {
-  color: #666;
-  font-size: 0.85rem;
-}
-
-/* Select Styling */
-select.rsvp-input {
-  cursor: pointer;
-  appearance: none;
-}
-
-/* Button Styling */
+/* Button Modern (Glow Effect) */
 .rsvp-button {
-  background: linear-gradient(135deg, #d4af37, #f4d03f);
-  color: #000 !important;
-  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold));
+  color: #1a1d21 !important;
+  font-weight: 700;
   width: 100%;
-  padding: 12px;
+  padding: 16px;
   border: none;
-  border-radius: 30px;
-  margin-top: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
 }
 
 .rsvp-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.5);
+  filter: brightness(1.1);
 }
 
-/* Guestbook Styling */
+/* Guestbook Modern Layout */
 .ucapan-box {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  max-height: 400px;
-  overflow-y: auto;
-  padding: 10px;
+  padding: 20px;
 }
 
-/* Scrollbar aesthetic */
-.ucapan-box::-webkit-scrollbar {
-  width: 5px;
-}
-.ucapan-box::-webkit-scrollbar-thumb {
-  background: var(--primary-gold);
-  border-radius: 10px;
-}
-
-/* Individual Comment Card */
 .ucapan-card {
-  background: #1a1a1a;
-  border-left: 3px solid var(--primary-gold);
-  padding: 15px;
-  margin-bottom: 15px;
-  text-align: left;
-  border-radius: 0 10px 10px 0;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.ucapan-card:hover {
+  transform: scale(1.02);
+  border-color: rgba(197, 160, 89, 0.3);
 }
 
 .ucapan-card strong {
-  color: var(--primary-gold);
+  color: var(--accent-gold);
+  font-size: 1rem;
+  margin-bottom: 8px;
   display: block;
-  margin-bottom: 5px;
 }
+
+.ucapan-card p {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin: 0;
+}
+
 
 
 
