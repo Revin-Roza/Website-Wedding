@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-</head>
 
     <!-- SEO Tag -->
     <meta name="author" content="ari">
@@ -542,27 +541,35 @@
                 </section>
 
 <!-- RSVP / Konfirmasi Kehadiran -->
-<section id="rsvp">
+<section id="rsvp" class="bg-white-black py-5 text-center">
 
-<h2>Konfirmasi Kehadiran</h2>
+<h2 class="font-esthetic mb-4" style="font-size:2rem;">
+Konfirmasi Kehadiran
+</h2>
 
-<form id="rsvp-form">
+<form id="rsvp-form" class="mx-auto" style="max-width:400px">
 
-<input type="text" id="nama" placeholder="Nama Anda" required>
+<input class="form-control rounded-pill mb-3"
+type="text"
+id="nama"
+placeholder="Nama Anda"
+required>
 
-<select id="hadir">
+<select class="form-control rounded-pill mb-3" id="hadir">
 <option value="Hadir">Hadir</option>
 <option value="Tidak Hadir">Tidak Hadir</option>
 <option value="Masih Ragu">Masih Ragu</option>
 </select>
 
-<textarea id="ucapan" placeholder="Ucapan & Doa"></textarea>
+<textarea class="form-control rounded-4 mb-3"
+id="ucapan"
+placeholder="Ucapan & Doa"></textarea>
 
-<button type="submit">Kirim</button>
+<button class="btn btn-outline-auto rounded-pill px-4">
+Kirim
+</button>
 
 </form>
-
-<div id="list-ucapan"></div>
 
 </section>
 
