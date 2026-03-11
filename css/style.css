@@ -184,3 +184,120 @@ body {
     overflow-x: hidden; /* Mencegah geser kanan-kiri yang berantakan */
     overflow-y: auto !important; /* Memaksa scroll vertikal aktif */
 }
+
+/* =========================
+Wedding Gift Section
+========================= */
+
+.bg-light-dark{
+background: linear-gradient(180deg,#0f1720,#1a1f27);
+color:#e5e7eb;
+}
+
+/* Judul */
+.font-esthetic{
+font-family: "Playfair Display", serif;
+font-weight:500;
+letter-spacing:1px;
+color:#ffffff;
+}
+
+/* Card utama */
+.bg-theme-auto{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+border:1px solid rgba(255,255,255,0.08);
+transition: all .3s ease;
+}
+
+.bg-theme-auto:hover{
+transform: translateY(-3px);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Button */
+.btn-outline-auto{
+border:1px solid rgba(255,255,255,0.3);
+color:#fff;
+font-size:.8rem;
+padding:4px 12px;
+transition:all .25s ease;
+}
+
+.btn-outline-auto:hover{
+background:#ffffff;
+color:#000;
+border-color:#fff;
+}
+
+/* Gift Card (rekening) */
+
+.gift-card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.07);
+border-radius:14px;
+padding:14px;
+text-align:center;
+transition:all .3s ease;
+}
+
+.gift-card:hover{
+background:rgba(255,255,255,0.06);
+transform:translateY(-2px);
+}
+
+/* Nama Bank */
+.gift-bank{
+font-size:.8rem;
+letter-spacing:1px;
+color:#9ca3af;
+margin-bottom:4px;
+}
+
+/* Nomor Rekening */
+.gift-number{
+font-size:1.05rem;
+font-weight:600;
+letter-spacing:1px;
+color:#ffffff;
+margin-bottom:4px;
+}
+
+/* Nama Pemilik */
+.gift-name{
+font-size:.8rem;
+color:#cbd5e1;
+margin-bottom:10px;
+}
+
+/* Copy Button */
+.gift-copy{
+border:none;
+background:#ffffff10;
+color:#fff;
+font-size:.75rem;
+padding:6px 12px;
+border-radius:20px;
+transition:all .25s ease;
+}
+
+.gift-copy:hover{
+background:#ffffff;
+color:#000;
+}
+
+/* QRIS Image */
+#qris img{
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Text */
+section p{
+color:#cbd5e1;
+line-height:1.6;
+}
+
+/* Collapse animation smooth */
+.collapse{
+transition: all .35s ease;
+}
