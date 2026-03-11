@@ -1191,46 +1191,6 @@ alert("Nomor rekening berhasil disalin");
     }
 </script>
 
-<script>
-    // Pastikan ini diletakkan di bagian paling bawah agar tidak memblokir loading HTML
-    const undangan = {
-        guest: {
-            open: function(button) {
-                const welcome = document.getElementById('welcome');
-                
-                // 1. Tambahkan transisi halus via JS
-                welcome.style.transition = "opacity 0.8s ease, visibility 0.8s";
-                welcome.style.opacity = '0';
-                welcome.style.visibility = 'hidden';
-                
-                // 2. Tunggu animasi selesai baru hilangkan dari display
-                setTimeout(() => {
-                    welcome.style.display = 'none';
-                    
-                    // Aktifkan scroll pada body (jika sebelumnya dimatikan)
-                    document.body.style.overflow = 'auto';
-                    
-                    // Jalankan animasi AOS jika kamu menggunakannya
-                    if (typeof AOS !== 'undefined') {
-                        AOS.refresh();
-                    }
-                    
-                    // Putar musik jika ada fungsi playMusic()
-                    // if (typeof playMusic === 'function') { playMusic(); }
-                }, 800);
-            }
-        }
-    };
-
-    // Opsional: Logika ambil nama tamu dari URL (digabung di sini)
-    const urlParams = new URLSearchParams(window.location.search);
-    const namaTamu = urlParams.get('to');
-    if (namaTamu) {
-        const el = document.getElementById('nama-tamu');
-        if(el) el.innerText = decodeURIComponent(namaTamu).replace(/\+/g, ' ');
-    }
-</script>
-
         
     </body>
 
