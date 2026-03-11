@@ -421,3 +421,106 @@ border-bottom:none;
     }
 </style>
 
+<style>
+    /* 1. Background Image Handling */
+    .bg-cover-home {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: brightness(40%) contrast(110%); /* Membuat foto latar belakang gelap & mewah */
+    }
+
+    .main-bg-overlay::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    }
+
+    /* 2. Frame Foto Utama */
+    .img-home-main {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border: 3px solid #d4a373;
+        padding: 5px;
+        transition: transform 0.5s ease;
+    }
+    
+    .img-home-main:hover {
+        transform: scale(1.05);
+    }
+
+    /* 3. Warna Gold & Tombol Premium */
+    .text-gold-premium {
+        color: #d4a373;
+    }
+
+    .border-gold-premium {
+        border: 2px solid #d4a373;
+    }
+
+    .btn-gold-pill {
+        background: transparent;
+        border: 1px solid #d4a373;
+        color: #d4a373;
+        border-radius: 50px;
+        padding: 8px 25px;
+        font-size: 0.8rem;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-gold-pill:hover {
+        background: #d4a373;
+        color: #000;
+        box-shadow: 0 0 15px rgba(212, 163, 115, 0.4);
+    }
+
+    /* 4. Mouse Scroll Animation */
+    .mouse {
+        width: 22px;
+        height: 38px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .wheel {
+        width: 4px;
+        height: 8px;
+        background: #d4a373;
+        border-radius: 2px;
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll-anim 1.5s infinite;
+    }
+
+    @keyframes scroll-anim {
+        0% { opacity: 1; top: 8px; }
+        100% { opacity: 0; top: 20px; }
+    }
+
+    /* Responsive untuk Smartphone */
+    @media (max-width: 576px) {
+        .img-home-main {
+            width: 140px;
+            height: 140px;
+        }
+        h1.font-esthetic {
+            font-size: 2.5rem !important;
+        }
+    }
+</style>
+
