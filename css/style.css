@@ -3,30 +3,12 @@
 ============================================================
 */
 :root {
-    --bg-color: #fffaf7;
-    --section-color: #fdf0ea;
-    --text-color: #3a3a3a;
-    --accent-color: #b48a78;
-    --gold-premium: #d4a373;
-    --gold-light: #f3e5ab;
-}
-
-/* Dark Mode Theme */
-[data-theme="dark"] {
-    --bg-color: #1f1f1f;
-    --section-color: #2a2a2a;
+    --bg-color: #000000; /* Kunci ke Hitam agar serasi dengan gradasi */
+    --section-color: #1a1a1a;
     --text-color: #f5f5f5;
     --accent-color: #d4a373;
-}
-
-/* Auto Dark Mode (System Preference) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #1f1f1f;
-        --section-color: #2a2a2a;
-        --text-color: #f5f5f5;
-        --accent-color: #d4a373;
-    }
+    --gold-premium: #d4a373;
+    --gold-light: #f3e5ab;
 }
 
 body {
@@ -34,63 +16,24 @@ body {
     color: var(--text-color);
     margin: 0;
     font-family: 'Poppins', sans-serif;
-}
-
-body.loading-active {
-    overflow: hidden !important;
+    overflow-x: hidden;
 }
 
 /* ============================================================
-2. ANIMATIONS & EFFECTS
-============================================================
-*/
-/* Sakura Effect */
-canvas.sakura {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 999;
-}
-
-/* Pulse Glow Loading */
-@keyframes logo-glow {
-    0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
-    50% { transform: scale(1.03); filter: drop-shadow(0 0 20px rgba(212, 163, 115, 0.5)); }
-    100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
-}
-
-.pulse-animation {
-    animation: logo-glow 3s infinite ease-in-out;
-}
-
-/* ============================================================
-3. SECTION: HOME (HERO) - HIGH PRIORITY
+2. SECTION: HOME (HERO) - OPTIMIZED
 ============================================================
 */
 .home-section-final {
     position: relative !important;
-    /* Ubah height menjadi min-height agar bisa memanjang jika konten penuh */
-    min-height: 100vh !important; 
-    height: auto !important; 
+    min-height: 100vh; /* Desktop tetap Full */
     width: 100% !important;
     display: flex !important;
-    flex-direction: column !important; /* Susun ke bawah */
+    flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    /* Tambahkan padding bawah yang besar (100px) agar tidak tertutup menu bar */
-    padding: 60px 20px 120px 20px !important; 
-    overflow: visible !important;
-}
-
-/* Memastikan konten utama tidak terlalu lebar */
-.main-content-wrapper {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    max-width: 400px; /* Batasi lebar agar rapi di tengah */
+    padding: 40px 20px 80px 20px !important;
+    overflow: hidden !important;
+    background: #000;
 }
 
 .main-background {
@@ -106,16 +49,21 @@ canvas.sakura {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.4);
+    filter: brightness(0.45); /* Sedikit lebih terang agar subjek terlihat */
 }
 
+/* Gradien Bawah - Pengganti agar tidak terpotong kaku */
 .overlay-gradient {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40%;
-    background: linear-gradient(to bottom, transparent, #000);
+    height: 60%; /* Gradasi lebih tinggi */
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(0,0,0,0.5) 40%, 
+        rgba(0,0,0,0.9) 80%, 
+        #000000 100%);
     z-index: 2;
 }
 
@@ -123,86 +71,52 @@ canvas.sakura {
     position: relative;
     z-index: 10;
     width: 100%;
+    max-width: 450px;
     text-align: center;
+}
+
+/* Foto Profil Home */
+.profile-circle {
+    width: 140px !important;
+    height: 140px !important;
+    border: 2px solid var(--gold-premium);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 auto 20px auto !important;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.profile-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .couple-name-display {
     font-size: clamp(2.5rem, 8vw, 4rem);
     color: #fff;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
-}
-
-.profile-circle {
-    width: clamp(120px, 20vw, 160px);
-    height: clamp(120px, 20vw, 160px);
-    border: 2px solid var(--gold-premium);
-    border-radius: 50%;
-    padding: 5px;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.1);
-}
-
-.profile-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
 }
 
 /* ============================================================
-4. SECTION: GUEST BOOK & Gifting
-============================================================
-*/
-.gift-card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 14px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-}
-
-.gift-number {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--gold-light);
-}
-
-/* Ucapan Box Scrollbar */
-.ucapan-box {
-    max-width: 420px;
-    margin: auto;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.ucapan-box::-webkit-scrollbar { width: 4px; }
-.ucapan-box::-webkit-scrollbar-thumb {
-    background: rgba(212,175,55,0.5);
-    border-radius: 10px;
-}
-
-.ucapan-card {
-    padding: 12px 4px;
-    border-bottom: 1px dashed rgba(255,255,255,0.15);
-}
-
-/* ============================================================
-5. BUTTONS & UI ELEMENTS
+3. BUTTONS & UI
 ============================================================
 */
 .btn-premium-gold {
     border: 1px solid var(--gold-premium) !important;
     color: var(--gold-premium) !important;
     border-radius: 50px;
-    padding: 10px 30px;
+    padding: 10px 25px;
     text-decoration: none;
-    font-size: 0.8rem;
-    background: rgba(0,0,0,0.5);
-    transition: 0.3s;
-    font-weight: 600;
+    font-size: 0.85rem;
+    background: rgba(0,0,0,0.6);
+    transition: 0.3s ease;
+    display: inline-block;
+    font-weight: 500;
 }
 
 .btn-premium-gold:hover {
@@ -210,73 +124,57 @@ canvas.sakura {
     color: #000 !important;
 }
 
-/* Scroll Down Hint */
-.scroll-down-hint {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    text-align: center;
-}
-
-.mouse-box {
-    width: 18px;
-    height: 30px;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    margin: 0 auto 5px;
-    position: relative;
-}
-
-.mouse-wheel {
-    width: 3px;
-    height: 6px;
-    background: var(--gold-premium);
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: move-dot 1.5s infinite;
-}
-
-@keyframes move-dot {
-    0% { top: 5px; opacity: 1; }
-    100% { top: 15px; opacity: 0; }
-}
-
 /* ============================================================
-6. RESPONSIVE UTILITY
+4. MOBILE OPTIMIZATION (Fix Terpotong)
 ============================================================
 */
 @media (max-width: 576px) {
-    .section { padding: 50px 15px; }
-    .couple-name-display { font-size: 2.2rem !important; }
-    .profile-circle { width: 115px !important; height: 115px !important; }
-}
+    .home-section-final {
+        min-height: 85vh !important; /* Home tidak memenuhi layar penuh agar bawah kelihatan */
+        padding-bottom: 100px !important;
+    }
 
-@media (max-width: 576px) {
-    /* Kecilkan ukuran nama agar hemat ruang */
     .couple-name-display {
-        font-size: 2.2rem !important;
-        margin-bottom: 10px !important;
+        font-size: 2.3rem !important;
     }
 
-    /* Kecilkan ukuran foto profil di Home */
     .profile-circle {
-        width: 110px !important;
-        height: 110px !important;
-        margin: 15px auto !important;
+        width: 115px !important;
+        height: 115px !important;
     }
 
-    /* Hilangkan Scroll Down di HP karena bikin penuh layar */
+    /* Hilangkan elemen mengambang yang memakan tempat */
     .scroll-down-hint {
         display: none !important;
     }
-    
-    /* Tambahkan jarak pada section Mempelai agar tidak mepet navbar */
+
+    /* Section selanjutnya (Mempelai) */
+    section {
+        padding: 60px 20px !important;
+    }
+
     #mempelai {
-        padding-bottom: 100px !important;
+        padding-top: 20px !important; /* Tarik sedikit ke atas agar menyatu dengan gradasi */
     }
 }
 
+/* ============================================================
+5. GUEST BOOK & UTILITIES
+============================================================
+*/
+.gift-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.ucapan-box {
+    max-width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    padding: 10px;
+}
