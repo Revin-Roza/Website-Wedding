@@ -82,67 +82,34 @@
             <main data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="25% 0% 0% 0%" data-bs-smooth-scroll="true" tabindex="0">
 
 
-             <!-- Home -->
-      <!-- ==================== HOME SECTION ==================== -->
-<section id="home" class="position-relative overflow-hidden">
+             
+     <!-- Home -->
+            <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
+          <img src="./assets/images/placeholder.webp" data-src="./assets/images/Cover_rr.webp" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
 
-    <!-- Background Image -->
-    <img 
-        src="./assets/images/placeholder.webp" 
-        data-src="./assets/images/Cover_rr.webp" 
-        alt="Background Pernikahan Revin & Roza"
-        class="img-bg bg-cover-home lazy-load">
+                    <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
+                        <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
 
-    <!-- Content -->
-    <div class="position-relative z-3 text-center d-flex flex-column justify-content-center align-items-center min-vh-100">
+                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/Cover_rr.webp" alt="bg" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
 
-        <div class="content-glass mx-auto" style="max-width: 420px;">
+                        <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">Wahyu &amp; Riski</h2>
+                        <p class="my-2" style="font-size: 1.25rem;">Rabu, 15 Maret 2023</p>
 
-            <!-- Judul kecil -->
-            <h1 class="font-esthetic text-light-muted mb-3" style="font-size: 1.35rem; letter-spacing: 3px;">
-                UNDANGAN PERNIKAHAN
-            </h1>
+                        <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
+                            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
+                        </button>
 
-            <!-- Foto Couple -->
-            <div class="profile-frame mx-auto mb-4" onclick="undangan.guest.modal(this)">
-                <img 
-                    src="./assets/images/placeholder.webp" 
-                    data-src="./assets/images/Cover_rr.webp" 
-                    alt="Revin & Roza"
-                    class="img-profile lazy-load">
-            </div>
+                        <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
+                            <div class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
+                                <div class="scroll-animation rounded-4 bg-secondary"></div>
+                            </div>
+                        </div>
 
-            <!-- Nama Pengantin -->
-            <h2 class="font-esthetic text-gradient-gold mb-2" style="font-size: 2.8rem; line-height: 1.1;">
-                Revin &amp; Roza
-            </h2>
+                        <p class="pb-4 m-0 text-secondary" style="font-size: 0.825rem;">Scroll Down</p>
+                    </div>
+                </section>
 
-            <!-- Tanggal -->
-            <p class="text-light-muted mb-4" style="font-size: 1.25rem; font-weight: 500;">
-                Sabtu, 04 April 2026
-            </p>
-
-            <!-- Tombol Save Calendar -->
-            <button class="btn-premium-gold btn-sm shadow-lg mb-5">
-                <i class="fa-solid fa-calendar-check me-2"></i>
-                Save to Google Calendar
-            </button>
-
-            <!-- Mouse Scroll Indicator -->
-            <div class="d-flex flex-column align-items-center">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <p class="text-light-muted mt-3 mb-0" style="font-size: 0.8rem; letter-spacing: 1.5px;">
-                    SCROLL DOWN
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-    <!-- Wave Separator -->
+                <!-- Wave Separator -->
                 <div class="svg-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="color-theme-svg no-gap-bottom">
                         <path fill="currentColor" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -905,33 +872,21 @@ Terima kasih atas doa dan ucapan yang diberikan
     </div>
 
     <!-- Welcome Page -->
-<div class="loading-page" id="welcome" style="opacity: 1; transition: opacity 1s ease-out; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;">
-    
-    <div class="main-gradient-overlay d-flex justify-content-center align-items-center vh-100 p-3">
-        
-        <div class="d-flex flex-column text-center content-glass rounded-5 shadow-lg mx-auto" style="width: 100%; max-width: 380px; padding: 2.5rem 1.5rem !important; border: 1px solid rgba(255,255,255,0.08);">
-            
-            <p class="text-light-muted font-italic mb-1" style="font-size: 0.8rem; letter-spacing: 2px;">THE WEDDING OF</p>
+    <div class="loading-page bg-white-black" id="welcome" style="opacity: 0;">
+        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
+            <div class="d-flex flex-column text-center">
+                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">The Wedding Of</h2>
 
-            <h1 class="font-esthetic mb-4 text-gradient-gold" id="title-rr">Revin &amp; Roza</h1>
+                <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="background" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
 
-            <div class="profile-frame mb-4 mx-auto" id="profile-container">
-                <img src="./assets/images/Cover_rr.webp" alt="backround-rr" class="img-profile" style="width: 100%; height: 100%; object-fit: cover;">
+                <h2 class="font-esthetic mb-4" style="font-size: 2.25rem;">Wahyu &amp; Riski</h2>
+                <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
+
+                <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto" onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open Invitation</button>
             </div>
-            
-            <div id="guest-name-container" class="mb-4 text-white">
-                <p class="mb-1 opacity-75" style="font-size: 0.8rem;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 id="nama-tamu" class="fw-bold" style="letter-spacing: 0.5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Tamu Undangan</h3>
-            </div>
-
-            <button type="button" class="btn btn-gold-outline shadow rounded-pill px-4 py-2 mx-auto" onclick="undangan.guest.open(this)" style="font-size: 0.9rem;">
-                <i class="fa-solid fa-envelope-open me-2"></i>Open Invitation
-            </button>
         </div>
     </div>
-</div>
 
-    
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
         <!-- Theme Button -->
@@ -946,37 +901,26 @@ Terima kasih atas doa dan ucapan yang diberikan
     </div>
 
     <!-- Loading Page -->
- <div class="loading-page" id="loading" style="opacity: 1; background-color: #000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10001; transition: opacity 0.8s ease-in-out;">
-    <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="d-flex flex-column text-center" style="width: 280px;">
-            
-            <div class="logo-container mb-4">
-                <img src="./assets/images/logo_rr.jpg" 
-                     class="pulse-animation" 
-                     alt="Logo R&R" 
-                     style="width: 8rem; height: auto; filter: drop-shadow(0 0 15px rgba(212, 163, 115, 0.3));">
-            </div>
-
-            <div class="px-4">
-                <div class="progress bg-dark" role="progressbar" style="height: 0.2rem; border-radius: 10px; background-color: rgba(255,255,255,0.1) !important;">
-                    <div class="progress-bar" id="progress-bar" 
-                         style="width: 0%; background: linear-gradient(90deg, #d4a373, #f3e5ab); transition: width 0.4s ease;">
-                    </div>
+ <div class="loading-page bg-white-black" id="loading" style="opacity: 1;">
+        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
+            <div class="d-flex flex-column width-loading text-center">
+                <img src="./assets/images/placeholder.webp" data-src="./assets/images/icon-192x192.png" fetchpriority="high" class="img-fluid mb-3 mx-auto object-fit-cover opacity-0" alt="icon" style="width: 3.5rem; height: 3.5rem;">
+                <div class="progress" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
+                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
                 </div>
+                <small class="d-none mt-1 text-theme-auto" id="progress-info" style="font-size: 0.8rem;">Booting application...</small>
+                <noscript>
+                    <small class="mt-1 text-danger">Sorry, this invitation requires javascript to work</small>
+                </noscript>
             </div>
-            
-            <small class="mt-4 text-gold-muted" id="progress-info" style="font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 300;">Mempersiapkan Undangan</small>
-            
-            <noscript>
-                <small class="mt-2 text-danger">Maaf, aplikasi ini memerlukan JavaScript untuk berjalan.</small>
-            </noscript>
+        </div>
+        <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
+            <div class="d-flex flex-column">
+                <small class="text-secondary">from</small>
+                <small class="text-theme-auto"><i class="fa-brands fa-github me-1"></i>dewanakl</small>
+            </div>
         </div>
     </div>
-
-    <div class="text-center position-fixed w-100" style="bottom: 5%;">
-        <small class="text-gold-muted opacity-50" style="font-size: 0.7rem; letter-spacing: 2px;">THE WEDDING OF REVIN & ROZA</small>
-    </div>
-</div>
 
     <!-- Modal Image -->
     <div class="modal fade" id="modal-image" tabindex="-1" aria-hidden="true">
