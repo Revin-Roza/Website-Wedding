@@ -1152,58 +1152,56 @@ container.appendChild(card);
 
 </script>
         
-        <!-- Bunga Sakura -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jhammann/sakura@master/dist/sakura.css">
-<script src="https://cdn.jsdelivr.net/gh/jhammann/sakura@master/dist/sakura.min.js"></script>
-        
-        <script>
-window.addEventListener('load', () => {
-    const sakura = new Sakura('body', {
-        colors: [
-            {
-                gradientColorStart: 'rgba(255,183,197,0.9)',
-                gradientColorEnd: 'rgba(255,197,208,0.9)',
-                gradientColorDegree: 120
-            },
-            {
-                gradientColorStart: 'rgba(255,192,203,0.9)',
-                gradientColorEnd: 'rgba(255,182,193,0.9)',
-                gradientColorDegree: 120
+     <!-- ==================== SAKURA PETALS (Bunga Sakura) ==================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jhammann/sakura@master/dist/sakura.css">
+
+    <!-- ==================== SCRIPT UTAMA ==================== -->
+    <script src="https://cdn.jsdelivr.net/gh/jhammann/sakura@master/dist/sakura.min.js" defer></script>
+
+    <script>
+        // ====================== SAKURA EFFECT ======================
+        document.addEventListener('DOMContentLoaded', () => {
+            new Sakura('body', {
+                colors: [
+                    {
+                        gradientColorStart: 'rgba(255,183,197,0.92)',
+                        gradientColorEnd:   'rgba(255,197,208,0.92)',
+                        gradientColorDegree: 120
+                    },
+                    {
+                        gradientColorStart: 'rgba(255,192,203,0.92)',
+                        gradientColorEnd:   'rgba(255,182,193,0.92)',
+                        gradientColorDegree: 120
+                    }
+                ],
+                delay: 280,
+                fallSpeed: 1.6,
+                maxSize: 15,
+                minSize: 9,
+                className: 'sakura'   // pastikan sesuai dengan CSS
+            });
+        });
+
+        // ====================== COPY NOMOR REKENING ======================
+        function copyRek(nomor) {
+            navigator.clipboard.writeText(nomor).then(() => {
+                alert("✅ Nomor rekening berhasil disalin!");
+            }).catch(() => {
+                alert("❌ Gagal menyalin nomor rekening.");
+            });
+        }
+
+        // ====================== NAMA TAMU DARI URL (?to=) ======================
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const namaTamu = urlParams.get('to');
+
+            if (namaTamu && document.getElementById('nama-tamu')) {
+                const namaBersih = decodeURIComponent(namaTamu).replace(/\+/g, ' ');
+                document.getElementById('nama-tamu').innerText = namaBersih;
             }
-        ],
-        delay: 300,
-        fallSpeed: 1.5,
-        maxSize: 14,
-        minSize: 8
-    });
-});
-</script>
-        
-        <!-- nomor Rekening -->
-        <script>
+        });
+    </script>
 
-function copyRek(nomor){
-
-navigator.clipboard.writeText(nomor);
-
-alert("Nomor rekening berhasil disalin");
-
-}
-
-<script>
-
-<script>
-    // Fungsi untuk mengambil nama dari URL parameter ?to=
-    const urlParams = new URLSearchParams(window.location.search);
-    const namaTamu = urlParams.get('to');
-
-    if (namaTamu) {
-        // Ganti teks "Tamu Undangan" dengan nama dari URL
-        // replace(/\+/g, ' ') digunakan agar tanda + di URL berubah jadi spasi
-        document.getElementById('nama-tamu').innerText = decodeURIComponent(namaTamu).replace(/\+/g, ' ');
-    }
-</script>
-        
-    </body>
-
+</body>
 </html>
