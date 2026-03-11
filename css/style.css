@@ -414,6 +414,100 @@ RSVP
 }
 
 
+/* --- SECTION GUESTBOOK --- */
+.guestbook-section {
+  background: linear-gradient(180deg, #4a0404 0%, #2b0202 100%);
+  padding: 60px 20px;
+  color: #ffffff;
+}
+
+.guestbook-title {
+  font-family: 'Great Vibes', cursive;
+  color: #f3cf7a;
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+}
+
+.ucapan-subtitle {
+  color: #ffdada;
+  font-size: 0.85rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+/* --- CONTAINER UCAPAN (Scrollable) --- */
+.ucapan-box {
+  max-width: 500px; /* Ukuran box lebih ramping agar elegan */
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05); /* Efek kaca transparan */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 450px; /* Batas tinggi box */
+  overflow-y: auto; /* Fitur Scroll */
+  padding: 20px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* --- CUSTOM SCROLLBAR (Agar tetap estetik) --- */
+.ucapan-box::-webkit-scrollbar {
+  width: 4px;
+}
+.ucapan-box::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.ucapan-box::-webkit-scrollbar-thumb {
+  background: #f3cf7a; /* Warna emas untuk scrollbar */
+  border-radius: 10px;
+}
+
+/* --- ITEM UCAPAN (List) --- */
+.ucapan-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ucapan-item {
+  padding: 15px 5px;
+  text-align: left;
+  /* Pembatas Garis Putus-Putus Transparan */
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.ucapan-item:last-child {
+  border-bottom: none; /* Hilangkan garis pada komentar terakhir */
+}
+
+/* Detail Nama & Status Hadir */
+.ucapan-item strong {
+  color: #f3cf7a;
+  font-size: 0.9rem; /* Ukuran lebih kecil sesuai request */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Label Hadir (Badge kecil) */
+.ucapan-item .status-hadir {
+  font-size: 0.7rem;
+  background: rgba(243, 207, 122, 0.15);
+  color: #f3cf7a;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 400;
+  text-transform: italic;
+}
+
+/* Detail Pesan */
+.ucapan-item p {
+  font-size: 0.85rem; /* Ukuran pesan sedikit lebih kecil agar enak dibaca */
+  line-height: 1.5;
+  color: #f0f0f0;
+  margin: 5px 0 0 0;
+  font-weight: 300;
+}
 
 
 
