@@ -264,3 +264,68 @@ line-height:1.5;
 .ucapan-card:last-child{
 border-bottom:none;
 }
+
+
+<style>
+    /* 1. Gradasi Aesthetic: Hitam ke Merah Gelap */
+    .main-gradient-overlay {
+        background: linear-gradient(135deg, #000000 0%, #1a0000 40%, #4d0000 100%);
+        /* Atau alternatif gradasi radial jika suka efek sorot tengah:
+        background: radial-gradient(circle at center, #330000 0%, #000000 100%); */
+    }
+
+    /* 2. Efek Glassmorphism untuk Konten agar Mudah Dibaca */
+    .content-glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* 3. Gradasi Emas untuk Nama Mempelai */
+    .text-gradient-gold {
+        background: linear-gradient(to bottom, #f3e5ab 0%, #d4a373 50%, #b38b59 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+
+    /* 4. Bingkai Foto Bulat Aesthetic */
+    .profile-frame {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid #d4a373; /* Warna bingkai emas */
+        padding: 5px;
+        background: rgba(255,255,255,0.1);
+        overflow: hidden;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    }
+
+    .img-profile {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    /* 5. Tombol Elegant Outline Emas */
+    .btn-gold-outline {
+        color: #f3e5ab;
+        background-color: transparent;
+        border: 2px solid #d4a373;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .btn-gold-outline:hover {
+        background-color: #d4a373;
+        color: #1a0000;
+        box-shadow: 0 0 15px rgba(212, 163, 115, 0.7);
+    }
+
+    /* Utilitas */
+    .text-light-muted {
+        color: rgba(255, 255, 255, 0.6);
+    }
+</style>
