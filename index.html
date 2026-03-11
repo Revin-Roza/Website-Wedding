@@ -891,33 +891,33 @@ onclick="undangan.util.copy(this)">
     </div>
 
     <!-- Welcome Page -->
-<div class="loading-page custom-bg-premium" id="welcome">
-  <div class="content">
-    
-    <h2 class="the-wedding">The Wedding Of</h2>
-    
-    <div class="couple-photo mx-auto">
-      <img src="./assets/images/bg.webp" alt="Revin & Roza" id="photo">
-    </div>
-    
-    <h2 class="names">Revin &amp; Roza</h2>
-    
-    <div class="guest-container">
-      <div id="guest-name">Kepada Yth. Bapak/Ibu/Saudara/i</div>
-      <h3 id="nama-tamu" class="fw-bold">Nama Tamu</h3>
+<!-- WELCOME PAGE PREMIUM -->
+<div class="loading-page" id="welcome" style="display: none; opacity: 1;">
+    <div class="content">
+        <h2 class="the-wedding">The Wedding Of</h2>
+        
+        <div class="couple-photo mx-auto">
+            <img src="./assets/images/bg.webp" alt="Revin & Roza">
+        </div>
+        
+        <h2 class="names">Revin &amp; Roza</h2>
+        
+        <div class="guest-container">
+            <div id="guest-name">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+            <h3 id="nama-tamu" class="fw-bold">Nama Tamu</h3>
+        </div>
+
+        <button type="button" class="btn-open shadow" onclick="openInvitation(this)">
+            <i class="fa-solid fa-envelope-open-text me-2"></i>
+            OPEN INVITATION
+        </button>
     </div>
 
-    <button type="button" class="btn-open shadow" onclick="undangan.guest.open(this)">
-      <i class="fa-solid fa-envelope-open-text me-2"></i>
-      OPEN INVITATION
-    </button>
-  </div>
-
-  <!-- Hati kecil melayang -->
-  <div class="heart" style="top:15%; left:8%; animation-delay:0s;">♡</div>
-  <div class="heart" style="top:35%; left:85%; animation-delay:4s;">♥</div>
-  <div class="heart" style="top:65%; left:12%; animation-delay:9s;">♡</div>
-  <div class="heart" style="top:82%; left:78%; animation-delay:13s;">♥</div>
+    <!-- Hati melayang -->
+    <div class="heart" style="top:15%; left:8%; animation-delay:0s;">♡</div>
+    <div class="heart" style="top:35%; left:85%; animation-delay:4s;">♥</div>
+    <div class="heart" style="top:65%; left:12%; animation-delay:9s;">♡</div>
+    <div class="heart" style="top:82%; left:78%; animation-delay:13s;">♥</div>
 </div>
 
 
@@ -935,26 +935,31 @@ onclick="undangan.util.copy(this)">
     </div>
 
     <!-- Loading Page -->
- <div class="loading-page bg-white-black" id="loading" style="opacity: 1;">
-        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-            <div class="d-flex flex-column width-loading text-center">
-                <img src="./assets/images/placeholder.webp" data-src="./assets/images/logo_rr.jpg" fetchpriority="high" class="img-fluid mb-3 mx-auto object-fit-cover opacity-0" alt="icon" style="width: 3.5rem; height: 3.5rem;">
-                <div class="progress" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
-                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>l
+<!-- LOADING PAGE - Elegan & Cepat -->
+<div class="loading-page" id="loading">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center">
+            <!-- Logo kecil -->
+            <img src="./assets/images/placeholder.webp" 
+                 data-src="./assets/images/logo_rr.jpg" 
+                 class="img-fluid mb-4 mx-auto" 
+                 alt="Revin & Roza" 
+                 style="width: 70px; height: 70px; border-radius: 50%;">
+
+            <!-- Progress Bar Modern -->
+            <div class="progress mx-auto" style="width: 180px; height: 4px; background: rgba(212,175,55,0.2); border-radius: 999px; overflow: hidden;">
+                <div id="progress-bar" 
+                     class="progress-bar" 
+                     style="width: 0%; height: 100%; background: linear-gradient(90deg, #d4af37, #f5d07a); transition: width 2.5s ease;">
                 </div>
-                <small class="d-none mt-1 text-theme-auto" id="progress-info" style="font-size: 0.8rem;">Booting application...</small>
-                <noscript>
-                    <small class="mt-1 text-danger">Sorry, this invitation requires javascript to work</small>
-                </noscript>
             </div>
-        </div>
-        <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
-            <div class="d-flex flex-column">
-                <small class="text-secondary">from</small>
-                <small class="text-theme-auto"><i class="fa-brands fa-github me-1"></i>dewanakl</small>
-            </div>
+
+            <small class="mt-3 d-block text-light" style="font-size: 0.85rem; opacity: 0.7;">
+                Preparing your invitation...
+            </small>
         </div>
     </div>
+</div>
 
     <!-- Modal Image -->
     <div class="modal fade" id="modal-image" tabindex="-1" aria-hidden="true">
@@ -1107,33 +1112,53 @@ alert("Berhasil disalin ✓");
 </script>
 
 <script>
-  // Ambil nama tamu dari URL (?to=Nama Tamu)
-  function getGuestName() {
+  // === PROGRESS LOADING ===
+  let progress = 0;
+  const progressBar = document.getElementById('progress-bar');
+
+  const loadingInterval = setInterval(() => {
+    progress += Math.random() * 18 + 7;   // acak biar natural
+    if (progress > 100) progress = 100;
+    
+    progressBar.style.width = progress + '%';
+
+    if (progress >= 100) {
+      clearInterval(loadingInterval);
+      setTimeout(switchToWelcome, 600);
+    }
+  }, 120);
+
+  // Pindah ke Welcome Page
+  function switchToWelcome() {
+    document.getElementById('loading').style.opacity = '0';
+    
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('welcome').style.display = 'flex';
+      
+      // Animasi welcome muncul
+      setTimeout(() => {
+        document.getElementById('welcome').style.opacity = '1';
+      }, 50);
+    }, 800);
+  }
+
+  // Fungsi tombol Open Invitation
+  function openInvitation(btn) {
+    btn.style.transform = 'scale(0.92)';
+    setTimeout(() => {
+      document.getElementById('welcome').classList.add('hidden');
+      setTimeout(() => {
+        document.getElementById('welcome').style.display = 'none';
+      }, 1300);
+    }, 280);
+  }
+
+  // Ambil nama tamu
+  window.onload = function() {
     const params = new URLSearchParams(window.location.search);
     let nama = params.get('to') || "Nama Tamu";
     document.getElementById('nama-tamu').textContent = nama;
-  }
-
-  // Jalankan saat halaman selesai load
-  window.onload = () => {
-    getGuestName();
-  };
-
-  // Fungsi tombol Open Invitation
-  window.undangan = {
-    guest: {
-      open: function(btn) {
-        btn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-          document.getElementById('welcome').style.opacity = '0';
-          setTimeout(() => {
-            document.getElementById('welcome').style.display = 'none';
-            // Tambahkan kode ini jika ingin langsung scroll ke section home:
-            // document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
-          }, 1200);
-        }, 300);
-      }
-    }
   };
 </script>
 
