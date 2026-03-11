@@ -1,428 +1,75 @@
+/* ============================================================
+1. CORE SETTINGS & VARIABLES
+============================================================
+*/
+:root {
+    --bg-color: #fffaf7;
+    --section-color: #fdf0ea;
+    --text-color: #3a3a3a;
+    --accent-color: #b48a78;
+    --gold-premium: #d4a373;
+    --gold-light: #f3e5ab;
+}
+
+/* Dark Mode Theme */
+[data-theme="dark"] {
+    --bg-color: #1f1f1f;
+    --section-color: #2a2a2a;
+    --text-color: #f5f5f5;
+    --accent-color: #d4a373;
+}
+
+/* Auto Dark Mode (System Preference) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1f1f1f;
+        --section-color: #2a2a2a;
+        --text-color: #f5f5f5;
+        --accent-color: #d4a373;
+    }
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body.loading-active {
+    overflow: hidden !important;
+}
+
+/* ============================================================
+2. ANIMATIONS & EFFECTS
+============================================================
+*/
+/* Sakura Effect */
 canvas.sakura {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none;
-z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
 }
 
-body{
-background:#fffaf7;
-color:#3a3a3a;
+/* Pulse Glow Loading */
+@keyframes logo-glow {
+    0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
+    50% { transform: scale(1.03); filter: drop-shadow(0 0 20px rgba(212, 163, 115, 0.5)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
 }
 
-.section{
-background:#fdf0ea;
-padding:80px 20px;
+.pulse-animation {
+    animation: logo-glow 3s infinite ease-in-out;
 }
 
-.couple-name{
-color:#b48a78;
-}
-
-.btn-wedding{
-background:#b48a78;
-color:white;
-border-radius:30px;
-}
-
-.btn-wedding:hover{
-background:#a07160;
-}
-
-
-<!-- BG PUTIH --!>
-:root{
---bg-color:#fffaf7;
---section-color:#fdf0ea;
---text-color:#3a3a3a;
---accent-color:#b48a78;
-}
-
-<!-- BG DARK --!>
-[data-theme="dark"]{
---bg-color:#1f1f1f;
---section-color:#2a2a2a;
---text-color:#f5f5f5;
---accent-color:#d4a373;
-}
-
-<!-- SWITCH MODE --!>
-body{
-background:var(--bg-color);
-color:var(--text-color);
-}
-
-section{
-background:var(--section-color);
-}
-
-.couple-name{
-color:var(--accent-color);
-}
-
-.btn-wedding{
-background:var(--accent-color);
-color:white;
-}
-
-<!-- AUTO MODE HO --!>
-@media (prefers-color-scheme: dark){
-:root{
---bg-color:#1f1f1f;
---section-color:#2a2a2a;
---text-color:#f5f5f5;
---accent-color:#d4a373;
-}
-}
-
-
-
-
-.gift-card{
-
-background:rgba(255,255,255,0.05);
-
-border-radius:14px;
-
-padding:14px;
-
-text-align:center;
-
-border:1px solid rgba(255,255,255,0.08);
-
-backdrop-filter: blur(10px);
-
-}
-
-.gift-bank{
-
-font-size:0.85rem;
-
-opacity:0.8;
-
-margin-bottom:5px;
-
-}
-
-.gift-number{
-
-font-size:1.05rem;
-
-font-weight:600;
-
-letter-spacing:1px;
-
-margin-bottom:6px;
-
-}
-
-.gift-name{
-
-font-size:0.85rem;
-
-opacity:0.7;
-
-margin-bottom:12px;
-
-}
-
-.gift-copy{
-
-border:none;
-
-background:rgba(255,255,255,0.08);
-
-color:white;
-
-padding:6px 14px;
-
-font-size:0.75rem;
-
-border-radius:20px;
-
-transition:0.3s;
-
-}
-
-.gift-copy:hover{
-
-background:#d4af37;
-
-color:black;
-
-}
-
-
-/* SUBTITLE */
-
-.ucapan-subtitle{
-font-size:0.85rem;
-opacity:0.7;
-margin-bottom:22px;
-}
-
-
-/* BOX SCROLL */
-
-.ucapan-box{
-
-max-width:420px;
-
-margin:auto;
-
-max-height:300px;
-
-overflow-y:auto;
-
-padding:8px 12px;
-
-}
-
-
-/* SCROLLBAR */
-
-.ucapan-box::-webkit-scrollbar{
-width:4px;
-}
-
-.ucapan-box::-webkit-scrollbar-thumb{
-background:rgba(212,175,55,0.5);
-border-radius:10px;
-}
-
-
-/* KOMENTAR */
-
-.ucapan-card{
-
-padding:12px 4px;
-
-text-align:left;
-
-border-bottom:1px dashed rgba(255,255,255,0.15);
-
-}
-
-
-/* HEADER */
-
-.ucapan-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:4px;
-
-}
-
-
-/* NAMA */
-
-.ucapan-nama{
-
-font-size:0.86rem;
-
-font-weight:600;
-
-letter-spacing:0.2px;
-
-}
-
-
-/* STATUS */
-
-.ucapan-status{
-
-font-size:0.75rem;
-
-color:#d4af37;
-
-}
-
-
-/* PESAN */
-
-.ucapan-pesan{
-
-font-size:0.8rem;
-
-opacity:0.85;
-
-line-height:1.5;
-
-}
-
-
-/* KOMENTAR TERAKHIR */
-
-.ucapan-card:last-child{
-border-bottom:none;
-}
-
-
-<style>
-    /* 1. Gradasi Luxury: Black & Deep Wine Red */
-    .main-gradient-overlay {
-        background: radial-gradient(circle at center, #2d0a0a 0%, #000000 100%);
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* 2. Glassmorphism Card yang lebih Solid agar Teks Terbaca */
-    .content-glass {
-        background: rgba(255, 255, 255, 0.05); /* Sedikit lebih terang agar kontras */
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        width: 85%;
-        max-width: 350px;
-        padding: 30px 20px !important;
-        margin: auto;
-    }
-
-    /* 3. Text Gradient Gold (Lebih Tajam) */
-    .text-gradient-gold {
-        background: linear-gradient(180deg, #f3e5ab 0%, #d4a373 50%, #b38b59 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 700;
-        text-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    }
-
-    /* 4. Bingkai Foto (Dibuat lebih slim & premium) */
-    #profile-container {
-        width: 130px;
-        height: 130px;
-        border: 2px solid #d4a373; /* Garis lebih tipis agar elegan */
-        padding: 5px;
-        border-radius: 50%;
-        margin: 20px auto !important;
-        background: linear-gradient(45deg, #d4a373, #2d0a0a);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    }
-
-    .img-profile {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        filter: brightness(0.9); /* Sedikit gelap agar menyatu dengan tema */
-    }
-
-    /* 5. Tombol Premium (Solid & Elegant) */
-    .btn-gold-outline {
-        color: #1a0000;
-        background: linear-gradient(45deg, #f3e5ab, #d4a373); /* Tombol dibuat solid agar terbaca */
-        border: none;
-        padding: 10px 25px !important;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.8rem !important;
-        letter-spacing: 1.5px;
-        transition: transform 0.2s ease;
-    }
-
-    .btn-gold-outline:hover {
-        transform: scale(1.05);
-        color: #000;
-        box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
-    }
-
-    /* CSS Khusus Layar HP (Agar Presisi seperti di gambar) */
-    @media (max-width: 576px) {
-        .content-glass {
-            padding: 25px 15px !important;
-        }
-
-        #title-rr {
-            font-size: 2.2rem !important;
-            margin-bottom: 0.5rem !important;
-            line-height: 1.2;
-        }
-
-        #profile-container {
-            width: 115px !important;
-            height: 115px !important;
-        }
-
-        #nama-tamu {
-            font-size: 1.4rem !important;
-            margin-top: 5px;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .text-light-muted {
-            font-size: 0.75rem !important;
-            opacity: 0.8;
-            letter-spacing: 1px;
-        }
-    }
-</style>
-
-<style>
-    /* Warna teks emas redup untuk loading */
-    .text-gold-muted {
-        color: #d4a373;
-        opacity: 0.8;
-    }
-
-    /* Animasi denyut pada icon loading */
-    .pulse-animation {
-        animation: pulse-gold 2s infinite;
-    }
-
-    @keyframes pulse-gold {
-        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 163, 115, 0.7); }
-        70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(212, 163, 115, 0); }
-        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 163, 115, 0); }
-    }
-
-    /* Menghilangkan scrollbar saat loading */
-    body.loading-active {
-        overflow: hidden !important;
-    }
-</style>
-
-<style>
-    /* Warna Gold Khas */
-    .text-gold-muted {
-        color: #d4a373;
-    }
-
-    /* Animasi Pulse yang Lebih Lembut untuk Logo */
-    .pulse-animation {
-        animation: logo-glow 3s infinite ease-in-out;
-    }
-
-    @keyframes logo-glow {
-        0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
-        50% { transform: scale(1.03); filter: drop-shadow(0 0 20px rgba(212, 163, 115, 0.5)); }
-        100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
-    }
-
-    /* Mencegah pergeseran konten saat progres berjalan */
-    .logo-container {
-        min-height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-</style>
-
-</style>
-/* --- FIX TOTAL HOME SECTION --- */
+/* ============================================================
+3. SECTION: HOME (HERO) - HIGH PRIORITY
+============================================================
+*/
 .home-section-final {
     position: relative !important;
     height: 100vh !important;
@@ -431,8 +78,6 @@ border-bottom:none;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
     background: #000;
 }
 
@@ -466,35 +111,23 @@ border-bottom:none;
     position: relative;
     z-index: 10;
     width: 100%;
-    padding-top: 20px;
-}
-
-.text-upper-gold {
-    color: #d4a373 !important;
-    letter-spacing: 5px;
-    font-size: 0.75rem;
-    margin-bottom: 10px;
+    text-align: center;
 }
 
 .couple-name-display {
-    font-size: clamp(2.5rem, 8vw, 4rem); /* Ukuran dinamis HP & Desktop */
+    font-size: clamp(2.5rem, 8vw, 4rem);
     color: #fff;
     margin-bottom: 20px;
     text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
 }
 
-.profile-center {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-}
-
 .profile-circle {
-    width: clamp(120px, 20vw, 160px); /* Ukuran fleksibel */
+    width: clamp(120px, 20vw, 160px);
     height: clamp(120px, 20vw, 160px);
-    border: 2px solid #d4a373;
+    border: 2px solid var(--gold-premium);
     border-radius: 50%;
     padding: 5px;
+    margin: 0 auto;
     background: rgba(255,255,255,0.1);
 }
 
@@ -505,30 +138,67 @@ border-bottom:none;
     border-radius: 50%;
 }
 
-.text-event-date {
-    color: #f3e5ab;
-    font-size: clamp(1.1rem, 4vw, 1.5rem);
-    font-weight: 600;
-    margin-top: 5px;
+/* ============================================================
+4. SECTION: GUEST BOOK & Gifting
+============================================================
+*/
+.gift-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
 }
 
+.gift-number {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+}
+
+/* Ucapan Box Scrollbar */
+.ucapan-box {
+    max-width: 420px;
+    margin: auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.ucapan-box::-webkit-scrollbar { width: 4px; }
+.ucapan-box::-webkit-scrollbar-thumb {
+    background: rgba(212,175,55,0.5);
+    border-radius: 10px;
+}
+
+.ucapan-card {
+    padding: 12px 4px;
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+}
+
+/* ============================================================
+5. BUTTONS & UI ELEMENTS
+============================================================
+*/
 .btn-premium-gold {
-    border: 1px solid #d4a373 !important;
-    color: #d4a373 !important;
+    border: 1px solid var(--gold-premium) !important;
+    color: var(--gold-premium) !important;
     border-radius: 50px;
-    padding: 10px 25px;
+    padding: 10px 30px;
     text-decoration: none;
     font-size: 0.8rem;
     background: rgba(0,0,0,0.5);
     transition: 0.3s;
+    font-weight: 600;
 }
 
 .btn-premium-gold:hover {
-    background: #d4a373;
+    background: var(--gold-premium);
     color: #000 !important;
 }
 
-/* Scroll Hint Fix */
+/* Scroll Down Hint */
 .scroll-down-hint {
     position: absolute;
     bottom: 20px;
@@ -550,7 +220,7 @@ border-bottom:none;
 .mouse-wheel {
     width: 3px;
     height: 6px;
-    background: #d4a373;
+    background: var(--gold-premium);
     position: absolute;
     top: 5px;
     left: 50%;
@@ -563,11 +233,12 @@ border-bottom:none;
     100% { top: 15px; opacity: 0; }
 }
 
-.scroll-down-hint span {
-    font-size: 0.6rem;
-    color: #fff;
-    opacity: 0.6;
-    letter-spacing: 2px;
+/* ============================================================
+6. RESPONSIVE UTILITY
+============================================================
+*/
+@media (max-width: 576px) {
+    .section { padding: 50px 15px; }
+    .couple-name-display { font-size: 2.2rem !important; }
+    .profile-circle { width: 115px !important; height: 115px !important; }
 }
-</style>
-
