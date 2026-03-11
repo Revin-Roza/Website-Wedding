@@ -264,70 +264,44 @@ body {
 
 /* Desain Card ala Instagram */
 /* Pastikan parent memiliki posisi relative */
+.ucapan-box {
+  max-width: 450px; /* Diperkecil agar fokus ke tengah */
+  height: 400px;    /* Tinggi box dikurangi sedikit */
+  background: #fdfdfd;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
 .ucapan-item {
-  position: relative; /* Wajib ada agar status tidak lari ke luar kotak */
-  background: #ffffff;
-  border: 1px solid #dbdbdb;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  padding: 20px 15px 15px 15px; /* Tambah padding atas sedikit agar tidak tertutup label */
-  text-align: left;
-}
-
-/* Styling Label di Pojok Kanan Atas */
-.status-kehadiran {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 4px 8px;
-  border-radius: 5px;
-  letter-spacing: 0.5px;
-}
-
-/* Warna berbeda untuk Hadir & Tidak Hadir agar informatif */
-.status-hadir {
-  background-color: #e8f5e9; /* Hijau muda lembut */
-  color: #2e7d32;
-}
-
-.status-absen {
-  background-color: #ffebee; /* Merah muda lembut */
-  color: #c62828;
-}
-
-/* Jika Masih Ragu */
-.status-ragu {
-  background-color: #fff3e0;
-  color: #ef6c00;
-}
-
-.ucapan-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  padding: 12px; /* Padding dalam item lebih rapat */
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
 }
 
 .avatar-circle {
-  width: 35px;
-  height: 35px;
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  border-radius: 50%;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 0.8rem;
+  width: 30px;  /* Ukuran avatar diperkecil */
+  height: 30px;
+  font-size: 0.75rem;
 }
 
 .guest-name {
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin: 0;
+  font-size: 0.85rem; /* Nama lebih ramping */
+}
+
+.guest-message {
+  font-size: 0.85rem; /* Isi pesan lebih enak dibaca di ukuran kecil */
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.status-kehadiran {
+  font-size: 0.6rem; /* Badge status lebih mungil di pojok */
+  top: 8px;
+  right: 8px;
+  padding: 2px 6px;
 }
 
 .attendance-badge {
@@ -337,13 +311,6 @@ body {
   background: #f0f0f0;
   margin-left: 10px;
   color: #666;
-}
-
-.guest-message {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #262626;
-  margin-top: 5px;
 }
 
 /* Custom Scrollbar */
