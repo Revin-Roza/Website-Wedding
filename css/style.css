@@ -136,5 +136,25 @@ pointer-events:none;
 }
 
 
+/* Pastikan gambar di welcome page masuk ke bingkai lingkaran */
+.img-center-crop {
+    width: 220px;         /* Tentukan lebar tetap */
+    height: 220px;        /* Tentukan tinggi tetap (harus sama agar bulat sempurna) */
+    object-fit: cover;    /* KUNCI: Gambar akan otomatis terpotong di tengah agar pas di frame */
+    object-position: center;
+}
 
+/* Tambahan untuk Premium Design 2025 agar frame lebih tegas */
+.rounded-circle.border-3 {
+    border: 3px solid #8b0000 !important; /* Warna merah premium */
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.5); /* Efek glowing */
+}
+
+/* Perbaikan untuk Gambar Galeri agar tidak penyet atau keluar jalur */
+.gallery-img, .img-fluid {
+    width: 100%;
+    height: 250px;       /* Sesuaikan tinggi yang Anda inginkan */
+    object-fit: cover;
+    border-radius: 15px;
+}
 
