@@ -928,48 +928,54 @@ Terima kasih atas doa dan ucapan yang diberikan
     </div>
 
     <!-- Welcome Page -->
- <div class="loading-page" id="welcome" style="position: fixed; inset: 0; width: 100%; height: 100%; background: #000; z-index: 9999; transition: opacity 1s ease-out;">
-    
-    <div class="main-gradient-overlay d-flex justify-content-center align-items-center vh-100 p-3">
-        
-        <div class="d-flex flex-column text-center content-glass rounded-5 shadow-lg mx-auto" style="width: 100%; max-width: 380px; padding: 2.5rem 1.5rem; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
-            
-            <p class="text-light-muted font-italic mb-1" style="font-size: 0.8rem; letter-spacing: 2px; color: rgba(255,255,255,0.6);">THE WEDDING OF</p>
+ <div class="loading-page" id="welcome">
 
-            <h1 class="font-esthetic mb-4 text-gradient-gold" id="title-rr" style="font-size: 3rem; color: #d4a373;">Revin &amp; Roza</h1>
+    <div class="main-gradient-overlay">
 
-            <div class="profile-frame mb-4 mx-auto" id="profile-container" style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #d4a373; padding: 5px; overflow: hidden;">
-                <img src="./assets/images/Cover_rr.webp" 
-                     alt="background-rr" 
-                     class="img-profile" 
-                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"
-                     loading="eager" 
-                     fetchpriority="high">
-            </div>
-            <div id="guest-name-container" class="mb-4 text-white">
-                <p class="mb-1 opacity-75" style="font-size: 0.85rem;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 id="nama-tamu" class="fw-bold" style="font-size: 1.4rem; color: #ffffff;">Tamu Undangan</h3>
-            </div>
-            <button type="button" class="btn-premium-gold mx-auto" onclick="undangan.guest.open(this)" style="cursor: pointer;">
-                <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
-            </button>
-            </div>
-        </div>
-    </div>
-            
-            <div id="guest-name-container" class="mb-4 text-white">
-                <p class="mb-1 opacity-75" style="font-size: 0.8rem;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 id="nama-tamu" class="fw-bold" style="letter-spacing: 0.5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Tamu Undangan</h3>
+        <div class="content-glass">
+
+            <p class="text-light-muted">
+                THE WEDDING OF
+            </p>
+
+            <h1 class="font-esthetic text-gradient-gold" id="title-rr">
+                Revin &amp; Roza
+            </h1>
+
+            <div class="profile-frame" id="profile-container">
+                <img 
+                    src="./assets/images/Cover_rr.webp"
+                    alt="Revin dan Roza"
+                    class="img-profile"
+                    loading="eager"
+                    fetchpriority="high"
+                >
             </div>
 
-            <button type="button" class="btn btn-gold-outline shadow rounded-pill px-4 py-2 mx-auto" onclick="undangan.guest.open(this)" style="font-size: 0.9rem;">
-                <i class="fa-solid fa-envelope-open me-2"></i>Open Invitation
+            <div id="guest-name-container">
+
+                <p class="guest-label">
+                    Kepada Yth. Bapak/Ibu/Saudara/i:
+                </p>
+
+                <h3 id="nama-tamu">
+                    Tamu Undangan
+                </h3>
+
+            </div>
+
+            <button 
+                type="button"
+                class="btn-premium-gold"
+                onclick="undangan.guest.open(this)"
+            >
+                <i class="fa-solid fa-envelope-open"></i>
+                Buka Undangan
             </button>
         </div>
     </div>
 </div>
-
-
+    
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
         <!-- Theme Button -->
