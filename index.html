@@ -796,9 +796,7 @@ Terima kasih atas doa dan ucapan yang diberikan
 </p>
 
 <div class="ucapan-box">
-
 <div id="ucapan-container"></div>
-
 </div>
 
 </section>
@@ -1050,7 +1048,7 @@ const rows = data.split("\n").slice(1);
 
 const container = document.getElementById("ucapan-container");
 
-rows.reverse().slice(0,30).forEach(row => {
+rows.reverse().slice(0,40).forEach(row => {
 
 const cols = row.split(",");
 
@@ -1059,10 +1057,6 @@ const hadir = cols[2];
 const pesan = cols[3];
 
 if(!nama) return;
-
-const status = hadir === "Hadir"
-? "Hadir"
-: "Tidak Hadir";
 
 const card = document.createElement("div");
 
@@ -1074,14 +1068,12 @@ card.innerHTML = `
 
 <span class="ucapan-nama">${nama}</span>
 
-<span class="ucapan-status">(${status})</span>
+<span class="ucapan-status">(${hadir})</span>
 
 </div>
 
 <div class="ucapan-pesan">
-
 ${pesan}
-
 </div>
 
 `;
