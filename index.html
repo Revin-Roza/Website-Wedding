@@ -139,30 +139,41 @@
             <main data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="25% 0% 0% 0%" data-bs-smooth-scroll="true" tabindex="0">
 
                 <!-- Home -->
-                <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
-                    <img src="./assets/images/placeholder.webp" data-src="./assets/images/backround-rr.webp" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
+                <section id="home" class="position-relative overflow-hidden p-0 m-0 vh-100 d-flex align-items-center justify-content-center">
+    <div class="main-bg-overlay">
+        <img src="./assets/images/Cover_rr.jpeg" alt="Cover Revin & Roza" class="bg-cover-home">
+    </div>
 
-                    <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
-                        <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
+    <div class="position-relative text-center content-home-fade w-100 px-3">
+        <p class="text-gold-premium tracking-widest mb-2" style="font-size: 0.8rem; letter-spacing: 4px;">WEDDING CELEBRATION</p>
+        
+        <h1 class="font-esthetic text-white mb-4" style="font-size: 3rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.5);">Revin &amp; Roza</h1>
 
-                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/backround-rr.webp" alt="bg" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+        <div class="position-relative d-inline-block">
+            <img src="./assets/images/Cover_rr.jpeg" alt="Revin & Roza" 
+                 onclick="undangan.guest.modal(this)" 
+                 class="img-home-main rounded-circle border-gold-premium shadow-lg my-3 cursor-pointer">
+        </div>
 
-                        <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">Revin &amp; Roza</h2>
-                        <p class="my-2" style="font-size: 1.25rem;">Sabtu, 4 April 2026</p>
+        <div class="text-white mt-3">
+            <p class="mb-1 opacity-75" style="font-size: 1rem; letter-spacing: 1px;">SAVE THE DATE</p>
+            <h3 class="fw-bold" style="font-size: 1.4rem; color: #f3e5ab;">Sabtu, 04 April 2026</h3>
+        </div>
 
-                        <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
-                            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
-                        </button>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Revin+%26+Roza&dates=20260404T080000Z/20260404T130000Z" 
+           target="_blank" 
+           class="btn btn-gold-pill mt-4 shadow-sm">
+            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
+        </a>
 
-                        <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
-                            <div class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
-                                <div class="scroll-animation rounded-4 bg-secondary"></div>
-                            </div>
-                        </div>
-
-                        <p class="pb-4 m-0 text-secondary" style="font-size: 0.825rem;">Scroll Down</p>
-                    </div>
-                </section>
+        <div class="scroll-indicator mt-5">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p class="text-white opacity-50 mt-2" style="font-size: 0.7rem; letter-spacing: 2px;">SCROLL DOWN</p>
+        </div>
+    </div>
+</section>
 
                 <!-- Wave Separator -->
                 <div class="svg-wrapper">
