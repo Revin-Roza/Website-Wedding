@@ -164,41 +164,95 @@ margin:auto;
 
 }
 
+/* SUBTITLE */
+
+.ucapan-subtitle{
+
+font-size:0.85rem;
+
+opacity:0.7;
+
+margin-bottom:25px;
+
+}
+
+/* BOX SCROLL */
+
+.ucapan-box{
+
+max-width:420px;
+
+margin:auto;
+
+max-height:320px;
+
+overflow-y:auto;
+
+padding:10px;
+
+border-radius:14px;
+
+background:rgba(0,0,0,0.05);
+
+backdrop-filter:blur(10px);
+
+}
+
+/* SCROLLBAR */
+
+.ucapan-box::-webkit-scrollbar{
+
+width:4px;
+
+}
+
+.ucapan-box::-webkit-scrollbar-thumb{
+
+background:#d4af37;
+
+border-radius:10px;
+
+}
+
 /* CARD */
 
 .ucapan-card{
 
-background:#1f232b;
+padding:12px 6px;
 
-color:white;
-
-padding:16px;
-
-border-radius:14px;
-
-margin-bottom:14px;
+border-bottom:1px solid rgba(0,0,0,0.08);
 
 text-align:left;
 
-box-shadow:0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
+
+.ucapan-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:4px;
 
 }
 
 /* NAMA */
 
-.ucapan-card h5{
+.ucapan-nama{
 
-margin:0;
-
-font-size:0.95rem;
+font-size:0.85rem;
 
 font-weight:600;
 
 }
 
-/* STATUS HADIR */
+/* STATUS */
 
-.ucapan-card span{
+.ucapan-status{
 
 font-size:0.75rem;
 
@@ -206,15 +260,13 @@ color:#d4af37;
 
 }
 
-/* UCAPAN */
+/* PESAN */
 
-.ucapan-card p{
+.ucapan-pesan{
 
-margin-top:6px;
+font-size:0.8rem;
 
-font-size:0.85rem;
-
-opacity:0.9;
+opacity:0.85;
 
 line-height:1.5;
 
