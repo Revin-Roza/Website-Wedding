@@ -156,25 +156,14 @@ color:black;
 }
 
 
-.ucapan-wrapper{
-
-max-width:420px;
-
-margin:auto;
-
-}
-
 /* SUBTITLE */
 
 .ucapan-subtitle{
-
 font-size:0.85rem;
-
 opacity:0.7;
-
-margin-bottom:25px;
-
+margin-bottom:22px;
 }
+
 
 /* BOX SCROLL */
 
@@ -184,47 +173,39 @@ max-width:420px;
 
 margin:auto;
 
-max-height:320px;
+max-height:300px;
 
 overflow-y:auto;
 
-padding:10px;
-
-border-radius:14px;
-
-background:rgba(0,0,0,0.05);
-
-backdrop-filter:blur(10px);
+padding:8px 12px;
 
 }
+
 
 /* SCROLLBAR */
 
 .ucapan-box::-webkit-scrollbar{
-
 width:4px;
-
 }
 
 .ucapan-box::-webkit-scrollbar-thumb{
-
-background:#d4af37;
-
+background:rgba(212,175,55,0.5);
 border-radius:10px;
-
 }
 
-/* CARD */
+
+/* KOMENTAR */
 
 .ucapan-card{
 
-padding:12px 6px;
-
-border-bottom:1px solid rgba(0,0,0,0.08);
+padding:12px 4px;
 
 text-align:left;
 
+border-bottom:1px dashed rgba(255,255,255,0.15);
+
 }
+
 
 /* HEADER */
 
@@ -240,15 +221,19 @@ margin-bottom:4px;
 
 }
 
+
 /* NAMA */
 
 .ucapan-nama{
 
-font-size:0.85rem;
+font-size:0.86rem;
 
 font-weight:600;
 
+letter-spacing:0.2px;
+
 }
+
 
 /* STATUS */
 
@@ -259,6 +244,7 @@ font-size:0.75rem;
 color:#d4af37;
 
 }
+
 
 /* PESAN */
 
@@ -272,3 +258,9 @@ line-height:1.5;
 
 }
 
+
+/* KOMENTAR TERAKHIR */
+
+.ucapan-card:last-child{
+border-bottom:none;
+}
