@@ -80,24 +80,42 @@ color:white;
 
 
 .gift-card{
-padding:18px;
-border-radius:12px;
+background:#ffffff;
+border-radius:10px;
+padding:10px;
+margin-bottom:10px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
-.bank-name{
-font-size:16px;
+.bank{
+font-size:0.85rem;
+margin:0;
+opacity:0.7;
 }
 
-.rekening-number{
-font-size:16px;
+.rekening{
+font-size:0.95rem;
+font-weight:600;
 letter-spacing:1px;
+margin:2px 0;
 }
 
-.rekening-name{
-font-size:13px;
+.nama{
+font-size:0.8rem;
+opacity:0.7;
+margin-bottom:5px;
 }
 
 .copy-btn{
-font-size:12px;
-padding:6px 16px;
+font-size:0.75rem;
+padding:4px 12px;
+border:none;
+background:#c8a97e;
+color:white;
+border-radius:15px;
+}
+
+.qris-img{
+max-width:200px;
 }
