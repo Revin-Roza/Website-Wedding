@@ -140,45 +140,35 @@
 
 
                 <!-- Home -->
-<section id="home" class="home-section-final">
-    <div class="main-background">
-        <img src="./assets/images/Cover_rr.webp" alt="Background" class="img-bg">
-        <div class="overlay-gradient"></div>
-    </div>
+                <section id="home" class="home-section-final" style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    
+                    <div class="main-background" style="position: absolute; inset: 0; z-index: 1;">
+                        <img src="./assets/images/Cover_rr.webp" alt="Background" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                        <div class="overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);"></div>
+                    </div>
+                    <div class="main-content-wrapper text-center text-white" style="position: relative; z-index: 2; padding: 20px;">
+                        <p class="text-upper-gold" data-aos="fade-up" data-aos-delay="200" style="letter-spacing: 5px; font-size: 0.8rem; margin-bottom: 1rem; color: #d4a373;">THE WEDDING OF</p>
+                        
+                        <h1 class="font-esthetic couple-name-display" data-aos="zoom-in" data-aos-delay="400" style="font-size: clamp(3.5rem, 10vw, 5rem); line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">
+                            Revin & Roza
+                        </h1>
 
-    <div class="main-content-wrapper">
-        <div class="container text-center">
-            <p class="text-upper-gold">THE WEDDING OF</p>
-            
-            <h1 class="font-esthetic couple-name-display">Revin & Roza</h1>
+                        <div class="profile-circle mx-auto mb-4" data-aos="fade-up" data-aos-delay="600" style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid #d4a373; padding: 5px; background: rgba(255,255,255,0.1); backdrop-filter: blur(5px);">
+                             <img src="./assets/images/Cover_rr.webp" alt="Revin & Roza" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        </div>
 
-            <div class="profile-center">
-                <div class="profile-circle">
-                    <img src="./assets/images/Cover_rr.webp" alt="Revin & Roza" onclick="undangan.guest.modal(this)">
-                </div>
-            </div>
-
-            <div class="date-info-wrapper">
-                <p class="text-save-date" style="letter-spacing: 3px; font-size: 0.7rem; color: #d4a373;">SAVE THE DATE</p>
-                <h2 class="text-event-date">Sabtu, 04 April 2026</h2>
-            </div>
-
-            <div class="mt-4">
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Revin+%26+Roza&dates=20260404T080000Z/20260404T130000Z" 
-                   target="_blank" class="btn-premium-gold">
-                    <i class="fa-solid fa-calendar-check me-2"></i>Save to Calendar
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="svg-wrapper" style="margin-top: -2px; background: #000; line-height: 0;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="display: block; width: 100%; height: auto;">
-        <path fill="#000000" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-</div>
-
+                        <div data-aos="fade-up" data-aos-delay="800">
+                            <h2 style="font-size: 1.2rem; font-weight: 300; letter-spacing: 3px; margin-bottom: 5px;">SABTU</h2>
+                            <h2 style="font-size: 1.5rem; font-weight: 600; color: #d4a373;">04 . 04 . 2026</h2>
+                        </div>
+                        
+                        <div class="mt-5 opacity-50" data-aos="fade-up" data-aos-delay="1000">
+                            <small class="d-block mb-2">Scroll Down</small>
+                            <i class="fa-solid fa-chevron-down bounce-animation"></i>
+                        </div>
+                    </div>
+                    </section>
+                
 
                 <!-- Bride -->
                 <section class="bg-white-black text-center" id="bride">
