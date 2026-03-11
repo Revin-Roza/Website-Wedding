@@ -719,85 +719,52 @@ onclick="undangan.util.copy(this)">
 
 
 <!-- RSVP / Konfirmasi Kehadiran -->
-<section id="rsvp" class="bg-white-black py-5">
+<section id="rsvp" class="rsvp-section py-5">
+  <div class="container">
+    <div class="rsvp-content text-center">
+      <h2 class="font-esthetic rsvp-title">Konfirmasi Kehadiran</h2>
+      <p class="rsvp-subtitle">
+        Mohon kesediaan Anda untuk mengonfirmasi kehadiran serta memberikan doa terbaik bagi kami.
+      </p>
 
-<div class="container text-center">
+      <form id="rsvp-form" class="rsvp-form mx-auto">
+        <div class="rsvp-group">
+          <label for="nama" class="rsvp-label">Nama Anda</label>
+          <input type="text" class="form-control rsvp-input" id="nama" placeholder="Masukkan nama Anda" required>
+        </div>
 
-<h2 class="font-esthetic mb-4 rsvp-title">
-Konfirmasi Kehadiran
-</h2>
+        <div class="rsvp-group">
+          <label for="hadir" class="rsvp-label">Konfirmasi Kehadiran</label>
+          <select class="form-select rsvp-input" id="hadir">
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+            <option value="Masih Ragu">Masih Ragu</option>
+          </select>
+        </div>
 
-<p class="rsvp-subtitle">
-Mohon kesediaan Anda untuk mengonfirmasi kehadiran
-serta memberikan doa terbaik bagi kami.
-</p>
+        <div class="rsvp-group">
+          <label for="ucapan" class="rsvp-label">Ucapan & Doa</label>
+          <textarea class="form-control rsvp-input rsvp-textarea" id="ucapan" rows="4" placeholder="Tuliskan ucapan terbaik Anda"></textarea>
+        </div>
 
-<form id="rsvp-form" class="rsvp-form mx-auto">
-
-<!-- Nama -->
-<div class="rsvp-group">
-<label class="rsvp-label">Nama Anda</label>
-
-<input
-class="form-control rsvp-input"
-type="text"
-id="nama"
-placeholder="Masukkan nama Anda"
-required>
-</div>
-
-<!-- Kehadiran -->
-<div class="rsvp-group">
-<label class="rsvp-label">Konfirmasi Kehadiran</label>
-
-<select class="form-control rsvp-input" id="hadir">
-
-<option value="Hadir">Hadir</option>
-
-<option value="Tidak Hadir">Tidak Hadir</option>
-
-<option value="Masih Ragu">Masih Ragu</option>
-
-</select>
-</div>
-
-<!-- Ucapan -->
-<div class="rsvp-group">
-<label class="rsvp-label">Ucapan & Doa</label>
-
-<textarea
-class="form-control rsvp-input rsvp-textarea"
-id="ucapan"
-rows="3"
-placeholder="Tuliskan ucapan terbaik Anda">
-</textarea>
-</div>
-
-<button class="rsvp-button" type="submit">
-Kirim Konfirmasi
-</button>
-
-</form>
-
-</div>
-
+        <button class="btn rsvp-button" type="submit">
+          Kirim Konfirmasi
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
 
-<!-- UCAPAN & DOA -->
-<section id="guestbook" class="py-5 bg-white-black text-center">
-
-<h2 class="font-esthetic mb-3" style="font-size:1.8rem;">
-Ucapan & Doa
-</h2>
-
-<p class="ucapan-subtitle">
-Terima kasih atas doa dan ucapan yang diberikan
-</p>
-
-<div class="ucapan-box">
-<div id="ucapan-container"></div>
-</div>
-
+<section id="guestbook" class="py-5 guestbook-section">
+  <div class="container text-center">
+    <h2 class="font-esthetic guestbook-title">Ucapan & Doa</h2>
+    <p class="ucapan-subtitle">Terima kasih atas doa dan ucapan yang diberikan</p>
+    
+    <div class="ucapan-box mt-4">
+      <div id="ucapan-container" class="ucapan-list">
+        </div>
+    </div>
+  </div>
 </section>
 
                 <!-- Comment -->
