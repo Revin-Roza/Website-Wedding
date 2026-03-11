@@ -1,762 +1,396 @@
 /* ========================================
-ROOT
-======================================== */
-
-:root{
---bg-main:#000;
---bg-section:#111;
---text-main:#ffffff;
---gold:#d4a373;
---gold-light:#f3e5ab;
---glass:rgba(255,255,255,0.06);
+   ROOT VARIABLES
+   ======================================== */
+:root {
+    --bg-main: #000;
+    --bg-section: #111;
+    --text-main: #ffffff;
+    --gold: #d4a373;
+    --gold-light: #f3e5ab;
+    --glass: rgba(255, 255, 255, 0.06);
 }
 
 /* ========================================
-BODY
-======================================== */
-
-body{
-background:var(--bg-main);
-color:var(--text-main);
-font-family:'Poppins',sans-serif;
-margin:0;
-padding:0;
-overflow-x:hidden;
-}
-
-/* ========================================
-SECTION
-======================================== */
-
-section{
-padding:80px 20px;
-position:relative;
-}
-
-/* ========================================
-HOME
-======================================== */
-
-#home{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-}
-
-.img-bg{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-top:0;
-left:0;
-filter:brightness(.45);
-z-index:-2;
-}
-
-.couple-name-display{
-font-size:3rem;
-font-weight:600;
-margin-bottom:10px;
-}
-
-/* ========================================
-WELCOME SCREEN
-======================================== */
-
-.loading-page{
-position:fixed;
-inset:0;
-width:100%;
-height:100%;
-background:#000;
-z-index:9999;
-transition:opacity 1s ease-out;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-/* overlay background */
-
-.main-gradient-overlay{
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:1rem;
-
-background:
-radial-gradient(circle at 30% 20%, rgba(212,163,115,0.15), transparent 60%),
-radial-gradient(circle at 70% 80%, rgba(212,163,115,0.12), transparent 60%),
-#000;
-}
-
-/* glass card */
-
-.content-glass{
-display:flex;
-flex-direction:column;
-text-align:center;
-width:100%;
-max-width:380px;
-padding:2.5rem 1.5rem;
-border-radius:2rem;
-border:1px solid rgba(255,255,255,0.08);
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-box-shadow:0 10px 40px rgba(0,0,0,0.6);
-}
-
-/* ========================================
-TEXT
-======================================== */
-
-.text-light-muted{
-font-size:.8rem;
-letter-spacing:2px;
-color:rgba(255,255,255,.6);
-}
-
-.font-esthetic{
-font-family:'Playfair Display', serif;
-}
-
-.text-gradient-gold{
-background:linear-gradient(45deg,#f3e5ab,#d4a373);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-#title-rr{
-font-size:3rem;
-margin-bottom:1.5rem;
-}
-
-/* ========================================
-PROFILE IMAGE
-======================================== */
-
-.profile-frame{
-width:150px;
-height:150px;
-border-radius:50%;
-border:2px solid var(--gold);
-padding:5px;
-overflow:hidden;
-margin:auto;
-}
-
-.img-profile{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:50%;
-}
-
-/* ========================================
-GUEST NAME
-======================================== */
-
-#guest-name-container{
-margin-bottom:1.5rem;
-color:#fff;
-}
-
-#guest-name-container p{
-font-size:.85rem;
-opacity:.75;
-}
-
-#nama-tamu{
-font-size:1.4rem;
-font-weight:600;
-letter-spacing:.5px;
-text-shadow:1px 1px 3px rgba(0,0,0,.5);
-}
-
-/* ========================================
-BUTTON
-======================================== */
-
-.btn-premium-gold{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:.5rem;
-padding:.7rem 1.6rem;
-border-radius:999px;
-border:none;
-background:linear-gradient(135deg,#f3e5ab,#d4a373);
-color:#000;
-font-weight:600;
-font-size:.95rem;
-cursor:pointer;
-transition:all .3s ease;
-}
-
-.btn-premium-gold:hover{
-transform:translateY(-2px);
-box-shadow:0 8px 20px rgba(212,163,115,.35);
-}
-
-/* ========================================
-RSVP FORM
-======================================== */
-
-.rsvp-group{
-margin-bottom:20px;
-text-align:left;
-}
-
-.rsvp-label{
-display:block;
-margin-bottom:6px;
-font-size:.9rem;
-}
-
-.rsvp-input{
-width:100%;
-padding:10px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,.2);
-background:#111;
-color:#fff;
-}
-
-.rsvp-textarea{
-resize:none;
-}
-
-.rsvp-button{
-background:var(--gold);
-border:none;
-padding:12px;
-border-radius:30px;
-width:100%;
-font-weight:600;
-}
-
-/* ========================================
-UCAPAN
-======================================== */
-
-.ucapan-box{
-max-width:500px;
-margin:auto;
-}
-
-.ucapan-card{
-background:#111;
-border-radius:14px;
-padding:14px;
-margin-bottom:14px;
-text-align:left;
-}
-
-.ucapan-header{
-display:flex;
-justify-content:space-between;
-margin-bottom:6px;
-}
-
-.ucapan-nama{
-font-weight:600;
-}
-
-.ucapan-status{
-font-size:.8rem;
-opacity:.7;
-}
-
-.ucapan-pesan{
-font-size:.9rem;
-line-height:1.4;
-}
-
-/* ========================================
-NAVBAR
-======================================== */
-
-#navbar-menu{
-background:#000;
-border-top:1px solid rgba(255,255,255,.1);
-}
-
-#navbar-menu .nav-link{
-color:#ccc;
-font-size:.9rem;
-text-align:center;
-}
-
-#navbar-menu .nav-link.active{
-color:var(--gold);
-}
-
-/* ========================================
-MODAL
-======================================== */
-
-.modal-content{
-background:#000;
-}
-
-/* ========================================
-ANIMATION
-======================================== */
-
-.pulse-animation{
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.05)}
-100%{transform:scale(1)}
-}
-
-/* ========================================
-WELCOME FADE OUT
-======================================== */
-
-.loading-page.hide{
-opacity:0;
-pointer-events:none;
-}
-
-/* ========================================
-RESPONSIVE
-======================================== */
-
-@media (max-width:480px){
-
-section{
-padding:60px 15px;
-}
-
-.couple-name-display{
-font-size:2.4rem;
-}
-
-#title-rr{
-font-size:2.5rem;
-}
-
-.profile-frame{
-width:130px;
-height:130px;
-}
-
-.content-glass{
-padding:2rem 1.3rem;
-}
-
-}
-
-/* Pastikan body tidak bisa di-scroll sebelum undangan dibuka */
+   GLOBAL / BODY
+   ======================================== */
 body {
-    overflow: hidden;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden; /* sampai welcome page selesai */
 }
 
-/* Pastikan welcome page menutupi seluruh layar dengan sempurna */
-#welcome {
-    position: fixed;
-    top: 0;
-    left: 0;
+section {
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* ========================================
+   HOME SECTION
+   ======================================== */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.img-bg,
+.bg-cover-home {
+    position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 9999;
-    background: radial-gradient(circle at center, #2d0a0a 0%, #000000 100%);
-    opacity: 1;
-    display: block;
-}
-
-
-<style>
-    /* Warna Gold Khas */
-    .text-gold-muted {
-        color: #d4a373;
-    }
-
-    /* Animasi Pulse yang Lebih Lembut untuk Logo */
-    .pulse-animation {
-        animation: logo-glow 3s infinite ease-in-out;
-    }
-
-    @keyframes logo-glow {
-        0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
-        50% { transform: scale(1.03); filter: drop-shadow(0 0 20px rgba(212, 163, 115, 0.5)); }
-        100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212, 163, 115, 0.2)); }
-    }
-
-    /* Mencegah pergeseran konten saat progres berjalan */
-    .logo-container {
-        min-height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-</style>
-
-<style>
-    /* 1. Background Image Handling */
-    .bg-cover-home {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        filter: brightness(40%) contrast(110%); /* Membuat foto latar belakang gelap & mewah */
-    }
-
-    .main-bg-overlay::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
-    }
-
-    /* 2. Frame Foto Utama */
-    .img-home-main {
-        width: 160px;
-        height: 160px;
-        object-fit: cover;
-        border: 3px solid #d4a373;
-        padding: 5px;
-        transition: transform 0.5s ease;
-    }
-    
-    .img-home-main:hover {
-        transform: scale(1.05);
-    }
-
-    /* 3. Warna Gold & Tombol Premium */
-    .text-gold-premium {
-        color: #d4a373;
-    }
-
-    .border-gold-premium {
-        border: 2px solid #d4a373;
-    }
-
-    .btn-gold-pill {
-        background: transparent;
-        border: 1px solid #d4a373;
-        color: #d4a373;
-        border-radius: 50px;
-        padding: 8px 25px;
-        font-size: 0.8rem;
-        transition: all 0.3s;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .btn-gold-pill:hover {
-        background: #d4a373;
-        color: #000;
-        box-shadow: 0 0 15px rgba(212, 163, 115, 0.4);
-    }
-
-    /* 4. Mouse Scroll Animation */
-    .mouse {
-        width: 22px;
-        height: 38px;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 20px;
-        display: inline-block;
-        position: relative;
-    }
-
-    .wheel {
-        width: 4px;
-        height: 8px;
-        background: #d4a373;
-        border-radius: 2px;
-        position: absolute;
-        top: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: scroll-anim 1.5s infinite;
-    }
-
-    @keyframes scroll-anim {
-        0% { opacity: 1; top: 8px; }
-        100% { opacity: 0; top: 20px; }
-    }
-
-    /* Responsive untuk Smartphone */
-    @media (max-width: 576px) {
-        .img-home-main {
-            width: 140px;
-            height: 140px;
-        }
-        h1.font-esthetic {
-            font-size: 2.5rem !important;
-        }
-    }
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let progressBar = document.getElementById('progress-bar');
-        let progressInfo = document.getElementById('progress-info');
-        let loadingPage = document.getElementById('loading');
-        let welcomePage = document.getElementById('welcome');
-        
-        // Simulasi progress loading (atau bisa diikat dengan actual media load)
-        let width = 0;
-        let interval = setInterval(function() {
-            if (width >= 100) {
-                clearInterval(interval);
-                finishLoading();
-            } else {
-                width += Math.floor(Math.random() * 15) + 5;
-                if(width > 100) width = 100;
-                progressBar.style.width = width + '%';
-            }
-        }, 150);
-
-        function finishLoading() {
-            progressInfo.innerText = "Selesai";
-            
-            setTimeout(() => {
-                // Fade out Loading Page
-                loadingPage.style.opacity = '0';
-                
-                setTimeout(() => {
-                    loadingPage.style.display = 'none';
-                    
-                    // Fade in Welcome Page (Pastikan ID Welcome sudah di-set opacity: 0 di awal)
-                    if (welcomePage) {
-                        welcomePage.style.visibility = 'visible';
-                        welcomePage.style.opacity = '1';
-                    }
-                }, 800);
-            }, 500);
-        }
-    });
-</script>
-
-<style>
-    /* Warna teks emas redup untuk loading */
-    .text-gold-muted {
-        color: #d4a373;
-        opacity: 0.8;
-    }
-
-    /* Animasi denyut pada icon loading */
-    .pulse-animation {
-        animation: pulse-gold 2s infinite;
-    }
-
-    @keyframes pulse-gold {
-        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 163, 115, 0.7); }
-        70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(212, 163, 115, 0); }
-        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 163, 115, 0); }
-    }
-
-    /* Menghilangkan scrollbar saat loading */
-    body.loading-active {
-        overflow: hidden !important;
-    }
-</style>
-
-/* Pastikan body tidak bisa di-scroll sebelum undangan dibuka */
-body {
-    overflow: hidden;
-}
-
-/* Pastikan welcome page menutupi seluruh layar dengan sempurna */
-#welcome {
-    position: fixed;
+    object-fit: cover;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: radial-gradient(circle at center, #2d0a0a 0%, #000000 100%);
-    opacity: 1;
-    display: block;
+    filter: brightness(0.45);
+    z-index: -2;
 }
 
+/* ========================================
+   WELCOME / LOADING PAGE
+   ======================================== */
+.loading-page,
+#welcome {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #2d0a0a 0%, #000000 100%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease-out;
+}
+
+.loading-page.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-gradient-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(212,163,115,0.15), transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(212,163,115,0.12), transparent 60%),
+        #000;
+}
+
+/* Glass Card */
+.content-glass {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+.text-light-muted {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.6);
+}
+
+.font-esthetic {
+    font-family: 'Playfair Display', serif;
+}
+
+.text-gradient-gold {
+    background: linear-gradient(45deg, #f3e5ab, #d4a373);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gold-muted,
+.text-gold-premium {
+    color: #d4a373;
+}
+
+#title-rr {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.couple-name-display {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ========================================
+   PROFILE IMAGE
+   ======================================== */
+.profile-frame,
 #profile-container {
-    width: 140px; /* Atau 110px di mobile */
-    height: 140px; /* Atau 110px di mobile */
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    
-    /* GANTI INI: Gunakan linear-gradient untuk efek gold logam */
-    border: none; /* Hapus border solid sebelumnya */
-    padding: 3px; /* Jarak untuk outline */
-    background: linear-gradient(135deg, #f3e5ab 0%, #d4a373 50%, #b38b59 100%);
-    
+    padding: 5px;
     overflow: hidden;
-    margin: 20px auto !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    margin: 20px auto;
+    background: linear-gradient(135deg, #f3e5ab, #d4a373);
+    border: 2px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.img-profile {
+.img-profile,
+.img-home-main {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
 }
 
-<style>
-    /* 1. Gradasi Luxury: Black & Deep Wine Red */
-    .main-gradient-overlay {
-        background: radial-gradient(circle at center, #2d0a0a 0%, #000000 100%);
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+/* ========================================
+   GUEST NAME
+   ======================================== */
+#guest-name-container {
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+#guest-name-container p {
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+#nama-tamu {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn-premium-gold,
+.btn-gold-outline,
+.btn-gold-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #f3e5ab, #d4a373);
+    color: #000;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-premium-gold:hover,
+.btn-gold-outline:hover,
+.btn-gold-pill:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(212,163,115,.4);
+}
+
+/* ========================================
+   RSVP FORM
+   ======================================== */
+.rsvp-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.rsvp-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.rsvp-input,
+.rsvp-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.2);
+    background: #111;
+    color: #fff;
+}
+
+.rsvp-textarea {
+    resize: none;
+}
+
+.rsvp-button {
+    background: var(--gold);
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    width: 100%;
+    font-weight: 600;
+    color: #000;
+}
+
+/* ========================================
+   UCAPAN / TESTIMONIAL
+   ======================================== */
+.ucapan-box {
+    max-width: 500px;
+    margin: auto;
+}
+
+.ucapan-card {
+    background: #111;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.ucapan-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.ucapan-nama {
+    font-weight: 600;
+}
+
+.ucapan-status {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.ucapan-pesan {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+#navbar-menu {
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+#navbar-menu .nav-link {
+    color: #ccc;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#navbar-menu .nav-link.active {
+    color: var(--gold);
+}
+
+/* ========================================
+   MODAL & ANIMATION
+   ======================================== */
+.modal-content {
+    background: #000;
+}
+
+.pulse-animation {
+    animation: logo-glow 3s infinite ease-in-out;
+}
+
+@keyframes logo-glow {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(212,163,115,0.2)); }
+    50% { transform: scale(1.03); filter: drop-shadow(0 0 20px rgba(212,163,115,0.5)); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.mouse {
+    width: 22px;
+    height: 38px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-anim 1.5s infinite;
+}
+
+@keyframes scroll-anim {
+    0%   { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 22px; }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+    section {
+        padding: 60px 15px;
     }
 
-    /* 2. Glassmorphism Card yang lebih Solid agar Teks Terbaca */
+    #title-rr {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .couple-name-display {
+        font-size: 2.4rem;
+    }
+
+    #profile-container,
+    .profile-frame {
+        width: 115px !important;
+        height: 115px !important;
+        border-width: 3px !important;
+    }
+
     .content-glass {
-        background: rgba(255, 255, 255, 0.05); /* Sedikit lebih terang agar kontras */
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        width: 85%;
-        max-width: 350px;
-        padding: 30px 20px !important;
-        margin: auto;
+        padding: 2rem 1.25rem !important;
+        max-width: 340px;
     }
 
-    /* 3. Text Gradient Gold (Lebih Tajam) */
-    .text-gradient-gold {
-        background: linear-gradient(180deg, #f3e5ab 0%, #d4a373 50%, #b38b59 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 700;
-        text-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    #nama-tamu {
+        font-size: 1.35rem !important;
     }
 
-    /* 4. Bingkai Foto (Dibuat lebih slim & premium) */
-    #profile-container {
-        width: 130px;
-        height: 130px;
-        border: 2px solid #d4a373; /* Garis lebih tipis agar elegan */
-        padding: 5px;
-        border-radius: 50%;
-        margin: 20px auto !important;
-        background: linear-gradient(45deg, #d4a373, #2d0a0a);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    .text-light-muted {
+        font-size: 0.75rem !important;
+        letter-spacing: 1px;
     }
+}
 
-    .img-profile {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        filter: brightness(0.9); /* Sedikit gelap agar menyatu dengan tema */
+@media (max-width: 480px) {
+    .content-glass {
+        padding: 2rem 1.3rem;
     }
-
-    /* 5. Tombol Premium (Solid & Elegant) */
-    .btn-gold-outline {
-        color: #1a0000;
-        background: linear-gradient(45deg, #f3e5ab, #d4a373); /* Tombol dibuat solid agar terbaca */
-        border: none;
-        padding: 10px 25px !important;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.8rem !important;
-        letter-spacing: 1.5px;
-        transition: transform 0.2s ease;
-    }
-
-    .btn-gold-outline:hover {
-        transform: scale(1.05);
-        color: #000;
-        box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
-    }
-
-    /* CSS Khusus Layar HP (Agar Presisi seperti di gambar) */
-    @media (max-width: 576px) {
-        .content-glass {
-            padding: 25px 15px !important;
-        }
-
-        #title-rr {
-            font-size: 2.2rem !important;
-            margin-bottom: 0.5rem !important;
-            line-height: 1.2;
-        }
-
-        #profile-container {
-            width: 115px !important;
-            height: 115px !important;
-        }
-
-        #nama-tamu {
-            font-size: 1.4rem !important;
-            margin-top: 5px;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .text-light-muted {
-            font-size: 0.75rem !important;
-            opacity: 0.8;
-            letter-spacing: 1px;
-        }
-    }
-</style>
-
-<style>
-    /* ... (CSS Gradasi, Gold, dll tetap sama) ... */
-
-    /* 2. Ukuran Default (Layar Desktop/Besar) */
-    #title-rr { font-size: 3.5rem; line-height: 1.1; }
-    #profile-container { width: 140px; height: 140px; border: 4px solid #d4a373; padding: 5px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.1); box-shadow: 0 8px 15px rgba(0,0,0,0.5); }
-    #nama-tamu { font-size: 1.6rem; }
-
-    /* CSS Inti untuk Menyesuaikan Layar HP (Mobile-First atau Breakpoint) */
-    @media (max-width: 576px) {
-        
-        /* 1. Atur Kartu agar lebih rapat (Hapus padding vertikal berlebih) */
-        .content-glass {
-            padding: 2rem 1.25rem !important; /* Rapatkan bagian atas dan bawah */
-        }
-
-        /* 2. Kecilkan Judul Nama agar pas (dari 3.5rem ke 2.5rem) */
-        #title-rr {
-            font-size: 2.5rem !important;
-            margin-bottom: 1rem !important;
-        }
-
-        /* 3. Kecilkan Gambar agar tidak memakan ruang (dari 140px ke 110px) */
-        #profile-container {
-            width: 110px !important; 
-            height: 110px !important;
-            border-width: 3px !important;
-            margin-bottom: 1rem !important;
-        }
-
-        /* 4. Rapatkan teks "Kepada Yth" */
-        #guest-name-container {
-            margin-bottom: 1.5rem !important;
-        }
-        
-        /* 5. Kecilkan Nama Tamu agar tidak baris baru jika panjang */
-        #nama-tamu {
-            font-size: 1.35rem !important;
-        }
-
-        /* 6. Hilangkan teks "THE WEDDING OF" di mobile agar sangat ringkas (Opsional, hapus baris ini jika ingin tetap muncul) */
-        .text-light-muted {
-            display: none !important;
-        }
-    }
-</style>
+}
