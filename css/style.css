@@ -158,3 +158,29 @@ pointer-events:none;
     border-radius: 15px;
 }
 
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transition: opacity 1s ease, visibility 1s;
+}
+
+/* Saat welcome page ditutup */
+.loading-page.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* KUNCI: Agar tidak menghalangi scroll */
+}
+
+/* Pastikan body bisa scroll kembali */
+body.modal-open {
+    overflow: hidden;
+}
+
+body {
+    overflow-x: hidden; /* Mencegah geser kanan-kiri yang berantakan */
+    overflow-y: auto !important; /* Memaksa scroll vertikal aktif */
+}
