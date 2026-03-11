@@ -140,30 +140,64 @@
 
 
              <!-- Home -->
-            <section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
-                    <img src="./assets/images/placeholder.webp" data-src="./assets/images/Cover_rr.webp" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
+      <!-- ==================== HOME SECTION ==================== -->
+<section id="home" class="position-relative overflow-hidden">
 
-                    <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
-                        <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
+    <!-- Background Image -->
+    <img 
+        src="./assets/images/placeholder.webp" 
+        data-src="./assets/images/Cover_rr.webp" 
+        alt="Background Pernikahan Revin & Roza"
+        class="img-bg bg-cover-home lazy-load">
 
-                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/bg.webp" alt="bg" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+    <!-- Content -->
+    <div class="position-relative z-3 text-center d-flex flex-column justify-content-center align-items-center min-vh-100">
 
-                        <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">Revin &amp; Roza</h2>
-                        <p class="my-2" style="font-size: 1.25rem;">Sabtu, 04 April 2026</p>
+        <div class="content-glass mx-auto" style="max-width: 420px;">
 
-                        <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
-                            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
-                        </button>
+            <!-- Judul kecil -->
+            <h1 class="font-esthetic text-light-muted mb-3" style="font-size: 1.35rem; letter-spacing: 3px;">
+                UNDANGAN PERNIKAHAN
+            </h1>
 
-                        <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
-                            <div class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
-                                <div class="scroll-animation rounded-4 bg-secondary"></div>
-                            </div>
-                        </div>
+            <!-- Foto Couple -->
+            <div class="profile-frame mx-auto mb-4" onclick="undangan.guest.modal(this)">
+                <img 
+                    src="./assets/images/placeholder.webp" 
+                    data-src="./assets/images/Cover_rr.webp" 
+                    alt="Revin & Roza"
+                    class="img-profile lazy-load">
+            </div>
 
-                        <p class="pb-4 m-0 text-secondary" style="font-size: 0.825rem;">Scroll Down</p>
-                    </div>
-                </section>
+            <!-- Nama Pengantin -->
+            <h2 class="font-esthetic text-gradient-gold mb-2" style="font-size: 2.8rem; line-height: 1.1;">
+                Revin &amp; Roza
+            </h2>
+
+            <!-- Tanggal -->
+            <p class="text-light-muted mb-4" style="font-size: 1.25rem; font-weight: 500;">
+                Sabtu, 04 April 2026
+            </p>
+
+            <!-- Tombol Save Calendar -->
+            <button class="btn-premium-gold btn-sm shadow-lg mb-5">
+                <i class="fa-solid fa-calendar-check me-2"></i>
+                Save to Google Calendar
+            </button>
+
+            <!-- Mouse Scroll Indicator -->
+            <div class="d-flex flex-column align-items-center">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p class="text-light-muted mt-3 mb-0" style="font-size: 0.8rem; letter-spacing: 1.5px;">
+                    SCROLL DOWN
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- Wave Separator -->
                 <div class="svg-wrapper">
