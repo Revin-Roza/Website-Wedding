@@ -80,42 +80,74 @@ color:white;
 
 
 .gift-card{
-background:#ffffff;
-border-radius:10px;
-padding:10px;
-margin-bottom:10px;
+
+background:rgba(255,255,255,0.05);
+border-radius:14px;
+
+padding:14px;
+
 text-align:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+backdrop-filter: blur(10px);
+
 }
 
-.bank{
+.gift-bank{
+
 font-size:0.85rem;
-margin:0;
-opacity:0.7;
-}
 
-.rekening{
-font-size:0.95rem;
-font-weight:600;
-letter-spacing:1px;
-margin:2px 0;
-}
+opacity:0.8;
 
-.nama{
-font-size:0.8rem;
-opacity:0.7;
 margin-bottom:5px;
+
 }
 
-.copy-btn{
-font-size:0.75rem;
-padding:4px 12px;
+.gift-number{
+
+font-size:1.05rem;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+margin-bottom:6px;
+
+}
+
+.gift-name{
+
+font-size:0.85rem;
+
+opacity:0.7;
+
+margin-bottom:12px;
+
+}
+
+.gift-copy{
+
 border:none;
-background:#c8a97e;
+
+background:rgba(255,255,255,0.08);
+
 color:white;
-border-radius:15px;
+
+padding:6px 14px;
+
+font-size:0.75rem;
+
+border-radius:20px;
+
+transition:0.3s;
+
 }
 
-.qris-img{
-max-width:200px;
+.gift-copy:hover{
+
+background:#d4af37;
+
+color:black;
+
 }
