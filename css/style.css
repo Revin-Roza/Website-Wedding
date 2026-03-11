@@ -32,3 +32,8 @@
 #navbar-menu .nav-link.active { color: var(--gold); }
 
 .modal-content { background: #000; }
+
+.loading-page.hide{
+opacity:0;
+pointer-events:none;
+}
