@@ -329,3 +329,38 @@ border-bottom:none;
         color: rgba(255, 255, 255, 0.6);
     }
 </style>
+
+<style>
+    /* ... (kode CSS sebelumnya tetap ada) ... */
+
+    /* KODE UNTUK RESPONSIF SMARTPHONE */
+    @media (max-width: 576px) {
+        /* Kecilkan ukuran teks judul */
+        .font-esthetic.text-gradient-gold {
+            font-size: 2.5rem !important;
+        }
+
+        /* Kecilkan ukuran bingkai foto agar tidak memenuhi layar */
+        .profile-frame {
+            width: 120px !important;
+            height: 120px !important;
+        }
+
+        /* Sesuaikan padding container agar tidak terlalu lebar */
+        .content-glass {
+            padding: 2.5rem 1.5rem !important;
+        }
+
+        /* Kecilkan ukuran nama tamu */
+        #nama-tamu {
+            font-size: 1.4rem !important;
+        }
+
+        /* Perkecil teks THE WEDDING OF */
+        .text-light-muted {
+            font-size: 0.75rem !important;
+            letter-spacing: 1px !important;
+        }
+    }
+</style>
+
