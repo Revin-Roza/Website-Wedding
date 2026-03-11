@@ -224,6 +224,29 @@ body {
   color: white;
 }
 
+/* Styling khusus untuk memperjelas subtitle */
+.rsvp-subtitle {
+  font-size: 1.05rem;          /* Ukuran pas, tidak kekecilan */
+  line-height: 1.6;            /* Jarak antar baris agar tidak sesak */
+  color: #555;                 /* Warna abu gelap yang lembut (kontras tinggi) */
+  margin-bottom: 35px;         /* Jarak ke formulir di bawahnya */
+  max-width: 600px;            /* Menjaga teks tidak terlalu lebar di layar PC */
+  margin-left: auto;           /* Tengah secara horizontal */
+  margin-right: auto;          /* Tengah secara horizontal */
+  font-weight: 400;            /* Ketebalan standar agar bersih */
+  letter-spacing: 0.3px;       /* Sedikit jarak antar huruf agar modern */
+}
+
+/* Tambahan untuk Judul (Title) agar serasi */
+.rsvp-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+
+
 /* --- Guestbook Section (Instagram Style) --- */
 .guestbook-section {
   background-color: #fff;
