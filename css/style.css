@@ -524,3 +524,58 @@ border-bottom:none;
     }
 </style>
 
+<style>
+    /* Mengatur foto background agar gelap dan penuh */
+    .bg-cover-home {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(35%); /* Membuat teks putih gampang dibaca */
+    }
+
+    /* Pengaturan gambar bulat di tengah */
+    .img-home-main {
+        width: 150px; /* Ukuran untuk Laptop */
+        height: 150px;
+        object-fit: cover;
+        border: 2px solid #d4a373;
+        padding: 4px;
+    }
+
+    /* KHUSUS SMARTPHONE */
+    @media (max-width: 576px) {
+        .img-home-main {
+            width: 120px; /* Ukuran pas untuk HP */
+            height: 120px;
+        }
+
+        h1.font-esthetic {
+            font-size: 2.2rem !important; /* Judul mengecil di HP */
+        }
+        
+        .scroll-indicator {
+            display: none; /* Sembunyikan mouse scroll di HP agar tidak penuh */
+        }
+    }
+
+    /* Tombol Premium */
+    .btn-gold-pill {
+        border: 1px solid #d4a373;
+        color: #d4a373;
+        border-radius: 50px;
+        padding: 8px 20px;
+        font-size: 0.8rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .btn-gold-pill:hover {
+        background: #d4a373;
+        color: #000;
+    }
+</style>
+
