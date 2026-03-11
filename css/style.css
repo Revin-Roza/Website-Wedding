@@ -421,21 +421,32 @@ border-bottom:none;
     }
 </style>
 
-<style>
-/* 1. Reset & Base Setup */
-.home-wrapper {
+/* --- GLOBAL STYLING --- */
+:root {
+    --gold-premium: #d4a373;
+    --gold-light: #f3e5ab;
+    --dark-bg: #000000;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif; /* Pastikan sudah panggil Google Fonts */
+}
+
+/* --- HOME SECTION --- */
+.home-section {
     position: relative;
     height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center; /* Menjamin konten tepat di tengah vertikal */
+    align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #000;
+    text-align: center;
 }
 
-/* 2. Background & Fade Transition */
-.home-bg-container {
+.home-bg-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -448,179 +459,127 @@ border-bottom:none;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.4) contrast(1.1);
+    filter: brightness(40%);
 }
 
-/* KUNCI TRANSISI HALUS: Gradient di bawah section */
-.bottom-gradient-fade {
+/* Gradient transisi halus di bawah */
+.bottom-fade {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 250px; /* Jarak fade */
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8) 50%, #000 100%);
-    z-index: 2;
+    height: 30vh;
+    background: linear-gradient(to bottom, transparent, var(--dark-bg));
 }
 
-/* 3. Content Styling */
-.home-content-center {
+.home-content {
     position: relative;
     z-index: 10;
-    text-align: center;
     width: 100%;
     padding: 0 20px;
 }
 
-/* Warna Emas Champagne (Lebih Premium) */
 .pre-title {
-    color: #d4a373;
+    color: var(--gold-premium);
     font-size: 0.75rem;
     letter-spacing: 5px;
-    margin-bottom: 15px;
-    font-weight: 300;
+    margin-bottom: 10px;
 }
 
-.main-names {
-    color: #ffffff;
-    font-size: 3.5rem; /* Ukuran pas untuk desktop */
-    margin-bottom: 25px;
-    text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+.main-name {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
 }
 
-/* Frame Foto Presisi */
-.profile-frame-premium {
+/* Foto Profil Responsif */
+.profile-frame {
     width: 150px;
     height: 150px;
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
     border-radius: 50%;
-    border: 1.5px solid rgba(212, 163, 115, 0.6);
-    padding: 7px;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(5px);
+    border: 2px solid var(--gold-premium);
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.profile-frame-premium img {
+.profile-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.event-date {
-    color: #f3e5ab; /* Gold cerah tapi elegan */
+.text-date {
+    color: var(--gold-light);
     font-size: 1.4rem;
-    letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-.save-date-label {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: #ffffff;
-    opacity: 0.7;
-    margin-bottom: 5px;
-}
-
-/* Tombol Premium */
-.btn-premium-gold {
+.btn-calendar-gold {
     display: inline-block;
-    margin-top: 30px;
-    padding: 12px 30px;
-    border: 1px solid #d4a373;
-    color: #d4a373;
+    margin-top: 25px;
+    padding: 10px 25px;
+    border: 1px solid var(--gold-premium);
+    color: var(--gold-premium);
     text-decoration: none;
     border-radius: 50px;
     font-size: 0.8rem;
-    letter-spacing: 1px;
-    transition: 0.4s;
-    background: rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
 
-.btn-premium-gold:hover {
-    background: #d4a373;
+.btn-calendar-gold:hover {
+    background: var(--gold-premium);
     color: #000;
-    box-shadow: 0 0 20px rgba(212, 163, 115, 0.3);
 }
 
-/* RESPONSIVE SMARTPHONE (Sangat Penting) */
-@media (max-width: 576px) {
-    .main-names {
-        font-size: 2.8rem;
-    }
-    .profile-frame-premium {
-        width: 130px;
-        height: 130px;
-    }
-    .event-date {
-        font-size: 1.2rem;
-    }
-    /* Memastikan konten tidak terlalu mepet ke atas di HP */
-    .home-content-center {
-        padding-bottom: 50px;
-    }
-}
-</style>
-
-<style>
-/* Container Scroll */
-.scroll-indicator-custom {
+/* Scroll Mouse Icon */
+.scroll-indicator {
     position: absolute;
-    bottom: 30px; /* Jarak dari bawah layar */
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100; /* Angka tinggi agar tidak tertutup background/gradient */
-    text-align: center;
-    transition: opacity 0.5s ease;
+    z-index: 100;
+    opacity: 0.7;
 }
 
-/* Bentuk Mouse */
-.mouse-wrapper {
-    width: 22px;
-    height: 35px;
-    border: 2px solid rgba(212, 163, 115, 0.8); /* Warna emas champagne */
+.mouse-icon {
+    width: 20px;
+    height: 32px;
+    border: 2px solid #fff;
     border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 8px;
+    margin: 0 auto 5px;
+    position: relative;
 }
 
-/* Titik yang Bergerak */
-.mouse-dot {
-    width: 4px;
-    height: 8px;
-    background-color: #f3e5ab;
-    border-radius: 2px;
-    margin-top: 7px;
-    animation: scroll-dot-move 1.5s infinite;
+.wheel {
+    width: 3px;
+    height: 6px;
+    background: var(--gold-premium);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-anim 1.5s infinite;
 }
 
-/* Animasi Gerak */
-@keyframes scroll-dot-move {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(12px); opacity: 0; }
+@keyframes scroll-anim {
+    0% { top: 6px; opacity: 1; }
+    100% { top: 18px; opacity: 0; }
 }
 
-/* Teks Scroll Down */
-.scroll-indicator-custom span {
-    display: block;
-    color: #ffffff;
+.scroll-indicator span {
     font-size: 0.6rem;
-    letter-spacing: 3px;
-    opacity: 0.6;
-    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* RESPONSIF: Tetap muncul di HP tapi sedikit lebih kecil */
+/* --- RESPONSIVE FIX --- */
 @media (max-width: 576px) {
-    .scroll-indicator-custom {
-        bottom: 20px;
-    }
-    .mouse-wrapper {
-        width: 18px;
-        height: 30px;
-    }
+    .main-name { font-size: 2.6rem; }
+    .profile-frame { width: 120px; height: 120px; }
+    .text-date { font-size: 1.1rem; }
+    .home-section { padding-bottom: 60px; }
 }
-</style>
 
 
 
