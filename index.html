@@ -929,33 +929,28 @@ Terima kasih atas doa dan ucapan yang diberikan
 
     <!-- Welcome Page -->
 <div class="loading-page custom-bg-premium" id="welcome" style="opacity: 1;">
-    <div class="vignette-overlay"></div>
-    
-    <div class="d-flex justify-content-center align-items-center vh-100 position-relative">
-        <div class="d-flex flex-column text-center content-wrapper px-4">
-            
-            <p class="text-uppercase tracking-widest text-accent mb-2">The Wedding Of</p>
-            
-            <div class="image-frame mb-4">
-                <img src="./assets/images/Cover_rr.webp" alt="Revin & Roza" class="img-premium">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex flex-column text-center">
+            <h2 class="font-esthetic mb-4 text-accent" style="font-size: 2rem; letter-spacing: 3px;">The Wedding Of</h2>
+
+            <div class="mx-auto mb-4" style="width: 220px; height: 220px;">
+                <img src="./assets/images/bg.webp" 
+                     alt="Revin & Roza" 
+                     class="img-center-crop rounded-circle border border-3 shadow">
             </div>
 
-            <h1 class="font-esthetic name-title mb-1">Revin & Roza</h1>
+            <h2 class="font-esthetic mb-2 name-title" style="font-size: 3rem;">Revin & Roza</h2>
             
-            <div class="guest-section mt-4">
-                <p class="text-light-muted mb-1" id="guest-name">Kepada Yth Bapak/Ibu/Saudara/i</p>
-                <h3 id="nama-tamu" class="guest-name-text">Nama Tamu</h3>
-            </div>
+            <div id="guest-name" class="mt-3 text-light-muted">Kepada Yth Bapak/Ibu/Saudara/i</div>
+            <h3 id="nama-tamu" class="fw-bold text-white">Nama Tamu</h3>
 
-            <button type="button" class="btn btn-premium mt-4" onclick="undangan.guest.open(this)">
-                <span class="btn-content">
-                    <i class="fa-solid fa-envelope-open-text me-2"></i> Open Invitation
-                </span>
+            <button type="button" class="btn btn-premium mt-4 shadow" onclick="undangan.guest.open(this)">
+                <i class="fa-solid fa-envelope-open-text me-2"></i>Open Invitation
             </button>
-            
         </div>
     </div>
 </div>
+
 
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
