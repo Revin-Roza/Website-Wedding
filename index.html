@@ -486,20 +486,34 @@ Namun jika memberi adalah ungkapan tanda kasih,
 Anda dapat mengirimkan hadiah melalui fitur berikut.
 </p>
 
-
+<!-- ===================== -->
 <!-- Transfer Bank -->
-<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start"
-data-aos="fade-up"
-data-aos-duration="2000">
+<!-- ===================== -->
+
+<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start">
 
 <i class="fa-solid fa-money-bill-transfer me-1"></i>
 <b>Transfer Bank</b>
 
-<p class="mt-2 mb-3" style="font-size:0.85rem; opacity:0.8;">
-Bagi keluarga dan sahabat yang ingin memberikan tanda kasih,
-dapat melalui rekening berikut.
+<div class="d-flex justify-content-between align-items-center mt-2">
+
+<p class="m-0" style="font-size:0.85rem;">
+Kirim tanda kasih melalui rekening berikut.
 </p>
 
+<button
+class="btn btn-outline-auto btn-sm rounded-4 py-0"
+data-bs-toggle="collapse"
+data-bs-target="#rekening">
+
+<i class="fa-solid fa-eye me-1"></i>
+Lihat Rekening
+
+</button>
+
+</div>
+
+<div class="collapse mt-3" id="rekening">
 
 <div class="row g-3">
 
@@ -507,9 +521,7 @@ dapat melalui rekening berikut.
 <div class="col-12">
 <div class="gift-card">
 
-<div class="gift-bank">
-Bank Mandiri
-</div>
+<div class="gift-bank">Bank Mandiri</div>
 
 <div class="gift-number">
 1720002687426
@@ -519,7 +531,7 @@ Bank Mandiri
 REVIN NAZIF AL FAYED
 </div>
 
-<button 
+<button
 class="gift-copy"
 data-copy="1720002687426"
 onclick="undangan.util.copy(this)">
@@ -532,14 +544,11 @@ Salin Rekening
 </div>
 </div>
 
-
 <!-- BRI -->
 <div class="col-12">
 <div class="gift-card">
 
-<div class="gift-bank">
-Bank BRI
-</div>
+<div class="gift-bank">Bank BRI</div>
 
 <div class="gift-number">
 542401023094538
@@ -549,7 +558,7 @@ Bank BRI
 ROZA MISALIA
 </div>
 
-<button 
+<button
 class="gift-copy"
 data-copy="542401023094538"
 onclick="undangan.util.copy(this)">
@@ -562,14 +571,11 @@ Salin Rekening
 </div>
 </div>
 
-
 <!-- BRK -->
 <div class="col-12">
 <div class="gift-card">
 
-<div class="gift-bank">
-Bank BRK
-</div>
+<div class="gift-bank">Bank BRK</div>
 
 <div class="gift-number">
 1243100742
@@ -579,7 +585,7 @@ Bank BRK
 ROZA MISALIA
 </div>
 
-<button 
+<button
 class="gift-copy"
 data-copy="1243100742"
 onclick="undangan.util.copy(this)">
@@ -593,24 +599,42 @@ Salin Rekening
 </div>
 
 </div>
+
+</div>
+
 </div>
 
 
+<!-- ===================== -->
 <!-- QRIS -->
-<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start"
-data-aos="fade-up"
-data-aos-duration="2000">
+<!-- ===================== -->
+
+<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start">
 
 <i class="fa-solid fa-qrcode me-1"></i>
 <b>QRIS</b>
 
-<p class="mt-2 mb-2" style="font-size:0.85rem; opacity:0.8;">
-Anda juga dapat memberikan tanda kasih melalui QRIS berikut.
+<div class="d-flex justify-content-between align-items-center mt-2">
+
+<p class="m-0" style="font-size:0.85rem;">
+Scan QRIS untuk memberikan hadiah.
 </p>
 
-<div class="text-center">
+<button
+class="btn btn-outline-auto btn-sm rounded-4 py-0"
+data-bs-toggle="collapse"
+data-bs-target="#qris">
 
-<img 
+<i class="fa-solid fa-eye me-1"></i>
+Lihat QRIS
+
+</button>
+
+</div>
+
+<div class="collapse text-center mt-3" id="qris">
+
+<img
 src="./assets/images/donate.png"
 class="img-fluid rounded-3 bg-white p-2"
 style="max-width:200px;">
@@ -620,18 +644,34 @@ style="max-width:200px;">
 </div>
 
 
-<!-- Kirim Kado -->
-<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start"
-data-aos="fade-up"
-data-aos-duration="2000">
+<!-- ===================== -->
+<!-- Gift -->
+<!-- ===================== -->
+
+<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start">
 
 <i class="fa-solid fa-gift me-1"></i>
 <b>Kirim Kado</b>
 
-<p class="mt-2 mb-3" style="font-size:0.85rem; opacity:0.8;">
-Bagi yang ingin mengirimkan kado,
-dapat menghubungi atau mengirimkan ke alamat berikut.
+<div class="d-flex justify-content-between align-items-center mt-2">
+
+<p class="m-0" style="font-size:0.85rem;">
+Informasi pengiriman kado.
 </p>
+
+<button
+class="btn btn-outline-auto btn-sm rounded-4 py-0"
+data-bs-toggle="collapse"
+data-bs-target="#detailGift">
+
+<i class="fa-solid fa-eye me-1"></i>
+Lihat Detail
+
+</button>
+
+</div>
+
+<div class="collapse mt-3" id="detailGift">
 
 <div class="d-flex justify-content-between align-items-center mb-2">
 
@@ -674,7 +714,10 @@ onclick="undangan.util.copy(this)">
 
 </div>
 
+</div>
+
 </section>
+
 
 <!-- RSVP / Konfirmasi Kehadiran -->
 <section id="rsvp" class="bg-white-black py-5 text-center">
