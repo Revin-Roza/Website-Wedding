@@ -421,117 +421,178 @@ border-bottom:none;
     }
 </style>
 
-<style>
-    .home-section {
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        text-align: center;
-        padding: 0 20px;
+/* Container Utama */
+.home-wrapper {
+    position: relative;
+    height: 100vh; /* Pastikan pas satu layar */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Fix */
+.home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar background tidak akan gepeng */
+    object-position: center;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+    z-index: 2;
+}
+
+/* Content Layout */
+.home-main-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+}
+
+/* Tipografi Premium */
+.label-top {
+    color: #d4a373;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.couple-names {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Frame Foto (Perbaikan Ukuran) */
+.profile-frame {
+    width: 160px; /* Ukuran Default Desktop */
+    height: 160px;
+    margin: 0 auto 2rem auto;
+    border-radius: 50%;
+    border: 2px solid #d4a373;
+    padding: 6px;
+    background: rgba(212, 163, 115, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.label-save {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.date-text {
+    font-size: 1.5rem;
+    color: #f3e5ab;
+    font-weight: 600;
+}
+
+/* Tombol */
+.btn-gold-outline {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 10px 25px;
+    border: 1px solid #d4a373;
+    color: #d4a373;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: rgba(0,0,0,0.2);
+}
+
+.btn-gold-outline:hover {
+    background: #d4a373;
+    color: #000;
+}
+
+/* Scroll Animation */
+.scroll-hint {
+    margin-top: 3rem;
+    opacity: 0.6;
+}
+
+.mouse-icon {
+    width: 20px;
+    height: 35px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    margin: 0 auto 8px;
+    position: relative;
+}
+
+.wheel-move {
+    width: 4px;
+    height: 8px;
+    background: #d4a373;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: mouse-scroll 1.5s infinite;
+}
+
+@keyframes mouse-scroll {
+    0% { top: 6px; opacity: 1; }
+    100% { top: 20px; opacity: 0; }
+}
+
+.scroll-hint span {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+}
+
+/* --- RESPONSIVE FIX UNTUK SMARTPHONE --- */
+@media (max-width: 576px) {
+    .couple-names {
+        font-size: 2.5rem; /* Mengecilkan nama agar tidak pecah baris */
+        margin-bottom: 1rem;
     }
 
-    /* Background Full Screen */
-    .home-bg-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
+    .profile-frame {
+        width: 120px; /* Ukuran pas di HP */
+        height: 120px;
+        margin-bottom: 1.5rem;
     }
 
-    .home-bg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.4); /* Menggelapkan background agar teks terbaca */
+    .date-text {
+        font-size: 1.2rem;
     }
 
-    .home-content {
-        position: relative;
-        z-index: 2; /* Di atas background */
-        width: 100%;
+    .scroll-hint {
+        margin-top: 2rem;
     }
+}
 
-    /* Tipografi */
-    .text-upper {
-        color: #d4a373;
-        font-size: 0.75rem;
-        letter-spacing: 4px;
-        margin-bottom: 10px;
-    }
-
-    .name-title {
-        color: white;
-        font-size: 2.8rem;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    }
-
-    /* Frame Foto Bulat */
-    .img-frame {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 25px auto;
-        border-radius: 50%;
-        border: 2px solid #d4a373;
-        padding: 5px;
-        overflow: hidden;
-    }
-
-    .img-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-    .date-wrapper {
-        color: white;
-        margin-bottom: 25px;
-    }
-
-    .text-save {
-        font-size: 0.8rem;
-        letter-spacing: 3px;
-        opacity: 0.8;
-        margin-bottom: 5px;
-    }
-
-    .text-date {
-        color: #f3e5ab;
-        font-size: 1.3rem;
-        font-weight: bold;
-    }
-
-    /* Tombol */
-    .btn-calendar {
-        display: inline-block;
-        padding: 10px 25px;
-        border: 1px solid #d4a373;
-        color: #d4a373;
-        text-decoration: none;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        transition: 0.3s;
-    }
-
-    .btn-calendar:hover {
-        background: #d4a373;
-        color: black;
-    }
-
-    /* Responsif Smartphone */
-    @media (max-width: 576px) {
-        .name-title { font-size: 2.3rem; }
-        .img-frame { width: 130px; height: 130px; }
-        .text-date { font-size: 1.1rem; }
-    }
-</style>
 
 
