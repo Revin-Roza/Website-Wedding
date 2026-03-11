@@ -303,13 +303,4 @@ RSVP
   display: block;
 }
 
-/* Tambahkan di paling bawah style.css */
-#welcome.hidden {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-body {
-  scroll-behavior: smooth;
-}
 
