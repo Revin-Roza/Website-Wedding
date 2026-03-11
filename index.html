@@ -1104,54 +1104,47 @@ alert("Berhasil disalin ✓");
 </script>
 
 <script>
-  // === PROGRESS LOADING ===
-  let progress = 0;
-  const progressBar = document.getElementById('progress-bar');
-
-  const loadingInterval = setInterval(() => {
-    progress += Math.random() * 18 + 7;   // acak biar natural
-    if (progress > 100) progress = 100;
-    
-    progressBar.style.width = progress + '%';
-
-    if (progress >= 100) {
-      clearInterval(loadingInterval);
-      setTimeout(switchToWelcome, 600);
-    }
-  }, 120);
-
-  // Pindah ke Welcome Page
-  function switchToWelcome() {
-    document.getElementById('loading').style.opacity = '0';
-    
-    setTimeout(() => {
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('welcome').style.display = 'flex';
-      
-      // Animasi welcome muncul
-      setTimeout(() => {
-        document.getElementById('welcome').style.opacity = '1';
-      }, 50);
-    }, 800);
-  }
-
-  // Fungsi tombol Open Invitation
-  function openInvitation(btn) {
-    btn.style.transform = 'scale(0.92)';
-    setTimeout(() => {
-      document.getElementById('welcome').classList.add('hidden');
-      setTimeout(() => {
-        document.getElementById('welcome').style.display = 'none';
-      }, 1300);
-    }, 280);
-  }
-
-  // Ambil nama tamu
-  window.onload = function() {
+  // Ambil nama tamu dari URL
+  function getGuestName() {
     const params = new URLSearchParams(window.location.search);
     let nama = params.get('to') || "Nama Tamu";
-    document.getElementById('nama-tamu').textContent = nama;
-  };
+    const el = document.getElementById('nama-tamu');
+    if (el) el.textContent = nama;
+  }
+
+  // FUNGSI OPEN INVITATION YANG SUDAH DIPERBAIKI
+  function openInvitation(btn) {
+    btn.style.transform = 'scale(0.9)';
+
+    const welcome = document.getElementById('welcome');
+    if (!welcome) return;
+
+    welcome.classList.add('hidden');
+
+    setTimeout(() => {
+      welcome.style.display = 'none';
+
+      // === INI YANG BARU & PASTI BEKERJA ===
+      const homeSection = document.getElementById('home');
+      if (homeSection) {
+        // Scroll dengan offset (kalau ada navbar fixed)
+        const offset = 80; // naikkan kalau navbar tinggi
+        const elementPosition = homeSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        console.error('Section id="home" tidak ditemukan!');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 900);
+  }
+
+  // Jalankan saat halaman load
+  window.onload = getGuestName;
 </script>
 
 </body>
