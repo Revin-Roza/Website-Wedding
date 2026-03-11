@@ -784,18 +784,22 @@ Kirim Konfirmasi
 
 </section>
 
-<!-- Ucapan & Doa -->
-<section id="ucapan" class="py-5 text-center bg-white-black">
+<!-- UCAPAN & DOA -->
+<section id="ucapan" class="py-5 bg-white-black text-center">
 
-<h2 class="font-esthetic mb-4" style="font-size:2rem;">
+<h2 class="font-esthetic mb-3" style="font-size:1.8rem;">
 Ucapan & Doa
 </h2>
 
-<p class="mb-4" style="opacity:0.7;">
+<p class="ucapan-subtitle">
 Terima kasih atas doa dan ucapan yang diberikan
 </p>
 
-<div id="ucapan-container" class="ucapan-wrapper"></div>
+<div class="ucapan-box">
+
+<div id="ucapan-container"></div>
+
+</div>
 
 </section>
 
@@ -1042,28 +1046,44 @@ fetch(csvURL)
 .then(response => response.text())
 .then(data => {
 
-const rows = data.split("\n").slice(1); // skip header
+const rows = data.split("\n").slice(1);
 
 const container = document.getElementById("ucapan-container");
 
-rows.reverse().forEach(row => {
+rows.reverse().slice(0,30).forEach(row => {
 
 const cols = row.split(",");
 
 const nama = cols[1];
 const hadir = cols[2];
-const ucapan = cols[3];
+const pesan = cols[3];
 
 if(!nama) return;
+
+const status = hadir === "Hadir"
+? "Hadir"
+: "Tidak Hadir";
 
 const card = document.createElement("div");
 
 card.className = "ucapan-card";
 
 card.innerHTML = `
-<h5>${nama}</h5>
-<span>${hadir}</span>
-<p>${ucapan}</p>
+
+<div class="ucapan-header">
+
+<span class="ucapan-nama">${nama}</span>
+
+<span class="ucapan-status">(${status})</span>
+
+</div>
+
+<div class="ucapan-pesan">
+
+${pesan}
+
+</div>
+
 `;
 
 container.appendChild(card);
