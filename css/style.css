@@ -1,161 +1,289 @@
-/* ============================================================
-[TAG: CORE SETTINGS & VARIABLES]
-============================================================ */
-:root {
-    --bg-color: #000000;
-    --section-color: #1a1a1a;
-    --text-color: #f5f5f5;
-    --accent-color: #d4a373;
-    --gold-premium: #d4a373;
-    --gold-light: #f3e5ab;
+/* ========================================
+ROOT VARIABLES
+======================================== */
+
+:root{
+--bg-main:#000;
+--bg-section:#111;
+--text-main:#ffffff;
+--gold:#d4a373;
+--gold-light:#f3e5ab;
+--glass:rgba(255,255,255,0.06);
 }
 
-body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+/* ========================================
+BODY
+======================================== */
+
+body{
+background:var(--bg-main);
+color:var(--text-main);
+font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+overflow-x:hidden;
 }
 
-/* ============================================================
-[TAG: SECTION: HOME (HERO)]
-============================================================ */
-.home-section-final {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px 80px 20px;
-    overflow: hidden;
+/* ========================================
+SECTION
+======================================== */
+
+section{
+padding:80px 20px;
+position:relative;
 }
 
-.main-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.bg-white-black{
+background:#000;
 }
 
-.img-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.45);
+.bg-light-dark{
+background:#111;
 }
 
-.overlay-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    background: linear-gradient(to bottom, 
-        transparent 0%, 
-        rgba(0,0,0,0.5) 40%, 
-        rgba(0,0,0,0.9) 80%, 
-        #000000 100%);
+/* ========================================
+HOME SECTION
+======================================== */
+
+#home{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
 }
 
-.main-content-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 450px;
-    text-align: center;
+.img-bg{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+top:0;
+left:0;
+filter:brightness(.45);
+z-index:-2;
 }
 
-/* Foto Profil Home */
-.profile-circle {
-    width: 140px;
-    height: 140px;
-    border: 2px solid var(--gold-premium);
-    border-radius: 50%;
-    padding: 5px;
-    margin: 0 auto 20px auto;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
-    overflow: hidden;
+.overlay-gradient{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:60%;
+background:linear-gradient(
+to bottom,
+transparent,
+rgba(0,0,0,.6),
+#000
+);
+z-index:-1;
 }
 
-.profile-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+.couple-name-display{
+font-size:3rem;
+font-weight:600;
+margin-bottom:10px;
 }
 
-.couple-name-display {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    color: #fff;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 20px rgba(0,0,0,0.9);
+.profile-circle{
+width:140px;
+height:140px;
+border-radius:50%;
+border:2px solid var(--gold);
+overflow:hidden;
+margin:auto;
 }
 
-/* ============================================================
-[TAG: BUTTONS & UI]
-============================================================ */
-.btn-premium-gold {
-    border: 1px solid var(--gold-premium);
-    color: var(--gold-premium);
-    border-radius: 50px;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    background: rgba(0,0,0,0.6);
-    transition: 0.3s ease;
-    display: inline-block;
-    font-weight: 500;
+.profile-circle img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-.btn-premium-gold:hover {
-    background: var(--gold-premium);
-    color: #000 !important;
+/* ========================================
+WELCOME PAGE
+======================================== */
+
+.loading-page{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
-/* ============================================================
-[TAG: MOBILE OPTIMIZATION]
-============================================================ */
-@media (max-width: 576px) {
-    .home-section-final {
-        min-height: 100vh;
-        padding-bottom: 100px;
-    }
-
-    .couple-name-display {
-        font-size: 2.3rem;
-    }
-
-    .profile-circle {
-        width: 115px;
-        height: 115px;
-    }
-
-    section {
-        padding: 60px 20px;
-    }
+.content-glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:40px 20px;
 }
 
-/* ============================================================
-[TAG: GUEST BOOK & UTILITIES]
-============================================================ */
-.gift-card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 14px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+/* ========================================
+BUTTON
+======================================== */
+
+.btn-premium-gold{
+background:linear-gradient(
+90deg,
+var(--gold),
+var(--gold-light)
+);
+border:none;
+padding:10px 24px;
+border-radius:50px;
+color:#000;
+font-weight:500;
+transition:.3s;
 }
 
-.ucapan-box {
-    max-width: 100%;
-    max-height: 300px;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.02);
-    border-radius: 10px;
-    padding: 10px;
+.btn-premium-gold:hover{
+transform:scale(1.05);
 }
-/* [/END CSS] */
+
+/* ========================================
+RSVP
+======================================== */
+
+.rsvp-group{
+margin-bottom:20px;
+text-align:left;
+}
+
+.rsvp-label{
+display:block;
+margin-bottom:6px;
+font-size:.9rem;
+}
+
+.rsvp-input{
+width:100%;
+padding:10px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,.2);
+background:#111;
+color:#fff;
+}
+
+.rsvp-textarea{
+resize:none;
+}
+
+.rsvp-button{
+background:var(--gold);
+border:none;
+padding:12px;
+border-radius:30px;
+width:100%;
+font-weight:600;
+}
+
+/* ========================================
+UCAPAN CARD
+======================================== */
+
+.ucapan-box{
+max-width:500px;
+margin:auto;
+}
+
+.ucapan-card{
+background:#111;
+border-radius:14px;
+padding:14px;
+margin-bottom:14px;
+text-align:left;
+}
+
+.ucapan-header{
+display:flex;
+justify-content:space-between;
+margin-bottom:6px;
+}
+
+.ucapan-nama{
+font-weight:600;
+}
+
+.ucapan-status{
+font-size:.8rem;
+opacity:.7;
+}
+
+.ucapan-pesan{
+font-size:.9rem;
+line-height:1.4;
+}
+
+/* ========================================
+NAVBAR BOTTOM
+======================================== */
+
+#navbar-menu{
+background:#000;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+#navbar-menu .nav-link{
+color:#ccc;
+font-size:.9rem;
+text-align:center;
+}
+
+#navbar-menu .nav-link.active{
+color:var(--gold);
+}
+
+/* ========================================
+MODAL IMAGE
+======================================== */
+
+.modal-content{
+background:#000;
+}
+
+.cursor-pointer{
+cursor:pointer;
+}
+
+/* ========================================
+ANIMATION
+======================================== */
+
+.pulse-animation{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+
+/* ========================================
+MOBILE
+======================================== */
+
+@media(max-width:480px){
+
+.couple-name-display{
+font-size:2.4rem;
+}
+
+.profile-circle{
+width:120px;
+height:120px;
+}
+
+section{
+padding:60px 15px;
+}
+
+}
