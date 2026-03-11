@@ -371,4 +371,27 @@ border-bottom:none;
     }
 </style>
 
+<style>
+    /* Warna teks emas redup untuk loading */
+    .text-gold-muted {
+        color: #d4a373;
+        opacity: 0.8;
+    }
+
+    /* Animasi denyut pada icon loading */
+    .pulse-animation {
+        animation: pulse-gold 2s infinite;
+    }
+
+    @keyframes pulse-gold {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 163, 115, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(212, 163, 115, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 163, 115, 0); }
+    }
+
+    /* Menghilangkan scrollbar saat loading */
+    body.loading-active {
+        overflow: hidden !important;
+    }
+</style>
 
