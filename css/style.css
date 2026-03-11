@@ -331,35 +331,43 @@ border-bottom:none;
 </style>
 
 <style>
-    /* ... (kode CSS sebelumnya tetap ada) ... */
+    /* ... (CSS Gradasi, Gold, dll tetap sama) ... */
 
-    /* KODE UNTUK RESPONSIF SMARTPHONE */
+    /* 2. Ukuran Default (Layar Desktop/Besar) */
+    #title-rr { font-size: 3.5rem; line-height: 1.1; }
+    #profile-container { width: 140px; height: 140px; border: 4px solid #d4a373; padding: 5px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.1); box-shadow: 0 8px 15px rgba(0,0,0,0.5); }
+    #nama-tamu { font-size: 1.6rem; }
+
+    /* CSS Inti untuk Menyesuaikan Layar HP (Mobile-First atau Breakpoint) */
     @media (max-width: 576px) {
-        /* Kecilkan ukuran teks judul */
-        .font-esthetic.text-gradient-gold {
-            font-size: 2.5rem !important;
-        }
-
-        /* Kecilkan ukuran bingkai foto agar tidak memenuhi layar */
-        .profile-frame {
-            width: 120px !important;
-            height: 120px !important;
-        }
-
-        /* Sesuaikan padding container agar tidak terlalu lebar */
+        
+        /* 1. Atur Kartu agar lebih rapat (Hapus padding vertikal berlebih) */
         .content-glass {
-            padding: 2.5rem 1.5rem !important;
+            padding: 2rem 1.25rem !important; /* Rapatkan bagian atas dan bawah */
         }
 
-        /* Kecilkan ukuran nama tamu */
+        /* 2. Kecilkan Judul Nama agar pas (dari 3.5rem ke 2.5rem) */
+        #title-rr {
+            font-size: 2.5rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        /* 3. Kecilkan Gambar agar tidak memakan ruang (dari 140px ke 110px) */
+        #profile-container {
+            width: 110px !important; 
+            height: 110px !important;
+            border-width: 3px !important;
+            margin-bottom: 1rem !important;
+        }
+
+        /* 4. Rapatkan teks "Kepada Yth" */
+        #guest-name-container {
+            margin-bottom: 1.5rem !important;
+        }
+        
+        /* 5. Kecilkan Nama Tamu agar tidak baris baru jika panjang */
         #nama-tamu {
-            font-size: 1.4rem !important;
-        }
-
-        /* Perkecil teks THE WEDDING OF */
-        .text-light-muted {
-            font-size: 0.75rem !important;
-            letter-spacing: 1px !important;
+            font-size: 1.35rem !important;
         }
     }
 </style>
