@@ -263,13 +263,45 @@ body {
 }
 
 /* Desain Card ala Instagram */
+/* Pastikan parent memiliki posisi relative */
 .ucapan-item {
-  background: var(--white);
+  position: relative; /* Wajib ada agar status tidak lari ke luar kotak */
+  background: #ffffff;
   border: 1px solid #dbdbdb;
   border-radius: 8px;
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 20px 15px 15px 15px; /* Tambah padding atas sedikit agar tidak tertutup label */
   text-align: left;
+}
+
+/* Styling Label di Pojok Kanan Atas */
+.status-kehadiran {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* Warna berbeda untuk Hadir & Tidak Hadir agar informatif */
+.status-hadir {
+  background-color: #e8f5e9; /* Hijau muda lembut */
+  color: #2e7d32;
+}
+
+.status-absen {
+  background-color: #ffebee; /* Merah muda lembut */
+  color: #c62828;
+}
+
+/* Jika Masih Ragu */
+.status-ragu {
+  background-color: #fff3e0;
+  color: #ef6c00;
 }
 
 .ucapan-header {
