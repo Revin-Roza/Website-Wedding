@@ -964,26 +964,34 @@ Terima kasih atas doa dan ucapan yang diberikan
     </div>
 
     <!-- Loading Page -->
-    <div class="loading-page bg-white-black" id="loading" style="opacity: 1;">
-        <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-            <div class="d-flex flex-column width-loading text-center">
-                <img src="./assets/images/placeholder.webp" data-src="./assets/images/backround-rr.webp" fetchpriority="high" class="img-fluid mb-3 mx-auto object-fit-cover opacity-0" alt="icon" style="width: 3.5rem; height: 3.5rem;">
-                <div class="progress" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
-                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+  <div class="loading-page" id="loading" style="opacity: 1; background-color: #000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10001; transition: opacity 0.8s ease-in-out;">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex flex-column text-center" style="width: 250px;">
+            
+            <img src="./assets/images/backround-rr.webp" 
+                 class="rounded-circle mb-4 mx-auto shadow-lg pulse-animation" 
+                 alt="icon" 
+                 style="width: 4rem; height: 4rem; object-fit: cover; border: 2px solid #d4a373;">
+            
+            <div class="progress bg-dark" role="progressbar" style="height: 0.3rem; border-radius: 10px; background-color: rgba(255,255,255,0.1) !important;">
+                <div class="progress-bar" id="progress-bar" 
+                     style="width: 0%; background: linear-gradient(90deg, #d4a373, #f3e5ab); transition: width 0.3s ease;">
                 </div>
-                <small class="d-none mt-1 text-theme-auto" id="progress-info" style="font-size: 0.8rem;">Booting application...</small>
-                <noscript>
-                    <small class="mt-1 text-danger">Sorry, this invitation requires javascript to work</small>
-                </noscript>
             </div>
-        </div>
-        <div class="text-center position-fixed w-100" style="bottom: 8%; left: 0;">
-            <div class="d-flex flex-column">
-                <small class="text-secondary">Hello</small>
-                <small class="text-theme-auto"><i class="fa-brands fa-github me-1"></i>World</small>
-            </div>
+            
+            <small class="mt-3 text-gold-muted" id="progress-info" style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;">Mempersiapkan Undangan...</small>
+            
+            <noscript>
+                <small class="mt-2 text-danger">Maaf, aplikasi ini memerlukan JavaScript untuk berjalan.</small>
+            </noscript>
         </div>
     </div>
+
+    <div class="text-center position-fixed w-100" style="bottom: 5%;">
+        <small class="text-secondary opacity-50" style="font-size: 0.7rem; letter-spacing: 1px;">REVIN & ROZA WEDDING</small>
+    </div>
+</div>
+
 
     <!-- Modal Image -->
     <div class="modal fade" id="modal-image" tabindex="-1" aria-hidden="true">
