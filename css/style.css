@@ -264,6 +264,44 @@ body {
 
 /* Desain Card ala Instagram */
 /* Pastikan parent memiliki posisi relative */
+/* Container kartu harus relatif */
+.ucapan-item {
+  position: relative; 
+  padding: 15px;      /* Jarak isi dengan tepi box */
+  margin-bottom: 12px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* CSS untuk memindah status ke pojok kanan atas */
+.status-label {
+  position: absolute;   /* Posisi bebas terhadap container */
+  top: 12px;           /* Jarak dari atas */
+  right: 12px;         /* Jarak dari kanan */
+  font-size: 0.7rem;    /* Ukuran kecil agar elegan */
+  color: #c5a059;       /* Warna senada tema emas */
+  font-weight: 600;
+  background-color: #f9f6f0; /* Background tipis agar terlihat seperti badge */
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* Merapikan nama tamu agar tidak tertutup status */
+.guest-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  display: block;
+  max-width: 70%; /* Agar nama panjang tidak menabrak label status */
+}
+
+.guest-message {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+
 .ucapan-box {
   max-width: 450px; /* Diperkecil agar fokus ke tengah */
   height: 400px;    /* Tinggi box dikurangi sedikit */
@@ -274,27 +312,10 @@ body {
   overflow-y: auto;
 }
 
-.ucapan-item {
-  padding: 12px; /* Padding dalam item lebih rapat */
-  margin-bottom: 12px;
-  border-radius: 10px;
-  border: 1px solid #f0f0f0;
-}
-
 .avatar-circle {
   width: 30px;  /* Ukuran avatar diperkecil */
   height: 30px;
   font-size: 0.75rem;
-}
-
-.guest-name {
-  font-size: 0.85rem; /* Nama lebih ramping */
-}
-
-.guest-message {
-  font-size: 0.85rem; /* Isi pesan lebih enak dibaca di ukuran kecil */
-  line-height: 1.4;
-  margin-top: 4px;
 }
 
 .status-kehadiran {
@@ -316,10 +337,6 @@ body {
 /* Custom Scrollbar */
 .ucapan-box::-webkit-scrollbar {
   width: 6px;
-}
-.ucapan-box::-webkit-scrollbar-thumb {
-  background-color: #dbdbdb;
-  border-radius: 10px;
 }
 
 
