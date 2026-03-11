@@ -267,38 +267,49 @@ border-bottom:none;
 
 
 <style>
-    /* 1. Gradasi Aesthetic: Hitam ke Merah Gelap */
+    /* 1. Gradasi Luxury: Black & Deep Wine Red */
     .main-gradient-overlay {
-        background: linear-gradient(135deg, #000000 0%, #1a0000 40%, #4d0000 100%);
-        /* Atau alternatif gradasi radial jika suka efek sorot tengah:
-        background: radial-gradient(circle at center, #330000 0%, #000000 100%); */
+        background: radial-gradient(circle at center, #2d0a0a 0%, #000000 100%);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    /* 2. Efek Glassmorphism untuk Konten agar Mudah Dibaca */
+    /* 2. Glassmorphism Card yang lebih Solid agar Teks Terbaca */
     .content-glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.05); /* Sedikit lebih terang agar kontras */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        width: 85%;
+        max-width: 350px;
+        padding: 30px 20px !important;
+        margin: auto;
     }
 
-    /* 3. Gradasi Emas untuk Nama Mempelai */
+    /* 3. Text Gradient Gold (Lebih Tajam) */
     .text-gradient-gold {
-        background: linear-gradient(to bottom, #f3e5ab 0%, #d4a373 50%, #b38b59 100%);
+        background: linear-gradient(180deg, #f3e5ab 0%, #d4a373 50%, #b38b59 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight: bold;
+        font-weight: 700;
+        text-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     }
 
-    /* 4. Bingkai Foto Bulat Aesthetic */
-    .profile-frame {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 4px solid #d4a373; /* Warna bingkai emas */
+    /* 4. Bingkai Foto (Dibuat lebih slim & premium) */
+    #profile-container {
+        width: 130px;
+        height: 130px;
+        border: 2px solid #d4a373; /* Garis lebih tipis agar elegan */
         padding: 5px;
-        background: rgba(255,255,255,0.1);
-        overflow: hidden;
-        box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+        border-radius: 50%;
+        margin: 20px auto !important;
+        background: linear-gradient(45deg, #d4a373, #2d0a0a);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     }
 
     .img-profile {
@@ -306,69 +317,58 @@ border-bottom:none;
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
+        filter: brightness(0.9); /* Sedikit gelap agar menyatu dengan tema */
     }
 
-    /* 5. Tombol Elegant Outline Emas */
+    /* 5. Tombol Premium (Solid & Elegant) */
     .btn-gold-outline {
-        color: #f3e5ab;
-        background-color: transparent;
-        border: 2px solid #d4a373;
-        transition: all 0.3s ease;
-        font-weight: 600;
-        letter-spacing: 1px;
+        color: #1a0000;
+        background: linear-gradient(45deg, #f3e5ab, #d4a373); /* Tombol dibuat solid agar terbaca */
+        border: none;
+        padding: 10px 25px !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem !important;
+        letter-spacing: 1.5px;
+        transition: transform 0.2s ease;
     }
 
     .btn-gold-outline:hover {
-        background-color: #d4a373;
-        color: #1a0000;
-        box-shadow: 0 0 15px rgba(212, 163, 115, 0.7);
+        transform: scale(1.05);
+        color: #000;
+        box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
     }
 
-    /* Utilitas */
-    .text-light-muted {
-        color: rgba(255, 255, 255, 0.6);
-    }
-</style>
-
-<style>
-    /* ... (CSS Gradasi, Gold, dll tetap sama) ... */
-
-    /* 2. Ukuran Default (Layar Desktop/Besar) */
-    #title-rr { font-size: 3.5rem; line-height: 1.1; }
-    #profile-container { width: 140px; height: 140px; border: 4px solid #d4a373; padding: 5px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.1); box-shadow: 0 8px 15px rgba(0,0,0,0.5); }
-    #nama-tamu { font-size: 1.6rem; }
-
-    /* CSS Inti untuk Menyesuaikan Layar HP (Mobile-First atau Breakpoint) */
+    /* CSS Khusus Layar HP (Agar Presisi seperti di gambar) */
     @media (max-width: 576px) {
-        
-        /* 1. Atur Kartu agar lebih rapat (Hapus padding vertikal berlebih) */
         .content-glass {
-            padding: 2rem 1.25rem !important; /* Rapatkan bagian atas dan bawah */
+            padding: 25px 15px !important;
         }
 
-        /* 2. Kecilkan Judul Nama agar pas (dari 3.5rem ke 2.5rem) */
         #title-rr {
-            font-size: 2.5rem !important;
-            margin-bottom: 1rem !important;
+            font-size: 2.2rem !important;
+            margin-bottom: 0.5rem !important;
+            line-height: 1.2;
         }
 
-        /* 3. Kecilkan Gambar agar tidak memakan ruang (dari 140px ke 110px) */
         #profile-container {
-            width: 110px !important; 
-            height: 110px !important;
-            border-width: 3px !important;
-            margin-bottom: 1rem !important;
+            width: 115px !important;
+            height: 115px !important;
         }
 
-        /* 4. Rapatkan teks "Kepada Yth" */
-        #guest-name-container {
-            margin-bottom: 1.5rem !important;
-        }
-        
-        /* 5. Kecilkan Nama Tamu agar tidak baris baru jika panjang */
         #nama-tamu {
-            font-size: 1.35rem !important;
+            font-size: 1.4rem !important;
+            margin-top: 5px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .text-light-muted {
+            font-size: 0.75rem !important;
+            opacity: 0.8;
+            letter-spacing: 1px;
         }
     }
 </style>
+
 
