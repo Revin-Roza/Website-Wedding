@@ -1132,13 +1132,28 @@ container.appendChild(card);
         });
 
         // ====================== COPY NOMOR REKENING ======================
-        function copyRek(nomor) {
-            navigator.clipboard.writeText(nomor).then(() => {
-                alert("✅ Nomor rekening berhasil disalin!");
-            }).catch(() => {
-                alert("❌ Gagal menyalin nomor rekening.");
-            });
+        </section>
+        <div id="copyToast" class="copy-toast">
+        Rekening berhasil disalin ✓
+        </div>
+        
+        <script>
+        
+        function copyText(text){
+        
+        navigator.clipboard.writeText(text);
+        
+        const toast = document.getElementById("copyToast");
+        
+        toast.classList.add("show");
+        
+        setTimeout(() => {
+        toast.classList.remove("show");
+        },2000);
+        
         }
+        
+        </script>
 
         // ====================== NAMA TAMU DARI URL (?to=) ======================
         document.addEventListener('DOMContentLoaded', () => {
