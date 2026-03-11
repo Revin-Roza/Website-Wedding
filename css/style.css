@@ -77,3 +77,37 @@ color:white;
 --accent-color:#d4a373;
 }
 }
+
+
+.gift-card{
+background:#ffffff;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.bank-name{
+font-family:'Playfair Display', serif;
+font-size:18px;
+margin-bottom:8px;
+}
+
+.rekening-number{
+font-size:20px;
+font-weight:600;
+letter-spacing:2px;
+}
+
+.rekening-name{
+font-size:14px;
+color:#777;
+margin-bottom:15px;
+}
+
+.copy-btn{
+border:none;
+background:#c8a97e;
+color:white;
+padding:8px 20px;
+border-radius:20px;
+font-size:14px;
+}
