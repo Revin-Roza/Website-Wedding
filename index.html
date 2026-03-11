@@ -1096,35 +1096,22 @@ container.appendChild(card);
         });
 
         // ====================== COPY NOMOR REKENING ======================
-        </section>
-        <div id="copyToast" class="copy-toast">
-        Rekening berhasil disalin ✓
-        </div>
-        
-        <script>
-        document.querySelectorAll('[data-copy]').forEach(button => {
-        
-        button.addEventListener('click', function(){
-        
-        const text = this.getAttribute('data-copy');
-        
-        navigator.clipboard.writeText(text).then(() => {
-        
-        const toast = document.getElementById("copyToast");
-        
-        toast.classList.add("show");
-        
-        setTimeout(()=>{
-        toast.classList.remove("show");
-        },2000);
-        
-        });
-        
-        });
-        
-        });
-        
-        </script>
+   <script>
+function copyText(text){
+
+var textarea = document.createElement("textarea");
+textarea.value = text;
+document.body.appendChild(textarea);
+
+textarea.select();
+document.execCommand("copy");
+
+document.body.removeChild(textarea);
+
+alert("Berhasil disalin ✓");
+
+}
+</script>
     
 </body>
 </html>
