@@ -7,3 +7,28 @@ height: 100%;
 pointer-events: none;
 z-index: 999;
 }
+
+body{
+background:#fffaf7;
+color:#3a3a3a;
+}
+
+.section{
+background:#fdf0ea;
+padding:80px 20px;
+}
+
+.couple-name{
+color:#b48a78;
+}
+
+.btn-wedding{
+background:#b48a78;
+color:white;
+border-radius:30px;
+}
+
+.btn-wedding:hover{
+background:#a07160;
+}
+
