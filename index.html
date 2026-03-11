@@ -1024,53 +1024,52 @@ form.reset();
 </script>
 
 <script>
+  const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuJmjywyD_0f0tk815ZV59d_LIcMcP6nSQIIkh2-uws9vxlygHQIOvNXhJq6WfyUwjTelXQ7HfFmU0/pub?output=csv";
 
-const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuJmjywyD_0f0tk815ZV59d_LIcMcP6nSQIIkh2-uws9vxlygHQIOvNXhJq6WfyUwjTelXQ7HfFmU0/pub?output=csv";
+  fetch(csvURL)
+    .then(response => response.text())
+    .then(data => {
+      // Membersihkan data dan membagi baris
+      const rows = data.trim().split("\n").slice(1);
+      const container = document.getElementById("ucapan-container");
+      
+      // Kosongkan container sebelum mengisi (mencegah duplikasi)
+      container.innerHTML = '';
 
-fetch(csvURL)
-.then(response => response.text())
-.then(data => {
+      // Balik urutan agar yang terbaru di atas, ambil 40 data
+      rows.reverse().slice(0, 40).forEach((row, index) => {
+        // Regex untuk memisahkan CSV dengan benar (mengatasi koma di dalam pesan)
+        const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
 
-const rows = data.split("\n").slice(1);
+        if (cols.length < 4) return;
 
-const container = document.getElementById("ucapan-container");
+        const nama = cols[1]?.replace(/"/g, "").trim();
+        const hadir = cols[2]?.replace(/"/g, "").trim();
+        const pesan = cols[3]?.replace(/"/g, "").trim();
 
-rows.reverse().slice(0,40).forEach(row => {
+        if (!nama || !pesan) return;
 
-const cols = row.split(",");
+        const card = document.createElement("div");
+        card.className = "ucapan-item"; // Sesuai dengan CSS kita
+        
+        // Menambahkan delay animasi muncul satu per satu (optional)
+        card.style.animationDelay = `${index * 0.1}s`;
 
-const nama = cols[1];
-const hadir = cols[2];
-const pesan = cols[3];
+        card.innerHTML = `
+          <div class="ucapan-header">
+            <span class="nama-tamu">${nama}</span>
+            <span class="status-kehadiran">(${hadir})</span>
+          </div>
+          <p class="pesan-tamu">${pesan}</p>
+        `;
 
-if(!nama) return;
-
-const card = document.createElement("div");
-
-card.className = "ucapan-card";
-
-card.innerHTML = `
-
-<div class="ucapan-header">
-
-<span class="ucapan-nama">${nama}</span>
-
-<span class="ucapan-status">(${hadir})</span>
-
-</div>
-
-<div class="ucapan-pesan">
-${pesan}
-</div>
-
-`;
-
-container.appendChild(card);
-
-});
-
-});
-
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error("Gagal memuat data ucapan:", err);
+      document.getElementById("ucapan-container").innerHTML = `<p style="color: #ffdada; font-size: 0.8rem;">Gagal memuat ucapan...</p>`;
+    });
 </script>
 
     <!-- ==================== SCRIPT UTAMA ==================== -->
@@ -1117,35 +1116,6 @@ alert("Berhasil disalin ✓");
 
 }
 </script>
-
-// Pasang ini di bagian script
-const form = document.getElementById('rsvp-form');
-const container = document.getElementById('ucapan-container');
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const nama = document.getElementById('nama').value;
-  const hadir = document.getElementById('hadir').value;
-  const ucapan = document.getElementById('ucapan').value;
-
-  const itemBaru = document.createElement('div');
-  itemBaru.className = 'ucapan-item';
-  
-  // Template visual: Nama di kiri, Hadir di kanan
-  itemBaru.innerHTML = `
-    <div class="ucapan-header">
-      <span class="nama-tamu">${nama}</span>
-      <span class="status-kehadiran">(${hadir})</span>
-    </div>
-    <p class="pesan-tamu">${ucapan}</p>
-  `;
-
-  container.prepend(itemBaru);
-  form.reset();
-  document.querySelector('.ucapan-box').scrollTop = 0;
-});
-
 
 
 </body>
