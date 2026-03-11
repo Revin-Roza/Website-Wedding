@@ -1092,7 +1092,14 @@ container.appendChild(card);
                 document.getElementById('nama-tamu').innerText = namaBersih;
             }
         });
+  
     </script>
-
+window.addEventListener("load", () => {
+  const welcome = document.querySelector(".loading-page");
+  if (welcome) {
+    welcome.classList.add("hide");
+  }
+});
+    
 </body>
 </html>
