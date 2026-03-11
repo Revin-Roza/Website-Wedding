@@ -755,22 +755,16 @@ onclick="undangan.util.copy(this)">
   </div>
 </section>
 
-<section id="guestbook" class="guestbook-section">
-  <div class="guestbook-edge-top"></div>
-
-  <div class="container text-center py-5">
-    <h2 class="font-esthetic guestbook-title">Ucapan & Doa</h2>
-    <p class="ucapan-subtitle">Terima kasih atas doa dan ucapan yang diberikan</p>
+<section id="guestbook" class="py-5 guestbook-section">
+  <div class="container"> <h2 class="font-esthetic guestbook-title text-center">Ucapan & Doa</h2>
+    <p class="ucapan-subtitle text-center">Terima kasih atas doa dan ucapan yang diberikan</p>
     
-    <div class="ucapan-box mt-4">
+    <div class="ucapan-box mt-4 mx-auto">
       <div id="ucapan-container" class="ucapan-list">
         </div>
     </div>
   </div>
-
-  <div class="guestbook-edge-bottom"></div>
 </section>
-
 
                 <!-- Comment -->
                 <section class="bg-light-dark my-0 pb-0 pt-3" id="comment">
@@ -1024,52 +1018,41 @@ form.reset();
 </script>
 
 <script>
-  const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuJmjywyD_0f0tk815ZV59d_LIcMcP6nSQIIkh2-uws9vxlygHQIOvNXhJq6WfyUwjTelXQ7HfFmU0/pub?output=csv";
+const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuJmjywyD_0f0tk815ZV59d_LIcMcP6nSQIIkh2-uws9vxlygHQIOvNXhJq6WfyUwjTelXQ7HfFmU0/pub?output=csv";
 
-  fetch(csvURL)
-    .then(response => response.text())
-    .then(data => {
-      // Membersihkan data dan membagi baris
-      const rows = data.trim().split("\n").slice(1);
-      const container = document.getElementById("ucapan-container");
+fetch(csvURL)
+  .then(response => response.text())
+  .then(data => {
+    const rows = data.trim().split("\n").slice(1);
+    const container = document.getElementById("ucapan-container");
+    container.innerHTML = ''; // Bersihkan loading
+
+    rows.reverse().slice(0, 40).forEach(row => {
+      // Menggunakan regex agar koma di dalam pesan tidak merusak kolom
+      const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
       
-      // Kosongkan container sebelum mengisi (mencegah duplikasi)
-      container.innerHTML = '';
+      if (cols.length < 4) return;
 
-      // Balik urutan agar yang terbaru di atas, ambil 40 data
-      rows.reverse().slice(0, 40).forEach((row, index) => {
-        // Regex untuk memisahkan CSV dengan benar (mengatasi koma di dalam pesan)
-        const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+      const nama = cols[1]?.replace(/"/g, "").trim();
+      const hadir = cols[2]?.replace(/"/g, "").trim();
+      const pesan = cols[3]?.replace(/"/g, "").trim();
 
-        if (cols.length < 4) return;
+      if (!nama || !pesan) return;
 
-        const nama = cols[1]?.replace(/"/g, "").trim();
-        const hadir = cols[2]?.replace(/"/g, "").trim();
-        const pesan = cols[3]?.replace(/"/g, "").trim();
+      const card = document.createElement("div");
+      card.className = "ucapan-item";
 
-        if (!nama || !pesan) return;
+      card.innerHTML = `
+        <div class="ucapan-header">
+          <span class="nama-tamu">${nama}</span>
+          <span class="status-kehadiran">(${hadir})</span>
+        </div>
+        <p class="pesan-tamu">${pesan}</p>
+      `;
 
-        const card = document.createElement("div");
-        card.className = "ucapan-item"; // Sesuai dengan CSS kita
-        
-        // Menambahkan delay animasi muncul satu per satu (optional)
-        card.style.animationDelay = `${index * 0.1}s`;
-
-        card.innerHTML = `
-          <div class="ucapan-header">
-            <span class="nama-tamu">${nama}</span>
-            <span class="status-kehadiran">(${hadir})</span>
-          </div>
-          <p class="pesan-tamu">${pesan}</p>
-        `;
-
-        container.appendChild(card);
-      });
-    })
-    .catch(err => {
-      console.error("Gagal memuat data ucapan:", err);
-      document.getElementById("ucapan-container").innerHTML = `<p style="color: #ffdada; font-size: 0.8rem;">Gagal memuat ucapan...</p>`;
+      container.appendChild(card);
     });
+  });
 </script>
 
     <!-- ==================== SCRIPT UTAMA ==================== -->
