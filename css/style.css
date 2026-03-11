@@ -506,6 +506,68 @@ RSVP
   }
 }
 
+/* --- CONTAINER UTAMA --- */
+.ucapan-box {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05); /* Efek Kaca */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  max-height: 400px; /* Batas Scroll */
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar agar tetap minimalis */
+.ucapan-box::-webkit-scrollbar { width: 3px; }
+.ucapan-box::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.5); border-radius: 10px; }
+
+/* --- ITEM KOMENTAR --- */
+.ucapan-item {
+  padding: 15px 0;
+  text-align: left;
+  /* Garis pembatas putus-putus transparan */
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2); 
+}
+
+.ucapan-item:last-child {
+  border-bottom: none; /* Hilangkan garis di paling bawah */
+}
+
+/* --- TATA LETAK NAMA & HADIR (Kunci Kerapian) --- */
+.ucapan-header {
+  display: flex;
+  justify-content: space-between; /* Nama di kiri, Status di kanan */
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.nama-tamu {
+  color: #d4af37; /* Emas */
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.status-kehadiran {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* --- PESAN --- */
+.pesan-tamu {
+  color: #f0f0f0;
+  font-size: 0.85rem; /* Ukuran lebih kecil agar enak dibaca */
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 300;
+  word-wrap: break-word; /* Agar pesan panjang tidak merusak layout */
+}
 
 
 
