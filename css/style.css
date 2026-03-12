@@ -1,9 +1,11 @@
-/* =================================================PERSIAPAN & VARIABEL (SATU PINTU)================================================= */
+/* ================================================================
+1. CORE VARIABLES & GLOBAL RESET
+================================================================
+*/
 :root {
-  /* Palet Utama Dark Mode */
   --bg-dark: #121212;        
   --bg-card: #1E1E1E;        
-  --primary-gold: #D4AF37;   /* Konsisten menggunakan Emas Luxury */
+  --primary-gold: #D4AF37;   
   --text-main: #E0E0E0;      
   --text-muted: #A0A0A0;     
   --accent: #2C2C2C;         
@@ -11,10 +13,9 @@
   --shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* 1. Global Reset */
 * {
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif !important; /* Memastikan semua font bersih */
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 body {
@@ -23,9 +24,13 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-/* 2. Tipografi Judul */
+/* ================================================================
+2. TYPOGRAPHY & REUSABLE CLASSES
+================================================================
+*/
 h1, h2, h3, .font-esthetic, .nama-mempelai, .rsvp-title {
     font-family: 'Playfair Display', serif !important;
     color: var(--primary-gold) !important;
@@ -33,61 +38,40 @@ h1, h2, h3, .font-esthetic, .nama-mempelai, .rsvp-title {
     font-weight: 700 !important;
 }
 
-/* 3. Teks Pendukung */
 p, span, .text-muted, .rsvp-subtitle, .opening-text {
     font-weight: 300 !important;
     color: var(--text-muted) !important;
 }
 
-/* =================================================KOMPONEN UTAMA (DARK CARDS)================================================= */
+.text-gold { color: var(--primary-gold) !important; }
 
-/* Card Utama & Gift Card */
-.bg-theme-auto, .gift-card, .agenda-card, .rsvp-form, .ucapan-box {
+/* ================================================================
+3. GLOBAL COMPONENTS (CARDS & BUTTONS)
+================================================================
+*/
+.bg-theme-auto, .gift-card, .agenda-card, .rsvp-wrapper, .gift-container, .quote-container, .story-wrapper, .gallery-wrapper {
     background-color: var(--bg-card) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 15px;
+    border-radius: 20px;
     color: var(--text-main) !important;
     transition: all .3s ease;
 }
 
-.bg-theme-auto:hover, .agenda-card:hover {
+/* Common Hover Effect */
+.bg-theme-auto:hover, .agenda-card:hover, .bank-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-gold) !important;
 }
 
-/* Form RSVP & Input */
-.rsvp-section { padding: 60px 0; }
-.rsvp-form { max-width: 500px; margin: auto; padding: 30px; }
-.rsvp-label { color: var(--primary-gold); font-weight: 600; margin-bottom: 8px; display: block; }
-
-.form-control, .form-select, .rsvp-input {
-    background-color: #252525 !important;
-    border: 1px solid #444 !important;
-    color: var(--white) !important;
-    border-radius: 10px;
-    padding: 12px;
-}
-
-.form-control:focus, .rsvp-input:focus {
-    border-color: var(--primary-gold) !important;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
-    outline: none;
-}
-
-/* =================================================TOMBOL (BUTTONS)================================================= */
-
-.btn-primary, .rsvp-button, .gift-copy {
+/* Buttons */
+.btn-custom, .btn-primary, .rsvp-button, .gift-copy, .btn-copy-gift {
     background-color: var(--primary-gold) !important;
     color: #121212 !important;
     border: none !important;
     font-weight: 600;
     border-radius: 8px;
+    padding: 10px 20px;
     transition: all 0.3s ease;
-}
-
-.btn-primary:hover, .rsvp-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
 }
 
 .btn-outline-auto, .btn-maps-modern {
@@ -100,595 +84,93 @@ p, span, .text-muted, .rsvp-subtitle, .opening-text {
     transition: all 0.3s ease;
 }
 
-.btn-outline-auto:hover, .btn-maps-modern:hover {
-    background: var(--primary-gold) !important;
-    color: #121212 !important;
-}
-
-/* =================================================DIVIDER & SEPARATOR================================================= */
-
-.transition-linear-clean {
-    width: 100%;
-    height: 80px; 
-    background: linear-gradient(to bottom, #191e25, #000000) !important;
-    margin: -1px 0;
-}
-
-.micro-gradient {
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(to bottom, #000000, #0c0c0c);
-    margin: -1px 0;
-}
-
-svg.color-theme-svg path {
-    fill: var(--bg-dark) !important;
-}
-
-/* =================================================UCAPAN / GUESTBOOK================================================= */
-
-.ucapan-item {
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    background: rgba(255,255,255,0.03);
-    padding: 15px;
-    margin-bottom: 12px;
-}
-
-.nama-tamu { color: var(--primary-gold); font-weight: bold; }
-.status-kehadiran { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
-.pesan-tamu { color: var(--text-main); font-size: 0.9rem; margin-top: 5px; }
-
-/* Custom Scrollbar */
-.ucapan-box::-webkit-scrollbar { width: 6px; }
-.ucapan-box::-webkit-scrollbar-thumb { background: var(--primary-gold); border-radius: 10px; }
-
-/* =================================================LAIN-LAIN================================================= */
-.copy-toast {
-    position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
-    background: var(--primary-gold); color: #000;
-    padding: 10px 20px; border-radius: 30px; font-size: .85rem;
-    z-index: 9999; display: none;
-}
-
-
-/* =================================================BRIDE================================================= */
-
-/* Penyesuaian Section Bride */
-#bride {
-    background-color: var(--bg-dark) !important;
-}
-
-.text-gold {
-    color: var(--primary-gold) !important;
-}
-
-.subtitle-bride {
-    font-size: 0.9rem !important;
-    max-width: 600px;
-    margin: 0 auto !important;
-    color: var(--text-muted) !important;
-}
-
-.img-mempelai {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--primary-gold) !important;
-    padding: 4px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.img-mempelai:hover {
-    transform: scale(1.05);
-}
-
-.nama-mempelai {
-    font-size: 2.2rem !important;
-    margin-top: 15px !important;
-}
-
-.role-text {
-    font-size: 1.1rem !important;
-    color: var(--primary-gold) !important;
-    font-weight: 400 !important;
-}
-
-.parent-info p {
-    font-size: 0.9rem !important;
-    color: var(--text-muted) !important;
-    letter-spacing: 0.5px;
-}
-
-.ampersand {
-    font-size: 4rem !important;
-    color: var(--primary-gold) !important;
-    margin: 20px 0;
-    opacity: 0.8;
-}
-
-/* =================================================BRIDE================================================= */
-
-/* --- SECTION QUOTE --- */
-#quote {
-    background-color: var(--bg-dark) !important;
-}
-
-.quote-container {
-    background: rgba(255, 255, 255, 0.03) !important; /* Transparansi tipis */
-    border: 1px solid rgba(212, 175, 55, 0.2) !important; /* Border emas tipis */
-    border-radius: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    backdrop-filter: blur(5px); /* Efek kaca */
-}
-
-.quote-text {
-    font-size: 1rem !important;
-    color: var(--text-main) !important;
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 10px !important;
-}
-
-.quote-source {
-    font-size: 0.85rem !important;
-    color: var(--primary-gold) !important;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.quote-divider {
-    border: 0;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    width: 50%;
-    margin: 0 auto;
-}
-
-/* =================================================UCAPAN / GUESTBOOK================================================= */
-
-/* --- LOVE STORY CUSTOM --- */
-.story-wrapper {
-    background-color: var(--bg-card) !important;
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-radius: 30px;
-}
-
-/* Video Styling */
-.video-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-    border: 2px solid var(--accent);
-    background: #000;
-}
-
-.video-loading-overlay {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 3;
-}
-
-.custom-progress {
-    width: 40%;
-    height: 6px !important;
-    background-color: #333 !important;
-}
-
-.bg-gold { background-color: var(--primary-gold) !important; }
-
-/* Timeline Styling */
-.story-scroll-box {
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.timeline-item {
-    display: flex;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.timeline-dot {
-    width: 30px;
-    height: 30px;
-    background: var(--bg-card);
-    border: 2px solid var(--primary-gold);
-    color: var(--primary-gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.8rem;
-    z-index: 2;
-    flex-shrink: 0;
-}
-
-/* Garis Vertical Timeline */
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: 14px;
-    top: 30px;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--primary-gold), transparent);
-    z-index: 1;
-}
-
-.timeline-item.last::before {
-    display: none;
-}
-
-.timeline-content {
-    padding-left: 20px;
-}
-
-.story-title {
-    color: var(--primary-gold) !important;
-    font-weight: 600 !important;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-}
-
-.story-desc {
-    font-size: 0.85rem !important;
-    line-height: 1.6;
-    color: var(--text-muted);
-}
-
-.story-overlay-btn {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-
-/* =================================================UCAPAN / GUESTBOOK================================================= */
-
-/* --- COUNTDOWN STYLING --- */
-.countdown-wrapper {
-    background: var(--bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 20px;
-    padding: 20px 10px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.countdown-item p {
-    font-size: 2rem !important;
-    font-weight: 700 !important;
-    color: var(--primary-gold) !important;
-    margin: 0 !important;
-    line-height: 1 !important;
-}
-
-.countdown-item small {
-    color: var(--text-muted);
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-}
-
-/* --- AGENDA STYLING --- */
-.agenda-section {
-    background-color: #0c0c0c !important; /* Latar gelap pekat */
-}
-
-.agenda-card {
-    background: #1a1a1a !important;
-    border: 1px solid #333 !important;
-    padding: 35px 25px !important;
-    border-radius: 25px !important;
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.agenda-card:hover {
-    border-color: var(--primary-gold) !important;
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-}
-
-.agenda-header {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--primary-gold);
-    margin-bottom: 10px;
-}
-
-.agenda-detail .date, .agenda-detail .time {
-    color: #fff !important;
-    font-weight: 600;
-    margin-bottom: 5px !important;
-}
-
-.agenda-detail .address {
-    font-size: 0.85rem !important;
-    color: var(--text-muted) !important;
-    margin-top: 15px !important;
-}
-
-.divider {
-    width: 50px;
-    height: 2px;
-    background: var(--primary-gold);
-    margin: 20px auto;
-}
-
-/* =================================================UCAPAN / GUESTBOOK================================================= */
-
-/* --- GALLERY STYLING --- */
-.gallery-wrapper {
-    background-color: var(--bg-card) !important;
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    border-radius: 30px;
-}
-
-.border-gold-thin {
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.img-gallery {
-    cursor: pointer;
-    transition: transform 0.5s ease, filter 0.3s ease;
-    object-fit: cover;
-    height: 250px; /* Atur tinggi agar seragam di HP */
-}
-
-@media (min-width: 768px) {
-    .img-gallery { height: 450px; } /* Lebih tinggi di Desktop */
-}
-
-.img-gallery:hover {
-    transform: scale(1.03);
-    filter: brightness(1.1);
-}
-
-/* Kustomisasi Indikator (Garis bawah carousel) */
-.custom-indicators button {
-    width: 10px !important;
-    height: 10px !important;
-    border-radius: 50% !important;
-    background-color: var(--primary-gold) !important;
-    opacity: 0.3;
-}
-
-.custom-indicators button.active {
-    opacity: 1;
-    width: 25px !important; /* Memanjang saat aktif */
-    border-radius: 10px !important;
-}
-
-/* Tombol Navigasi */
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    background-size: 50%;
-    padding: 20px;
-}
-
-/* =================================================UCAPAN / GUESTBOOK================================================= */
-
-/* --- GIFT SECTION STYLING --- */
-.subtitle-gift {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    max-width: 450px;
-    margin: 0 auto;
-}
-
-.gift-container {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.gift-header {
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.btn-toggle-gift {
-    background: transparent;
-    border: none;
-    color: var(--primary-gold);
-    transition: 0.3s;
-}
-
-.bank-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 15px;
-}
-
-.bank-name {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.bank-number {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--white);
-    margin: 2px 0;
-}
-
-.bank-owner {
-    font-size: 0.8rem;
-    color: var(--primary-gold);
-}
-
-.btn-copy-gift {
-    background: var(--primary-gold);
-    color: #121212;
-    border: none;
-    font-size: 0.75rem;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-copy-gift:hover {
+.btn-custom:hover, .btn-outline-auto:hover, .btn-maps-modern:hover {
     filter: brightness(1.2);
     transform: scale(1.05);
 }
 
-.qris-box img {
-    max-width: 200px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+/* ================================================================
+4. SPECIFIC SECTIONS STYLE
+================================================================
+*/
+
+/* --- BRIDE SECTION --- */
+.img-mempelai {
+    width: 180px; height: 180px;
+    object-fit: cover; border-radius: 50%;
+    border: 3px solid var(--primary-gold) !important;
+    padding: 4px; transition: 0.3s;
 }
 
+.nama-mempelai { font-size: 2.2rem !important; margin-top: 15px !important; }
 
-/* =================================================UCAPAN / GUESTBOOK================================================= */
+/* --- QUOTE SECTION --- */
+.quote-container { backdrop-filter: blur(5px); max-width: 700px; margin: 0 auto; padding: 25px; }
+.quote-text { font-style: italic; font-size: 1rem !important; }
 
-
-/* --- RSVP & GUESTBOOK STYLE --- */
-.rsvp-wrapper {
-    background: var(--bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 30px;
-    max-width: 600px;
-    margin: 0 auto;
+/* --- LOVE STORY SECTION --- */
+.video-container { position: relative; overflow: hidden; border-radius: 20px; background: #000; }
+.timeline-dot {
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 2px solid var(--primary-gold); color: var(--primary-gold);
+    display: flex; align-items: center; justify-content: center; font-weight: bold;
+}
+.timeline-item::before {
+    content: ""; position: absolute; left: 14px; top: 30px; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--primary-gold), transparent);
 }
 
-.form-label-custom {
-    color: var(--primary-gold);
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 8px;
-    display: block;
-    text-align: left;
-}
+/* --- COUNTDOWN --- */
+.countdown-wrapper { border: 1px solid rgba(212, 175, 55, 0.3); max-width: 500px; margin: 0 auto; }
+.countdown-item p { font-size: 2rem !important; color: var(--primary-gold) !important; margin: 0 !important; }
 
-.input-custom {
+/* --- GALLERY --- */
+.img-gallery { cursor: pointer; transition: 0.5s; object-fit: cover; height: 250px; width: 100%; border-radius: 15px; }
+@media (min-width: 768px) { .img-gallery { height: 400px; } }
+.img-gallery:hover { transform: scale(1.02); filter: brightness(1.1); }
+
+/* --- GIFT SECTION --- */
+.bank-card { background: rgba(255, 255, 255, 0.03); border-radius: 12px; padding: 15px; margin-bottom: 12px; }
+.bank-number { font-size: 1.1rem; font-weight: 700; color: var(--white); }
+
+/* --- RSVP & GUESTBOOK --- */
+.input-custom, .form-control, .form-select {
     background-color: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    color: white !important;
-    border-radius: 12px !important;
-    padding: 12px 15px !important;
-    transition: 0.3s;
+    color: white !important; border-radius: 12px !important; padding: 12px !important;
 }
+.input-custom:focus { border-color: var(--primary-gold) !important; box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important; }
 
-.input-custom:focus {
-    border-color: var(--primary-gold) !important;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1) !important;
-    background-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-/* Kotak Daftar Ucapan */
-.ucapan-container-wrapper {
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px;
-}
-
-.ucapan-scroll-box {
-    max-height: 400px;
-    overflow-y: auto;
-    padding: 15px;
-}
-
+.ucapan-scroll-box { max-height: 400px; overflow-y: auto; padding: 10px; }
 .ucapan-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-left: 3px solid var(--primary-gold);
+    background: rgba(255, 255, 255, 0.04); border-radius: 15px;
+    padding: 15px; margin-bottom: 15px; border-left: 3px solid var(--primary-gold);
 }
 
-.avatar-initial {
-    width: 35px;
-    height: 35px;
-    background: var(--primary-gold);
-    color: #000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.9rem;
+/* ================================================================
+5. TRANSITIONS & DIVIDERS
+================================================================
+*/
+.transition-linear-clean {
+    height: 80px; width: 100%;
+    background: linear-gradient(to bottom, #191e25, #121212) !important;
+    margin: -1px 0;
 }
 
-.ucapan-text {
-    font-size: 0.85rem;
-    color: var(--text-main);
-    line-height: 1.5;
+.closing-ornament { display: flex; align-items: center; justify-content: center; margin: 30px 0; }
+.ornament-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--primary-gold), transparent); }
+
+/* Custom Scrollbar */
+.with-scrollbar::-webkit-scrollbar { width: 5px; }
+.with-scrollbar::-webkit-scrollbar-thumb { background: var(--primary-gold); border-radius: 10px; }
+
+/* ================================================================
+6. UTILITIES
+================================================================
+*/
+.no-gap-bottom { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.copy-toast {
+    position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
+    background: var(--primary-gold); color: #000;
+    padding: 10px 20px; border-radius: 30px; z-index: 9999; display: none;
 }
-
-.text-gold {
-    color: var(--primary-gold) !important;
-}
-
-/* =================================================UCAPAN / GUESTBOOK================================================= */
-
-/* --- CLOSING SECTION STYLING --- */
-.section-closing {
-    background: linear-gradient(to bottom, var(--bg-dark), #000000) !important;
-    padding-bottom: 80px !important; /* Memberi ruang agar tidak mepet dengan navbar bawah */
-}
-
-.closing-text {
-    font-size: 0.95rem !important;
-    color: var(--text-main);
-    line-height: 1.8;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.closing-salam {
-    font-size: 1.8rem !important;
-    color: var(--primary-gold) !important;
-}
-
-.closing-hamdalah {
-    font-size: 2.5rem !important;
-    color: var(--primary-gold);
-    margin-top: 20px;
-}
-
-/* Ornamen Pengganti HR */
-.closing-ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ornament-line {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--primary-gold), transparent);
-}
-
-.text-gold {
-    color: var(--primary-gold) !important;
-}
-
-/* Memastikan tidak ada gap putih di paling bawah */
-.no-gap-bottom {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-
-/* =================================================UCAPAN / GUESTBOOK================================================= */
