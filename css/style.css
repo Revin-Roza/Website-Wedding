@@ -610,7 +610,7 @@ body {
 /*Transisi Background hitam ke cokelat */
 .micro-gradient {
   width: 100%;
-  height: 20px; /* Tinggi minimalis agar jarak tetap dekat */
+  height: 30px; /* Tinggi minimalis agar jarak tetap dekat */
   background: linear-gradient(
     to bottom, 
     #000000, 
