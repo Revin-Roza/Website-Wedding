@@ -354,9 +354,131 @@ svg.color-theme-svg path {
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
 
+/* --- COUNTDOWN STYLING --- */
+.countdown-wrapper {
+    background: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 20px 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.countdown-item p {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-gold) !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+}
+
+.countdown-item small {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+/* --- AGENDA STYLING --- */
+.agenda-section {
+    background-color: #0c0c0c !important; /* Latar gelap pekat */
+}
+
+.agenda-card {
+    background: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    padding: 35px 25px !important;
+    border-radius: 25px !important;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.agenda-card:hover {
+    border-color: var(--primary-gold) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.agenda-header {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-gold);
+    margin-bottom: 10px;
+}
+
+.agenda-detail .date, .agenda-detail .time {
+    color: #fff !important;
+    font-weight: 600;
+    margin-bottom: 5px !important;
+}
+
+.agenda-detail .address {
+    font-size: 0.85rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 15px !important;
+}
+
+.divider {
+    width: 50px;
+    height: 2px;
+    background: var(--primary-gold);
+    margin: 20px auto;
+}
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
 
+/* --- GALLERY STYLING --- */
+.gallery-wrapper {
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 30px;
+}
+
+.border-gold-thin {
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.img-gallery {
+    cursor: pointer;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    object-fit: cover;
+    height: 250px; /* Atur tinggi agar seragam di HP */
+}
+
+@media (min-width: 768px) {
+    .img-gallery { height: 450px; } /* Lebih tinggi di Desktop */
+}
+
+.img-gallery:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Kustomisasi Indikator (Garis bawah carousel) */
+.custom-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: var(--primary-gold) !important;
+    opacity: 0.3;
+}
+
+.custom-indicators button.active {
+    opacity: 1;
+    width: 25px !important; /* Memanjang saat aktif */
+    border-radius: 10px !important;
+}
+
+/* Tombol Navigasi */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    background-size: 50%;
+    padding: 20px;
+}
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
 
