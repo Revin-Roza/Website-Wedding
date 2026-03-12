@@ -500,43 +500,6 @@ body {
   padding-top: 30px; 
 }
 
-/* Pembatas CSS Glassmorphin countdown agenda */
-/* Efek Kaca untuk Section Agenda */
-.glass-divider-agenda {
-  /* Menggunakan warna #0c0c0c dengan transparansi 85% */
-  background: rgba(12, 12, 12, 0.85) !important;
-  
-  /* Efek Blur Kaca */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  
-  /* Menarik section agenda ke atas menutupi countdown */
-  margin-top: -80px; 
-  
-  /* Membuat lengkungan di atas agar seperti lembaran kaca */
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  
-  /* Kilauan garis di tepi kaca */
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  
-  padding-top: 60px;
-  padding-bottom: 80px;
-  position: relative;
-  z-index: 10;
-  
-  /* Bayangan halus untuk efek kedalaman */
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* Memastikan elemen di dalam section countdown tidak tertutup sepenuhnya */
-#section-countdown {
-  position: relative;
-  overflow: hidden;
-}
-
 
 /* Pembatas CSS Glassmorphin countdown agenda */
 .glass-spacer-custom {
