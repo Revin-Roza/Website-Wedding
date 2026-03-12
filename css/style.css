@@ -502,27 +502,32 @@ body {
 
 
 /* Pembatas CSS Glassmorphin countdown agenda */
-/* Container Gelombang */
-.wave-transition-only {
+/* Elemen transisi mandiri */
+.transition-linear-clean {
     width: 100%;
-    line-height: 0;
-    margin-top: -1px; /* Mencegah celah kecil di atas */
-    background-color: #000000; /* Mengunci warna dasar bawah */
-    overflow: hidden;
+    /* Tinggi 80px memberikan gradasi yang smooth di layar HP */
+    height: 80px; 
+    
+    /* Gradasi murni tanpa efek glassmorphism */
+    background: linear-gradient(
+        to bottom, 
+        #191e25 0%, 
+        #000000 100%
+    ) !important;
+
+    /* Menghilangkan celah garis putih antar section */
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: none;
+    padding: 0;
 }
 
-.wave-transition-only svg {
-    display: block;
-    width: calc(100% + 1.3px); /* Sedikit lebih lebar untuk mencegah gap di pinggir HP */
-    height: 65px; /* Tinggi gelombang yang proporsional di smartphone */
-    transform: rotate(0deg);
-}
-
-/* Memastikan section bawah rapat */
+/* Memastikan section Wedding Date tidak memiliki margin bawaan */
 #wedding-date {
-    margin-top: -1px !important;
-    border: none !important;
+    margin-top: 0 !important;
+    padding-top: 10px; /* Jarak teks dari gradasi */
 }
+
 
 
 /*Transisi Background hitam ke cokelat */
