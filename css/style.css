@@ -340,4 +340,72 @@ body {
 }
 
 
+/* Lokasi nikah */
+.agenda-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #f2e8d5;
+  transition: transform 0.3s;
+}
+
+.agenda-card:hover {
+  transform: translateY(-5px);
+}
+
+.agenda-header {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c5a059;
+  margin-bottom: 10px;
+}
+
+.agenda-type {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.divider {
+  width: 50px;
+  margin: 15px auto;
+  border-top: 2px solid #c5a059;
+}
+
+.agenda-detail .date {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2c2c2c;
+  margin-bottom: 5px;
+}
+
+.agenda-detail .location {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.btn-maps {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: #c5a059;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.btn-maps:hover {
+  background: #a38445;
+  color: white;
+}
+
+/* Memberikan sedikit perbedaan warna pada kartu kedua */
+.accent-card {
+  background-color: #fdfbf8;
+}
 
