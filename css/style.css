@@ -1,3 +1,11 @@
+:root {
+  --bg-dark: #121212;        /* Latar belakang utama */
+  --bg-card: #1E1E1E;        /* Latar belakang kotak/card */
+  --primary-gold: #D4AF37;   /* Warna emas untuk nama/icon */
+  --text-main: #E0E0E0;      /* Putih lembut untuk isi teks */
+  --text-muted: #A0A0A0;     /* Abu-abu untuk teks pendukung */
+  --accent: #2C2C2C;         /* Untuk garis pembatas halus */
+}
 
 /* =========================
 Wedding Gift Section
