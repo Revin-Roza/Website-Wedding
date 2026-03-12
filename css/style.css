@@ -539,37 +539,35 @@ body {
 
 
 /* Pembatas CSS Glassmorphin countdown agenda */
-#glass-separator-story-moment {
+.glass-spacer-custom {
   width: 100%;
-  height: 40px; /* Tinggi rendah agar tidak terlalu memakan tempat */
+  height: 50px; /* Tinggi lengkungan kaca */
   
-  /* Warna Dasar Moment Bahagia (#000000) dengan transparansi */
-  background: rgba(0, 0, 0, 0.7) !important;
+  /* Background hitam transparan agar efek blur terlihat */
+  background: rgba(0, 0, 0, 0.6) !important;
   
-  /* Efek Glassmorphism */
+  /* Efek Glassmorphism (Blur Background) */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   
-  /* Menarik elemen naik agar menimpa section Story (#191f26) */
-  margin-top: -40px; 
+  /* JARAK: Memberi ruang dengan konten di atasnya */
+  margin-top: 40px; 
+  
+  /* MEMBUAT EFEK TUMPUK: Menarik elemen sedikit ke atas background section bawah */
   position: relative;
-  z-index: 5;
+  z-index: 10;
   
-  /* Lengkungan halus */
-  border-top-left-radius: 35px;
-  border-top-right-radius: 35px;
+  /* Bentuk Lengkungan */
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
   
-  /* Kilau garis tepi tipis */
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  /* Garis Kilau: Kunci agar kaca terlihat di background hitam */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   
-  /* Menghilangkan celah bawah */
-  margin-bottom: 0;
+  /* Menghilangkan celah ke section bawah */
+  margin-bottom: -1px;
 }
 
-/* Pastikan section bawah (Moment) menempel rapat */
-#moment-bahagia { /* Ganti dengan ID section bawah Anda jika berbeda */
-  background-color: #000000 !important;
-  margin-top: 0 !important;
-  border: none !important;
-}
 
