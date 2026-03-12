@@ -502,109 +502,67 @@ body {
 
 
 /* Pembatas CSS Glassmorphin countdown agenda */
-/* container transisi */
-.premium-divider{
+/* Warna dasar agar menyatu dengan tema gelap */
+#wedding-date {
+    background-color: #0c0c0c !important;
+    color: white;
     position: relative;
-    height: 160px;
+    z-index: 2;
+}
+
+/* --- PEMBATAS ATAS --- */
+.glass-separator-top {
     width: 100%;
-    overflow: hidden;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background: linear-gradient(
-        to bottom,
-        #191e26 0%,
-        #131720 45%,
-        #07090c 75%,
-        #000000 100%
-    );
-}
-
-
-/* glass utama */
-.premium-glass{
+    height: 40px; /* Tinggi disesuaikan untuk HP */
+    background: rgba(12, 12, 12, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Lengkungan menyesuaikan lebar HP */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: -40px; /* Menarik naik tepat setinggi elemennya */
     position: relative;
-
-    width: 92%;
-    height: 90px;
-
-    border-radius: 100px;
-
-    background: rgba(255,255,255,0.05);
-
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
-    border: 1px solid rgba(255,255,255,0.14);
-
-    box-shadow:
-        0 30px 90px rgba(0,0,0,0.8),
-        inset 0 1px 0 rgba(255,255,255,0.35);
-
-    overflow:hidden;
+    z-index: 3;
 }
 
-
-/* aurora highlight */
-.premium-glass::before{
-    content:"";
-    position:absolute;
-
-    top:-40px;
-    left:-20%;
-
-    width:140%;
-    height:120px;
-
-    background: radial-gradient(
-        ellipse at center,
-        rgba(255,255,255,0.35),
-        transparent 70%
-    );
-
-    filter: blur(40px);
-    opacity:0.45;
+/* --- PEMBATAS BAWAH --- */
+.glass-separator-bottom {
+    width: 100%;
+    height: 40px;
+    background: rgba(12, 12, 12, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: -20px; /* Menarik section bawah naik sedikit agar rapat */
+    position: relative;
+    z-index: 3;
 }
 
-
-/* glow ambient */
-.premium-divider::before{
-    content:"";
-    position:absolute;
-
-    top:30px;
-    width:80%;
-    height:120px;
-
-    background: radial-gradient(
-        ellipse at center,
-        rgba(255,255,255,0.08),
-        transparent 70%
-    );
-
-    filter: blur(50px);
+/* Efek Kaca pada Box Timer agar lebih mewah di HP */
+.glass-timer-box {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    max-width: 90%; /* Agar tidak menyentuh pinggir layar HP */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-/* fade ke section bawah */
-.premium-divider::after{
-    content:"";
-    position:absolute;
-
-    bottom:-30px;
-    width:100%;
-    height:120px;
-
-    background: radial-gradient(
-        ellipse at center,
-        rgba(255,255,255,0.06),
-        transparent 70%
-    );
-
-    filter: blur(60px);
+/* Penyesuaian ukuran font untuk layar sangat kecil */
+@media (max-width: 380px) {
+    .glass-timer-box small {
+        font-size: 0.65rem;
+        margin-left: 2px !important;
+    </div>
 }
+
 
 
 /*Transisi Background hitam ke cokelat */
