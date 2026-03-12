@@ -428,3 +428,16 @@ body {
   box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
 }
 
+.spacer-wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background-color: #ffffff; /* Warna asal sebelum masuk ke section hitam */
+}
+.spacer-wave svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+
