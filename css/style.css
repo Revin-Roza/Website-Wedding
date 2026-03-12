@@ -435,33 +435,31 @@ body {
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  /* Background container harus sama dengan warna section ATAS (#1a2026) */
-  background-color: #1a2026; 
+  /* Background sekarang menggunakan warna BAWAH (#f4f4f4) */
+  background-color: #f4f4f4; 
   margin: 0;
   padding: 0;
 }
 
-/* Mengatur ukuran SVG */
 #divider-kado-rsvp svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 60px; /* Anda bisa sesuaikan tinggi gelombangnya di sini */
+  height: 60px; /* Tinggi gelombang */
+  /* Memastikan menempel ke atas agar tidak ada garis tipis */
+  transform: translateY(-1px); 
 }
 
-/* Memastikan Section Atas tidak punya margin bawah */
-#gift-section { /* Ganti dengan ID section kado Anda */
+/* Penyesuaian Section agar Rapat */
+#gift-section { 
   background-color: #1a2026;
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* Memastikan Section Bawah tidak punya margin atas */
-#rsvp-section { /* Ganti dengan ID section RSVP Anda */
+#rsvp-section { 
   background-color: #f4f4f4;
   margin-top: 0 !important;
-  padding-top: 40px; /* Beri jarak konten dari gelombang */
+  /* Beri padding top agar konten RSVP tidak terlalu mepet gelombang */
+  padding-top: 20px; 
 }
-
-
-
