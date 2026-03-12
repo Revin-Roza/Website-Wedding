@@ -227,90 +227,88 @@
                 </div>
 
                 <!-- Firman Allah Subhanahu Wa Ta'ala -->
-                <section class="bg-light-dark pt-2 pb-4">
-                    <div class="container text-center">
-                        <h2 class="font-esthetic pt-2 pb-1 m-0" style="font-size: 2rem;">Allah Subhanahu Wa Ta'ala berfirman</h2>
+              <section class="section-quote pt-5 pb-5" id="quote">
+    <div class="container text-center">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <h2 class="font-esthetic mb-4">Allah Subhanahu Wa Ta'ala berfirman</h2>
+        </div>
 
-                        <div class="bg-theme-auto mt-4 p-3 shadow rounded-4" data-aos="fade-down" data-aos-duration="2000">
-                            <p class="p-1 mb-2" style="font-size: 0.95rem;">Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah).</p>
-                            <p class="m-0 p-0 text-theme-auto" style="font-size: 0.95rem;">QS. Adh-Dhariyat: 49</p>
-                        </div>
+        <div class="quote-container p-4 shadow-lg" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="quote-item mb-4">
+                <p class="quote-text">"Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)."</p>
+                <p class="quote-source">— QS. Adh-Dhariyat: 49</p>
+            </div>
+            
+            <hr class="quote-divider">
 
-                        <div class="bg-theme-auto mt-4 p-3 shadow rounded-4" data-aos="fade-down" data-aos-duration="2000">
-                            <p class="p-1 mb-2" style="font-size: 0.95rem;">dan sesungguhnya Dialah yang menciptakan pasangan laki-laki dan perempuan,</p>
-                            <p class="m-0 p-0 text-theme-auto" style="font-size: 0.95rem;">QS. An-Najm: 45</p>
-                        </div>
-                    </div>
-                </section>
+            <div class="quote-item mt-4">
+                <p class="quote-text">"Dan sesungguhnya Dialah yang menciptakan pasangan laki-laki dan perempuan."</p>
+                <p class="quote-source">— QS. An-Najm: 45</p>
+            </div>
+        </div>
+    </div>
+</section>
 
                 <!-- Love Story -->
-                <section class="bg-light-dark pt-2 pb-4">
-                    <div class="container">
-                        <div class="bg-theme-auto rounded-5 shadow p-3">
-                            <h2 class="font-esthetic text-center py-2 mb-2" style="font-size: 2.125rem;">Kisah Cinta</h2>
+                <section class="section-story py-5" id="story">
+    <div class="container">
+        <div class="story-wrapper shadow-lg p-4 p-md-5" data-aos="fade-up">
+            <h2 class="font-esthetic text-center mb-4">Kisah Cinta</h2>
 
-                            <!-- Jika tidak ingin menggunakan video, hapus seluruh tag dengan id="video-love-story" di bawah ini. -->
-                            <!-- If you don't want to use the video, remove the entire tag with id="video-love-story" below. -->
+            <div id="video-love-stroy" class="video-container mb-4" 
+                 data-src="./assets/video/video_rr.mp4" 
+                 data-vid-class="w-100 rounded-4">
+                <div class="video-loading-overlay" id="video-love-stroy-loading">
+                    <div class="progress custom-progress">
+                        <div class="progress-bar bg-gold" id="progress-bar-video-love-stroy" style="width: 0%;"></div>
+                    </div>
+                    <small class="mt-2 progress-text" id="progress-info-video-love-stroy"></small>
+                </div>
+            </div>
 
-                            <div id="video-love-stroy" class="position-relative rounded-4 mb-2 pb-0" data-src="./assets/video/video_rr.mp4" data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0">
-                                <div class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto rounded-4 z-3" id="video-love-stroy-loading">
-                                    <div class="progress w-25" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
-                                        <div class="progress-bar" id="progress-bar-video-love-stroy" style="width: 0%;"></div>
-                                    </div>
-                                    <small class="mt-1 text-theme-auto bg-theme-auto py-0 px-2 rounded-4" id="progress-info-video-love-stroy" style="font-size: 0.7rem;"></small>
-                                </div>
-                            </div>
+            <div class="position-relative">
+                <div class="story-overlay-btn" id="story-btn-container">
+                    <button class="btn-custom btn-sm" onclick="undangan.guest.showStory(this.parentNode)">
+                        <i class="fa-solid fa-heart fa-bounce me-2"></i>Lihat Story
+                    </button>
+                </div>
 
-                            <div class="position-relative">
-                                <div class="position-absolute d-flex justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto z-3" style="opacity: 100%; background-color: unset;">
-                                    <button class="btn btn-outline-auto btn-sm rounded-4 shadow-sm" onclick="undangan.guest.showStory(this.parentNode)"><i class="fa-solid fa-heart fa-bounce me-2"></i>Lihat Story</button>
-                                </div>
-
-                                <div class="overflow-y-scroll overflow-x-hidden p-2 with-scrollbar" style="height: 15rem;">
-                                    <div class="row">
-                                        <div class="col-auto position-relative">
-                                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1" style="width: 2rem; height: 2rem;">1</p>
-                                            <hr class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
-                                        </div>
-                                        <div class="col mt-1 mb-3 ps-0">
-                                            <p class="fw-bold mb-2">Awal Pertemuan</p>
-                                            <p class="small mb-0">
-                                                Pertemuan kami bermula saat menjadi teman di satu sekolah yang sama, di bangku SMA. Kedekatan itu tumbuh seiring waktu, terlebih saat kami berada dalam satu lingkaran pertemanan yang sama, yaitu “Our”.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-auto position-relative">
-                                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1" style="width: 2rem; height: 2rem;">2</p>
-                                            <hr class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
-                                        </div>
-                                        <div class="col mt-1 mb-3 ps-0">
-                                            <p class="fw-bold mb-2">Benih Cinta</p>
-                                            <p class="small mb-0">
-                                                Seiring berjalannya waktu dan seringnya kebersamaan, tumbuhlah perasaan di antara kami. Sebuah perasaan yang kemudian kami yakini bersama pada tanggal 20 Maret 2019, sebagai awal perjalanan kisah kami.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-auto position-relative">
-                                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1" style="width: 2rem; height: 2rem;">3</p>
-                                            <hr class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
-                                        </div>
-                                        <div class="col mt-1 mb-3 ps-0">
-                                            <p class="fw-bold mb-2">Langkah Menuju Ridha Allah</p>
-                                            <p class="small mb-0">
-                                            Perjalanan menuju tahap ini tentu tidak selalu mudah. Namun dengan niat baik dan restu keluarga, pada tanggal 26 Agustus 2025 Revin bersama kedua orang tuanya datang bertemu keluarga Roza untuk menyampaikan niat melanjutkan hubungan ke jenjang yang lebih serius.
-                                            Kemudian pada 02 Januari 2026, keluarga Revin kembali datang untuk membicarakan rencana hari bahagia kami. <br><br>
-                                            
-                                            Dengan memohon ridha Allah SWT, kami memilih 04 April 2026 sebagai hari yang insyaAllah akan menjadi awal perjalanan baru bagi kami berdua dalam ikatan suci pernikahan.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="story-scroll-box with-scrollbar px-2" style="height: 18rem;">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-content">
+                            <h5 class="story-title">Awal Pertemuan</h5>
+                            <p class="story-desc">Pertemuan kami bermula saat menjadi teman di satu sekolah yang sama, di bangku SMA. Kedekatan itu tumbuh seiring waktu, terlebih saat kami berada dalam satu lingkaran pertemanan yang sama, yaitu “Our”.</p>
                         </div>
                     </div>
-                </section>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-content">
+                            <h5 class="story-title">Benih Cinta</h5>
+                            <p class="story-desc">Seiring berjalannya waktu dan seringnya kebersamaan, tumbuhlah perasaan di antara kami. Sebuah perasaan yang kemudian kami yakini bersama pada tanggal 20 Maret 2019, sebagai awal perjalanan kisah kami.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item last">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-content">
+                            <h5 class="story-title">Langkah Menuju Ridha Allah</h5>
+                            <p class="story-desc">
+                                Perjalanan menuju tahap ini tentu tidak selalu mudah. Namun dengan niat baik dan restu keluarga, pada tanggal 26 Agustus 2025 Revin bersama kedua orang tuanya datang bertemu keluarga Roza untuk menyampaikan niat melanjutkan hubungan ke jenjang yang lebih serius.
+                                Kemudian pada 02 Januari 2026, keluarga Revin kembali datang untuk membicarakan rencana hari bahagia kami.
+                                <br><br>
+                                Dengan memohon ridha Allah SWT, kami memilih 04 April 2026 sebagai hari yang insyaAllah akan menjadi awal perjalanan baru bagi kami berdua dalam ikatan suci pernikahan.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
          
          <!-- Premium Glass Divider -->
