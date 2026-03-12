@@ -432,7 +432,7 @@ body {
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  background-color: #ffffff; /* Warna asal sebelum masuk ke section hitam */
+  background-color: #121921; /* Warna asal sebelum masuk ke section hitam */
 }
 .spacer-wave svg {
   display: block;
