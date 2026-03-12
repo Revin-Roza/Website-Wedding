@@ -642,6 +642,53 @@ svg.color-theme-svg path {
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
 
+/* --- CLOSING SECTION STYLING --- */
+.section-closing {
+    background: linear-gradient(to bottom, var(--bg-dark), #000000) !important;
+    padding-bottom: 80px !important; /* Memberi ruang agar tidak mepet dengan navbar bawah */
+}
+
+.closing-text {
+    font-size: 0.95rem !important;
+    color: var(--text-main);
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.closing-salam {
+    font-size: 1.8rem !important;
+    color: var(--primary-gold) !important;
+}
+
+.closing-hamdalah {
+    font-size: 2.5rem !important;
+    color: var(--primary-gold);
+    margin-top: 20px;
+}
+
+/* Ornamen Pengganti HR */
+.closing-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ornament-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-gold), transparent);
+}
+
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+/* Memastikan tidak ada gap putih di paling bawah */
+.no-gap-bottom {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
 
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
