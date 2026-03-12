@@ -474,247 +474,128 @@
 
 
 <!-- Love Gift -->
-<section class="bg-light-dark pb-4">
-
-<div class="container text-center">
-
-<h2 class="font-esthetic pt-3 mb-3" style="font-size:2rem;">
-Wedding Gift
-</h2>
-
-<p style="font-size:0.9rem; max-width:420px; margin:auto;">
-Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
-Namun jika memberi adalah ungkapan tanda kasih,
-Anda dapat mengirimkan hadiah melalui fitur berikut.
-</p>
-
-<!-- ===================== -->
-<!-- Transfer Bank -->
-<!-- ===================== -->
-
-<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start">
-
-<i class="fa-solid fa-money-bill-transfer me-1"></i>
-<b>Transfer Bank</b>
-
-<div class="d-flex justify-content-between align-items-center mt-2">
-
-<p class="m-0" style="font-size:0.85rem;">
-Kirim tanda kasih melalui rekening berikut.
-</p>
-
-<button
-class="btn btn-outline-auto btn-sm rounded-4 py-0"
-data-bs-toggle="collapse"
-data-bs-target="#rekening">
-
-<i class="fa-solid fa-eye me-1"></i>
-Lihat Rekening
-
-</button>
-
-</div>
-
-<div class="collapse mt-3" id="rekening">
-
-<div class="row g-3">
-
-<!-- Mandiri -->
-<div class="col-12">
-<div class="gift-card">
-
-<div class="gift-bank">Bank Mandiri</div>
-
-<div class="gift-number">
-1720002687426
-</div>
-
-<div class="gift-name">
-REVIN NAZIF AL FAYED
-</div>
-
-<button
-class="gift-copy"
-onclick="copyText('1720002687426')">
-
-<i class="fa-regular fa-copy me-1"></i>
-Salin Rekening
-
-</button>
-
-</div>
-</div>
-
-<!-- BRI -->
-<div class="col-12">
-<div class="gift-card">
-
-<div class="gift-bank">Bank BRI</div>
-
-<div class="gift-number">
-542401023094538
-</div>
-
-<div class="gift-name">
-ROZA MISALIA
-</div>
-
-<button
-class="gift-copy"
-onclick="copyText('542401023094538')">
-
-<i class="fa-regular fa-copy me-1"></i>
-Salin Rekening
-
-</button>
-
-</div>
-</div>
-
-<!-- BRK -->
-<div class="col-12">
-<div class="gift-card">
-
-<div class="gift-bank">Bank BRK</div>
-
-<div class="gift-number">
-1243100742
-</div>
-
-<div class="gift-name">
-ROZA MISALIA
-</div>
-
-<button
-class="gift-copy"
-onclick="copyText('1243100742')">
-
-<i class="fa-regular fa-copy me-1"></i>
-Salin Rekening
-
-</button>
-
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ===================== -->
-<!-- QRIS -->
-<!-- ===================== -->
-
-<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start">
-
-<i class="fa-solid fa-qrcode me-1"></i>
-<b>QRIS</b>
-
-<div class="d-flex justify-content-between align-items-center mt-2">
-
-<p class="m-0" style="font-size:0.85rem;">
-Scan QRIS untuk memberikan hadiah.
-</p>
-
-<button
-class="btn btn-outline-auto btn-sm rounded-4 py-0"
-data-bs-toggle="collapse"
-data-bs-target="#qris">
-
-<i class="fa-solid fa-eye me-1"></i>
-Lihat QRIS
-
-</button>
-
-</div>
-
-<div class="collapse text-center mt-3" id="qris">
-
-<img
-src="./assets/images/donate.png"
-class="img-fluid rounded-3 bg-white p-2"
-style="max-width:200px;">
-
-</div>
-
-</div>
-
-
-<!-- ===================== -->
-<!-- Gift -->
-<!-- ===================== -->
-
-<div class="bg-theme-auto rounded-4 shadow p-3 mx-3 mt-4 text-start">
-
-<i class="fa-solid fa-gift me-1"></i>
-<b>Kirim Kado</b>
-
-<div class="d-flex justify-content-between align-items-center mt-2">
-
-<p class="m-0" style="font-size:0.85rem;">
-Informasi pengiriman kado.
-</p>
-
-<button
-class="btn btn-outline-auto btn-sm rounded-4 py-0"
-data-bs-toggle="collapse"
-data-bs-target="#detailGift">
-
-<i class="fa-solid fa-eye me-1"></i>
-Lihat Detail
-
-</button>
-
-</div>
-
-<div class="collapse mt-3" id="detailGift">
-
-<div class="d-flex justify-content-between align-items-center mb-2">
-
-<p class="m-0" style="font-size:0.85rem;">
-<i class="fa-solid fa-phone me-1"></i>
-0812345678
-</p>
-
-<button
-class="btn btn-outline-auto btn-sm rounded-4 py-0"
-data-copy="0812345678"
-onclick="undangan.util.copy(this)">
-
-<i class="fa-solid fa-copy"></i>
-
-</button>
-
-</div>
-
-
-<div class="d-flex justify-content-between align-items-center">
-
-<p class="m-0 text-truncate me-2" style="font-size:0.85rem;">
-<i class="fa-solid fa-location-dot me-1"></i>
-Kota Sejalur, Riau 28761
-</p>
-
-<button
-class="btn btn-outline-auto btn-sm rounded-4 py-0"
-data-copy="Kota Sejalur, Riau 28761"
-onclick="undangan.util.copy(this)">
-
-<i class="fa-solid fa-copy"></i>
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="py-5" id="love-gift">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="font-esthetic mb-3">Wedding Gift</h2>
+            <p class="subtitle-gift">
+                Doa restu Anda merupakan karunia yang sangat berarti bagi kami. 
+                Namun jika memberi adalah ungkapan tanda kasih, Anda dapat mengirimkan hadiah melalui fitur berikut.
+            </p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                
+                <div class="gift-container mb-4" data-aos="fade-up">
+                    <div class="gift-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fa-solid fa-money-bill-transfer text-gold me-2"></i>
+                            <span class="fw-bold">Transfer Bank</span>
+                        </div>
+                        <button class="btn-toggle-gift" data-bs-toggle="collapse" data-bs-target="#rekening">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="collapse show" id="rekening">
+                        <div class="p-3">
+                            <div class="bank-card mb-3">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <div class="bank-name">Bank Mandiri</div>
+                                        <div class="bank-number" id="num-mandiri">1720002687426</div>
+                                        <div class="bank-owner">REVIN NAZIF AL FAYED</div>
+                                    </div>
+                                    <button class="btn-copy-gift" onclick="copyText('1720002687426')">
+                                        <i class="fa-regular fa-copy"></i> Salin
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="bank-card mb-3">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <div class="bank-name">Bank BRI</div>
+                                        <div class="bank-number" id="num-bri">542401023094538</div>
+                                        <div class="bank-owner">ROZA MISALIA</div>
+                                    </div>
+                                    <button class="btn-copy-gift" onclick="copyText('542401023094538')">
+                                        <i class="fa-regular fa-copy"></i> Salin
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="bank-card">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <div class="bank-name">Bank BRK Syariah</div>
+                                        <div class="bank-number" id="num-brk">1243100742</div>
+                                        <div class="bank-owner">ROZA MISALIA</div>
+                                    </div>
+                                    <button class="btn-copy-gift" onclick="copyText('1243100742')">
+                                        <i class="fa-regular fa-copy"></i> Salin
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-container mb-4" data-aos="fade-up">
+                    <div class="gift-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fa-solid fa-qrcode text-gold me-2"></i>
+                            <span class="fw-bold">QRIS</span>
+                        </div>
+                        <button class="btn-toggle-gift" data-bs-toggle="collapse" data-bs-target="#qris">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="collapse" id="qris">
+                        <div class="text-center p-4">
+                            <div class="qris-box">
+                                <img src="./assets/images/donate.png" class="img-fluid rounded-3 bg-white p-2" alt="QRIS">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift-container" data-aos="fade-up">
+                    <div class="gift-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fa-solid fa-gift text-gold me-2"></i>
+                            <span class="fw-bold">Kirim Kado</span>
+                        </div>
+                        <button class="btn-toggle-gift" data-bs-toggle="collapse" data-bs-target="#detailGift">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="collapse" id="detailGift">
+                        <div class="p-3">
+                            <div class="bank-card p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <small class="text-gold d-block">Nomor Telepon</small>
+                                        <span class="fw-bold text-white">0812345678</span>
+                                    </div>
+                                    <button class="btn-copy-gift" onclick="copyText('0812345678')"><i class="fa-solid fa-copy"></i></button>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="pe-3">
+                                        <small class="text-gold d-block">Alamat Pengiriman</small>
+                                        <span class="small text-white">Gg. Ali Akbar No. 171, Sungai Pakning, Kec. Bukit Batu, Bengkalis, Riau.</span>
+                                    </div>
+                                    <button class="btn-copy-gift" onclick="copyText('Gg. Ali Akbar No. 171, Sungai Pakning')"><i class="fa-solid fa-copy"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Pembatas gift kado -->
@@ -725,51 +606,56 @@ onclick="undangan.util.copy(this)">
 </div>
 
 <!-- RSVP / Konfirmasi Kehadiran -->
-<section id="rsvp" class="rsvp-section py-5">
-  <div class="container">
-    <div class="rsvp-content text-center">
-      <h2 class="font-esthetic rsvp-title">Konfirmasi Kehadiran</h2>
-      <p class="rsvp-subtitle">
-        Mohon kesediaan Anda untuk mengonfirmasi kehadiran serta memberikan doa terbaik bagi kami.
-      </p>
+<section id="rsvp" class="py-5">
+    <div class="container">
+        <div class="rsvp-wrapper p-4 p-md-5 shadow-lg" data-aos="fade-up">
+            <div class="text-center mb-4">
+                <h2 class="font-esthetic rsvp-title">Konfirmasi Kehadiran</h2>
+                <p class="rsvp-subtitle">Mohon kesediaan Anda untuk mengonfirmasi kehadiran serta memberikan doa terbaik bagi kami.</p>
+            </div>
 
-      <form id="rsvp-form" class="rsvp-form mx-auto">
-        <div class="rsvp-group">
-          <label for="nama" class="rsvp-label">Nama Anda</label>
-          <input type="text" class="form-control rsvp-input" id="nama" placeholder="Masukkan nama Anda" required>
+            <form id="rsvp-form" class="rsvp-form-container mx-auto">
+                <div class="mb-4">
+                    <label for="nama" class="form-label-custom">Nama Lengkap</label>
+                    <input type="text" class="form-control input-custom" id="nama" placeholder="Contoh: Budi Santoso" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="hadir" class="form-label-custom">Konfirmasi Kehadiran</label>
+                    <select class="form-select input-custom" id="hadir">
+                        <option value="Hadir" selected>Berkenan Hadir</option>
+                        <option value="Tidak Hadir">Maaf, Tidak Bisa Hadir</option>
+                        <option value="Masih Ragu">Masih Ragu / Diusahakan</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="ucapan" class="form-label-custom">Ucapan & Doa</label>
+                    <textarea class="form-control input-custom" id="ucapan" rows="4" placeholder="Tuliskan ucapan dan doa terbaik Anda..."></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn-custom w-100 py-3" type="submit">
+                        <i class="fa-solid fa-paper-plane me-2"></i>Kirim Konfirmasi
+                    </button>
+                </div>
+            </form>
         </div>
-
-        <div class="rsvp-group">
-          <label for="hadir" class="rsvp-label">Konfirmasi Kehadiran</label>
-          <select class="form-select rsvp-input" id="hadir">
-            <option value="Hadir">Hadir</option>
-            <option value="Tidak Hadir">Tidak Hadir</option>
-            <option value="Masih Ragu">Masih Ragu</option>
-          </select>
-        </div>
-
-        <div class="rsvp-group">
-          <label for="ucapan" class="rsvp-label">Ucapan & Doa</label>
-          <textarea class="form-control rsvp-input rsvp-textarea" id="ucapan" rows="4" placeholder="Tuliskan ucapan terbaik Anda"></textarea>
-        </div>
-
-        <button class="btn rsvp-button" type="submit">
-          Kirim Konfirmasi
-        </button>
-      </form>
     </div>
-  </div>
 </section>
 
-<section id="guestbook" class="py-5 guestbook-section">
-  <div class="container"> <h2 class="font-esthetic guestbook-title text-center">Ucapan & Doa</h2>
-    <p class="ucapan-subtitle text-center">Terima kasih atas doa dan ucapan yang diberikan</p>
-    
-    <div class="ucapan-box mt-4 mx-auto">
-      <div id="ucapan-container" class="ucapan-list">
+<section id="guestbook" class="py-5">
+    <div class="container">
+        <div class="text-center mb-4" data-aos="fade-up">
+            <h2 class="font-esthetic">Ucapan & Doa</h2>
+            <p class="text-muted small">Terima kasih atas doa yang Anda berikan</p>
+        </div>
+        
+        <div class="ucapan-container-wrapper mx-auto" data-aos="fade-up">
+            <div id="ucapan-container" class="ucapan-scroll-box with-scrollbar">
+                </div>
         </div>
     </div>
-  </div>
 </section>
 
                 <!-- Comment -->
