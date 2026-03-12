@@ -482,3 +482,166 @@ svg.color-theme-svg path {
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
 
+/* --- GIFT SECTION STYLING --- */
+.subtitle-gift {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.gift-container {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.gift-header {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-toggle-gift {
+    background: transparent;
+    border: none;
+    color: var(--primary-gold);
+    transition: 0.3s;
+}
+
+.bank-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.bank-name {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bank-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 2px 0;
+}
+
+.bank-owner {
+    font-size: 0.8rem;
+    color: var(--primary-gold);
+}
+
+.btn-copy-gift {
+    background: var(--primary-gold);
+    color: #121212;
+    border: none;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-copy-gift:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+.qris-box img {
+    max-width: 200px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+
+/* =================================================UCAPAN / GUESTBOOK================================================= */
+
+
+/* --- RSVP & GUESTBOOK STYLE --- */
+.rsvp-wrapper {
+    background: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-label-custom {
+    color: var(--primary-gold);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    text-align: left;
+}
+
+.input-custom {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 12px 15px !important;
+    transition: 0.3s;
+}
+
+.input-custom:focus {
+    border-color: var(--primary-gold) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Kotak Daftar Ucapan */
+.ucapan-container-wrapper {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px;
+}
+
+.ucapan-scroll-box {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.ucapan-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--primary-gold);
+}
+
+.avatar-initial {
+    width: 35px;
+    height: 35px;
+    background: var(--primary-gold);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.ucapan-text {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+/* =================================================UCAPAN / GUESTBOOK================================================= */
+
+
+
+/* =================================================UCAPAN / GUESTBOOK================================================= */
