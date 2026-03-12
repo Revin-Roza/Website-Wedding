@@ -428,17 +428,22 @@ body {
   box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
 }
 
-.wave-separator {
-  line-height: 0;
+
+
+.wave-divider {
   width: 100%;
-  background-color: #ffffff; /* Sesuai warna section bawah (Putih) */
+  overflow: hidden;
+  line-height: 0;
+  /* Warna background divider harus mengikuti section ATAS (Hitam) */
+  background-color: #0c0c0c; 
 }
 
-.wave-separator svg {
+.wave-divider svg {
+  position: relative;
   display: block;
-  width: 100%;
-  height: auto;
-  /* Menghilangkan celah mikro antar section */
-  margin-bottom: -1px; 
+  width: calc(100% + 1.3px);
+  height: 70px; /* Atur tinggi gelombang */
 }
+
+
 
