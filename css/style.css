@@ -1,152 +1,688 @@
-/* =================================================PERSIAPAN & VARIABEL (SATU PINTU)================================================= */
+
+
 :root {
-  /* Palet Utama Dark Mode */
-  --bg-dark: #121212;        
-  --bg-card: #1E1E1E;        
-  --primary-gold: #D4AF37;   /* Konsisten menggunakan Emas Luxury */
-  --text-main: #E0E0E0;      
-  --text-muted: #A0A0A0;     
-  --accent: #2C2C2C;         
-  --white: #ffffff;
-  --shadow: 0 10px 30px rgba(0,0,0,0.5);
+  --bg-dark: #121212;        /* Latar belakang utama */
+  --bg-card: #1E1E1E;        /* Latar belakang kotak/card */
+  --primary-gold: #D4AF37;   /* Warna emas untuk nama/icon */
+  --text-main: #E0E0E0;      /* Putih lembut untuk isi teks */
+  --text-muted: #A0A0A0;     /* Abu-abu untuk teks pendukung */
+  --accent: #2C2C2C;         /* Untuk garis pembatas halus */
 }
 
-/* 1. Global Reset */
-* {
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif !important; /* Memastikan semua font bersih */
-}
-
+/* =========================
+FONT
+========================= */
+/* 1. Aturan Global (Warna Dasar & Font Isi) */
 body {
-    background-color: var(--bg-dark) !important;
-    color: var(--text-main) !important;
+    background-color: #121212; /* Dark Mode Background */
+    color: #E0E0E0;            /* Soft White Text agar tidak sakit mata */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
 }
 
-/* 2. Tipografi Judul */
-h1, h2, h3, .font-esthetic, .nama-mempelai, .rsvp-title {
-    font-family: 'Playfair Display', serif !important;
-    color: var(--primary-gold) !important;
+/* 2. Judul Utama (Nama Mempelai & Heading) */
+h1, h2, h3, .nama-mempelai {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37; /* Warna Emas Mewah */
     letter-spacing: 1px;
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
-/* 3. Teks Pendukung */
-p, span, .text-muted, .rsvp-subtitle, .opening-text {
-    font-weight: 300 !important;
-    color: var(--text-muted) !important;
+/* 3. Teks Pendukung (Kutipan Ayat/Keterangan) */
+p, span, .text-muted {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; /* Tipis agar terlihat modern */
+    color: #A0A0A0;   /* Abu-abu lembut */
 }
 
-/* =================================================KOMPONEN UTAMA (DARK CARDS)================================================= */
-
-/* Card Utama & Gift Card */
-.bg-theme-auto, .gift-card, .agenda-card, .rsvp-form, .ucapan-box {
-    background-color: var(--bg-card) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 15px;
-    color: var(--text-main) !important;
-    transition: all .3s ease;
+/* 4. Aksen Tambahan (Contoh: "The Wedding of") */
+.sub-title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Jarak antar huruf lebar = Elegan */
+    font-size: 0.8rem;
+    color: #D4AF37;
 }
 
-.bg-theme-auto:hover, .agenda-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-gold) !important;
+/* =========================
+Wedding Gift Section
+========================= */
+
+.bg-light-dark{
+background: linear-gradient(180deg,#0f1720,#1a1f27);
+color:#e5e7eb;
 }
 
-/* Form RSVP & Input */
-.rsvp-section { padding: 60px 0; }
-.rsvp-form { max-width: 500px; margin: auto; padding: 30px; }
-.rsvp-label { color: var(--primary-gold); font-weight: 600; margin-bottom: 8px; display: block; }
-
-.form-control, .form-select, .rsvp-input {
-    background-color: #252525 !important;
-    border: 1px solid #444 !important;
-    color: var(--white) !important;
-    border-radius: 10px;
-    padding: 12px;
+/* Judul */
+.font-esthetic{
+font-family: "Playfair Display", serif;
+font-weight:500;
+letter-spacing:1px;
+color:#ffffff;
 }
 
-.form-control:focus, .rsvp-input:focus {
-    border-color: var(--primary-gold) !important;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
-    outline: none;
+/* Card utama */
+.bg-theme-auto{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+border:1px solid rgba(255,255,255,0.08);
+transition: all .3s ease;
 }
 
-/* =================================================TOMBOL (BUTTONS)================================================= */
-
-.btn-primary, .rsvp-button, .gift-copy {
-    background-color: var(--primary-gold) !important;
-    color: #121212 !important;
-    border: none !important;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+.bg-theme-auto:hover{
+transform: translateY(-3px);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-.btn-primary:hover, .rsvp-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
+/* Button */
+.btn-outline-auto{
+border:1px solid rgba(255,255,255,0.3);
+color:#fff;
+font-size:.8rem;
+padding:4px 12px;
+transition:all .25s ease;
 }
 
-.btn-outline-auto, .btn-maps-modern {
-    border: 1px solid var(--primary-gold) !important;
-    color: var(--primary-gold) !important;
-    background: transparent !important;
-    border-radius: 50px;
-    padding: 10px 20px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.btn-outline-auto:hover{
+background:#ffffff;
+color:#000;
+border-color:#fff;
 }
 
-.btn-outline-auto:hover, .btn-maps-modern:hover {
-    background: var(--primary-gold) !important;
-    color: #121212 !important;
+/* Gift Card (rekening) */
+
+.gift-card{
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.07);
+border-radius:14px;
+padding:14px;
+text-align:center;
+transition:all .3s ease;
 }
 
-/* =================================================DIVIDER & SEPARATOR================================================= */
-
-.transition-linear-clean {
-    width: 100%;
-    height: 80px; 
-    background: linear-gradient(to bottom, #191e25, #000000) !important;
-    margin: -1px 0;
+.gift-card:hover{
+background:rgba(255,255,255,0.06);
+transform:translateY(-2px);
 }
 
-.micro-gradient {
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(to bottom, #000000, #0c0c0c);
-    margin: -1px 0;
+/* Nama Bank */
+.gift-bank{
+font-size:.8rem;
+letter-spacing:1px;
+color:#9ca3af;
+margin-bottom:4px;
 }
 
-svg.color-theme-svg path {
-    fill: var(--bg-dark) !important;
+/* Nomor Rekening */
+.gift-number{
+font-size:1.05rem;
+font-weight:600;
+letter-spacing:1px;
+color:#ffffff;
+margin-bottom:4px;
 }
 
-/* =================================================UCAPAN / GUESTBOOK================================================= */
+/* Nama Pemilik */
+.gift-name{
+font-size:.8rem;
+color:#cbd5e1;
+margin-bottom:10px;
+}
 
+/* Copy Button */
+.gift-copy{
+border:none;
+background:#ffffff10;
+color:#fff;
+font-size:.75rem;
+padding:6px 12px;
+border-radius:20px;
+transition:all .25s ease;
+}
+
+.gift-copy:hover{
+background:#ffffff;
+color:#000;
+}
+
+/* QRIS Image */
+#qris img{
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Text */
+section p{
+color:#cbd5e1;
+line-height:1.6;
+}
+
+/* Collapse animation smooth */
+.collapse{
+transition: all .35s ease;
+}
+
+
+
+
+
+
+
+
+.copy-toast{
+position:fixed;
+bottom:25px;
+left:50%;
+transform:translateX(-50%) translateY(20px);
+background:rgba(0,0,0,0.85);
+color:#fff;
+padding:10px 18px;
+border-radius:30px;
+font-size:.85rem;
+opacity:0;
+transition:all .3s ease;
+z-index:9999;
+}
+
+.copy-toast.show{
+opacity:1;
+transform:translateX(-50%) translateY(0);
+}
+
+
+/* =========================
+RSVP 
+========================= */
+/* --- Background Utama Section --- */
+:root {
+  --primary-gold: #c5a059; /* Warna emas elegan */
+  --soft-bg: #fdfbf8;
+  --text-dark: #4a4a4a;
+  --white: #ffffff;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background-color: var(--soft-bg);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.font-esthetic {
+  font-family: 'Playfair Display', serif; /* Pastikan import font ini di HTML */
+  color: var(--primary-gold);
+}
+
+/* --- RSVP Section --- */
+.rsvp-section {
+  padding: 60px 0;
+}
+
+.rsvp-form {
+  max-width: 500px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.rsvp-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.rsvp-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--primary-gold);
+}
+
+.rsvp-input {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.rsvp-input:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 0.2rem rgba(197, 160, 89, 0.1);
+  outline: none;
+}
+
+.rsvp-button {
+  background-color: var(--primary-gold);
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.2s;
+}
+
+.rsvp-button:hover {
+  background-color: #b38f4d;
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Styling khusus untuk memperjelas subtitle */
+.rsvp-subtitle {
+  font-size: 1.05rem;          /* Ukuran pas, tidak kekecilan */
+  line-height: 1.6;            /* Jarak antar baris agar tidak sesak */
+  color: #555;                 /* Warna abu gelap yang lembut (kontras tinggi) */
+  margin-bottom: 35px;         /* Jarak ke formulir di bawahnya */
+  max-width: 600px;            /* Menjaga teks tidak terlalu lebar di layar PC */
+  margin-left: auto;           /* Tengah secara horizontal */
+  margin-right: auto;          /* Tengah secara horizontal */
+  font-weight: 400;            /* Ketebalan standar agar bersih */
+  letter-spacing: 0.3px;       /* Sedikit jarak antar huruf agar modern */
+}
+
+/* Tambahan untuk Judul (Title) agar serasi */
+.rsvp-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: var(--primary-gold);
+}
+
+
+
+/* --- Guestbook Section (Instagram Style) --- */
+.guestbook-section {
+  background-color: #fff;
+}
+
+.ucapan-box {
+  max-width: 600px;
+  background: #fafafa;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  height: 500px; /* Tinggi box scroll */
+  overflow-y: auto;
+  padding: 15px;
+}
+
+/* Desain Card ala Instagram */
+/* Pastikan parent memiliki posisi relative */
+/* Container kartu harus relatif */
 .ucapan-item {
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    background: rgba(255,255,255,0.03);
-    padding: 15px;
-    margin-bottom: 12px;
+  position: relative; 
+  padding: 15px;      /* Jarak isi dengan tepi box */
+  margin-bottom: 12px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
 }
 
-.nama-tamu { color: var(--primary-gold); font-weight: bold; }
-.status-kehadiran { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
-.pesan-tamu { color: var(--text-main); font-size: 0.9rem; margin-top: 5px; }
+/* CSS untuk memindah status ke pojok kanan atas */
+.status-label {
+  position: absolute;   /* Posisi bebas terhadap container */
+  top: 12px;           /* Jarak dari atas */
+  right: 12px;         /* Jarak dari kanan */
+  font-size: 0.7rem;    /* Ukuran kecil agar elegan */
+  color: #c5a059;       /* Warna senada tema emas */
+  font-weight: 600;
+  background-color: #f9f6f0; /* Background tipis agar terlihat seperti badge */
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* Merapikan nama tamu agar tidak tertutup status */
+.guest-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  display: block;
+  max-width: 70%; /* Agar nama panjang tidak menabrak label status */
+}
+
+.guest-message {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+
+.ucapan-box {
+  max-width: 450px; /* Diperkecil agar fokus ke tengah */
+  height: 400px;    /* Tinggi box dikurangi sedikit */
+  background: #fdfdfd;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.avatar-circle {
+  width: 30px;  /* Ukuran avatar diperkecil */
+  height: 30px;
+  font-size: 0.75rem;
+}
+
+.status-kehadiran {
+  font-size: 0.6rem; /* Badge status lebih mungil di pojok */
+  top: 8px;
+  right: 8px;
+  padding: 2px 6px;
+}
+
+.attendance-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #f0f0f0;
+  margin-left: 10px;
+  color: #666;
+}
 
 /* Custom Scrollbar */
-.ucapan-box::-webkit-scrollbar { width: 6px; }
-.ucapan-box::-webkit-scrollbar-thumb { background: var(--primary-gold); border-radius: 10px; }
+.ucapan-box::-webkit-scrollbar {
+  width: 6px;
+}
 
-/* =================================================LAIN-LAIN================================================= */
-.copy-toast {
-    position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
-    background: var(--primary-gold); color: #000;
-    padding: 10px 20px; border-radius: 30px; font-size: .85rem;
-    z-index: 9999; display: none;
+
+/* Lokasi nikah */
+/* Background Seksi Hitam */
+.agenda-section {
+  background-color: #0c0c0c; /* Hitam pekat modern */
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.opening-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #d1d1d1;
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.agenda-card {
+  background: #1a1a1a; /* Hitam sedikit lebih terang agar card terlihat */
+  border: 1px solid #333; /* Outline tipis */
+  border-radius: 20px;
+  padding: 40px 30px;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+.agenda-card:hover {
+  border-color: #c5a059; /* Berubah jadi emas saat hover */
+  transform: translateY(-10px);
+}
+
+.agenda-header {
+  color: #c5a059;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.agenda-type {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background: #c5a059;
+  margin: 20px auto;
+}
+
+.agenda-detail .date {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.agenda-detail .address {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+/* Tombol Google Maps Mewah */
+.btn-maps-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: transparent;
+  color: #c5a059;
+  border: 2px solid #c5a059;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  gap: 10px; /* Jarak antara ikon dan teks */
+}
+
+.btn-maps-modern:hover {
+  background: #c5a059;
+  color: #000;
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
+
+
+/* Pembatas kado rsvp */
+/* Mengatur container divider */
+#divider-kado-rsvp {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  /* Background sekarang menggunakan warna BAWAH (#f4f4f4) */
+  background-color: #f4f4f4; 
+  margin: 0;
+  padding: 0;
+}
+
+#divider-kado-rsvp svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px; /* Tinggi gelombang */
+  /* Memastikan menempel ke atas agar tidak ada garis tipis */
+  transform: translateY(-1px); 
+}
+
+/* Penyesuaian Section agar Rapat */
+#gift-section { 
+  background-color: #1a2026;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#rsvp-section { 
+  background-color: #f4f4f4;
+  margin-top: 0 !important;
+  /* Beri padding top agar konten RSVP tidak terlalu mepet gelombang */
+  padding-top: 20px; 
+}
+
+
+/* Pembatas gallery kado */
+/* Container Pembatas Gallery-Gift */
+#divider-gallery-gift {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  /* Background menggunakan warna BAWAH (#0e1720) */
+  background-color: #0e1720; 
+  margin: 0;
+  padding: 0;
+}
+
+#divider-gallery-gift svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px; /* Tinggi gelombang bisa Anda sesuaikan */
+  /* Tarik sedikit ke atas untuk memastikan tidak ada garis bocor */
+  margin-top: -1px;
+}
+
+/* Penyesuaian Section Gallery */
+#gallery { 
+  background-color: #000000 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Penyesuaian Section Love Gift */
+#love-gift { 
+  background-color: #0e1720 !important;
+  margin-top: 0 !important;
+  padding-top: 30px; 
+}
+
+
+/* Pembatas CSS Glassmorphin countdown agenda */
+/* Elemen transisi mandiri */
+.transition-linear-clean {
+    width: 100%;
+    /* Tinggi 80px memberikan gradasi yang smooth di layar HP */
+    height: 80px; 
+    
+    /* Gradasi murni tanpa efek glassmorphism */
+    background: linear-gradient(
+        to bottom, 
+        #191e25 0%, 
+        #000000 100%
+    ) !important;
+
+    /* Menghilangkan celah garis putih antar section */
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: none;
+    padding: 0;
+}
+
+/* Memastikan section Wedding Date tidak memiliki margin bawaan */
+#wedding-date {
+    margin-top: 0 !important;
+    padding-top: 10px; /* Jarak teks dari gradasi */
+}
+
+
+
+/*Transisi Background hitam ke cokelat */
+.micro-gradient {
+  width: 100%;
+  height: 30px; /* Tinggi minimalis agar jarak tetap dekat */
+  background: linear-gradient(
+    to bottom, 
+    #000000, 
+    #0c0c0c
+  );
+  /* Menghilangkan margin bawaan browser dan celah pixel */
+  margin: -1px 0; 
+  border: none;
+}
+
+/* Penyesuaian agar konten tetap simetris */
+#story, #moment {
+  margin: 0;
+  border: none;
+}
+
+/* --- DARK MODE MINIMALIS OVERRIDE --- */
+
+:root {
+    --gold-luxury: #D4AF37;
+    --dark-bg: #121212;
+    --dark-card: #1E1E1E;
+    --soft-white: #E0E0E0;
+    --muted-grey: #A0A0A0;
+}
+
+/* 1. Reset Font Global (Mata tidak sakit & Modern) */
+* {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* 2. Judul & Nama Mempelai (Elegan & Mewah) */
+h1, h2, h3, .font-esthetic, .nama-mempelai {
+    font-family: 'Playfair Display', serif !important;
+    color: var(--gold-luxury) !important;
+    font-weight: 700 !important;
+    text-transform: none !important; /* Biarkan huruf besar kecil alami */
+}
+
+/* 3. Pengaturan Latar Belakang Dark Mode */
+body, .bg-white-black, .bg-light-dark, section {
+    background-color: var(--dark-bg) !important;
+    color: var(--soft-white) !important;
+}
+
+/* 4. Kotak Informasi (Card) agar Terlihat Dimensi */
+.bg-theme-auto, .border.rounded-5, .agenda-card, .gift-card {
+    background-color: var(--dark-card) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important; /* Border emas tipis */
+    color: var(--soft-white) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
+
+/* 5. Perbaikan Teks Pendukung (Kutipan & Nama Orang Tua) */
+p, span, small, .parent-name, .rsvp-subtitle {
+    color: var(--muted-grey) !important;
+    font-weight: 300 !important;
+    line-height: 1.8 !important;
+}
+
+/* 6. Tombol Minimalis Modern */
+.btn, .rsvp-button, .btn-maps-modern {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    border-radius: 8px !important; /* Tidak terlalu bulat, tidak terlalu tajam */
+    transition: all 0.3s ease !important;
+}
+
+/* Tombol Utama (Warna Emas) */
+.btn-primary, .rsvp-button {
+    background-color: var(--gold-luxury) !important;
+    border: none !important;
+    color: #121212 !important;
+}
+
+/* Tombol Garis (Outline) */
+.btn-outline-auto, .btn-outline-light {
+    border: 1px solid var(--gold-luxury) !important;
+    color: var(--gold-luxury) !important;
+    background: transparent !important;
+}
+
+/* 7. Icon FontAwesome */
+.fa-solid, .fa-regular, .fas {
+    color: var(--gold-luxury) !important;
+}
+
+/* 8. Input Form (RSVP) agar Gelap */
+.form-control, .form-select {
+    background-color: #252525 !important;
+    border: 1px solid #444 !important;
+    color: white !important;
+}
+
+.form-control:focus {
+    border-color: var(--gold-luxury) !important;
+    box-shadow: none !important;
+}
+
+/* 9. Hilangkan Garis Gelombang Putih jika Mengganggu */
+svg.color-theme-svg path {
+    fill: var(--dark-bg) !important;
 }
