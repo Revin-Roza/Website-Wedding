@@ -537,3 +537,39 @@ body {
   overflow: hidden;
 }
 
+
+/* Pembatas CSS Glassmorphin countdown agenda */
+#glass-separator-story-moment {
+  width: 100%;
+  height: 40px; /* Tinggi rendah agar tidak terlalu memakan tempat */
+  
+  /* Warna Dasar Moment Bahagia (#000000) dengan transparansi */
+  background: rgba(0, 0, 0, 0.7) !important;
+  
+  /* Efek Glassmorphism */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  /* Menarik elemen naik agar menimpa section Story (#191f26) */
+  margin-top: -40px; 
+  position: relative;
+  z-index: 5;
+  
+  /* Lengkungan halus */
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  
+  /* Kilau garis tepi tipis */
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  
+  /* Menghilangkan celah bawah */
+  margin-bottom: 0;
+}
+
+/* Pastikan section bawah (Moment) menempel rapat */
+#moment-bahagia { /* Ganti dengan ID section bawah Anda jika berbeda */
+  background-color: #000000 !important;
+  margin-top: 0 !important;
+  border: none !important;
+}
+
