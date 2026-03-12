@@ -8,6 +8,43 @@
 }
 
 /* =========================
+FONT
+========================= */
+/* 1. Aturan Global (Warna Dasar & Font Isi) */
+body {
+    background-color: #121212; /* Dark Mode Background */
+    color: #E0E0E0;            /* Soft White Text agar tidak sakit mata */
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Judul Utama (Nama Mempelai & Heading) */
+h1, h2, h3, .nama-mempelai {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37; /* Warna Emas Mewah */
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* 3. Teks Pendukung (Kutipan Ayat/Keterangan) */
+p, span, .text-muted {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; /* Tipis agar terlihat modern */
+    color: #A0A0A0;   /* Abu-abu lembut */
+}
+
+/* 4. Aksen Tambahan (Contoh: "The Wedding of") */
+.sub-title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Jarak antar huruf lebar = Elegan */
+    font-size: 0.8rem;
+    color: #D4AF37;
+}
+
+/* =========================
 Wedding Gift Section
 ========================= */
 
