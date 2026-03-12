@@ -211,11 +211,146 @@ svg.color-theme-svg path {
 
 /* =================================================BRIDE================================================= */
 
+/* --- SECTION QUOTE --- */
+#quote {
+    background-color: var(--bg-dark) !important;
+}
 
+.quote-container {
+    background: rgba(255, 255, 255, 0.03) !important; /* Transparansi tipis */
+    border: 1px solid rgba(212, 175, 55, 0.2) !important; /* Border emas tipis */
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px); /* Efek kaca */
+}
+
+.quote-text {
+    font-size: 1rem !important;
+    color: var(--text-main) !important;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 10px !important;
+}
+
+.quote-source {
+    font-size: 0.85rem !important;
+    color: var(--primary-gold) !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.quote-divider {
+    border: 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    width: 50%;
+    margin: 0 auto;
+}
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
 
+/* --- LOVE STORY CUSTOM --- */
+.story-wrapper {
+    background-color: var(--bg-card) !important;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 30px;
+}
 
+/* Video Styling */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid var(--accent);
+    background: #000;
+}
+
+.video-loading-overlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 3;
+}
+
+.custom-progress {
+    width: 40%;
+    height: 6px !important;
+    background-color: #333 !important;
+}
+
+.bg-gold { background-color: var(--primary-gold) !important; }
+
+/* Timeline Styling */
+.story-scroll-box {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.timeline-item {
+    display: flex;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.timeline-dot {
+    width: 30px;
+    height: 30px;
+    background: var(--bg-card);
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+/* Garis Vertical Timeline */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 30px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary-gold), transparent);
+    z-index: 1;
+}
+
+.timeline-item.last::before {
+    display: none;
+}
+
+.timeline-content {
+    padding-left: 20px;
+}
+
+.story-title {
+    color: var(--primary-gold) !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.story-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.story-overlay-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
 
 /* =================================================UCAPAN / GUESTBOOK================================================= */
 
