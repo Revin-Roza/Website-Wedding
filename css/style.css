@@ -150,3 +150,78 @@ svg.color-theme-svg path {
     padding: 10px 20px; border-radius: 30px; font-size: .85rem;
     z-index: 9999; display: none;
 }
+
+
+/* =================================================BRIDE================================================= */
+
+/* Penyesuaian Section Bride */
+#bride {
+    background-color: var(--bg-dark) !important;
+}
+
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+.subtitle-bride {
+    font-size: 0.9rem !important;
+    max-width: 600px;
+    margin: 0 auto !important;
+    color: var(--text-muted) !important;
+}
+
+.img-mempelai {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-gold) !important;
+    padding: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.img-mempelai:hover {
+    transform: scale(1.05);
+}
+
+.nama-mempelai {
+    font-size: 2.2rem !important;
+    margin-top: 15px !important;
+}
+
+.role-text {
+    font-size: 1.1rem !important;
+    color: var(--primary-gold) !important;
+    font-weight: 400 !important;
+}
+
+.parent-info p {
+    font-size: 0.9rem !important;
+    color: var(--text-muted) !important;
+    letter-spacing: 0.5px;
+}
+
+.ampersand {
+    font-size: 4rem !important;
+    color: var(--primary-gold) !important;
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+/* =================================================BRIDE================================================= */
+
+
+
+/* =================================================UCAPAN / GUESTBOOK================================================= */
+
+
+
+/* =================================================UCAPAN / GUESTBOOK================================================= */
+
+
+/* =================================================UCAPAN / GUESTBOOK================================================= */
+
+
+/* =================================================UCAPAN / GUESTBOOK================================================= */
+
