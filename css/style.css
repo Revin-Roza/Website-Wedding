@@ -435,7 +435,7 @@ body {
   overflow: hidden;
   line-height: 0;
   /* Warna background divider harus mengikuti section ATAS (Hitam) */
-  background-color: #0c0c0c; 
+  background-color: ##2596be; 
 }
 
 .wave-divider svg {
