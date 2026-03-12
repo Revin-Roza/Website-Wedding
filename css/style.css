@@ -595,5 +595,94 @@ body {
   border: none;
 }
 
+/* --- DARK MODE MINIMALIS OVERRIDE --- */
+
+:root {
+    --gold-luxury: #D4AF37;
+    --dark-bg: #121212;
+    --dark-card: #1E1E1E;
+    --soft-white: #E0E0E0;
+    --muted-grey: #A0A0A0;
+}
+
+/* 1. Reset Font Global (Mata tidak sakit & Modern) */
+* {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* 2. Judul & Nama Mempelai (Elegan & Mewah) */
+h1, h2, h3, .font-esthetic, .nama-mempelai {
+    font-family: 'Playfair Display', serif !important;
+    color: var(--gold-luxury) !important;
+    font-weight: 700 !important;
+    text-transform: none !important; /* Biarkan huruf besar kecil alami */
+}
+
+/* 3. Pengaturan Latar Belakang Dark Mode */
+body, .bg-white-black, .bg-light-dark, section {
+    background-color: var(--dark-bg) !important;
+    color: var(--soft-white) !important;
+}
+
+/* 4. Kotak Informasi (Card) agar Terlihat Dimensi */
+.bg-theme-auto, .border.rounded-5, .agenda-card, .gift-card {
+    background-color: var(--dark-card) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important; /* Border emas tipis */
+    color: var(--soft-white) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
+
+/* 5. Perbaikan Teks Pendukung (Kutipan & Nama Orang Tua) */
+p, span, small, .parent-name, .rsvp-subtitle {
+    color: var(--muted-grey) !important;
+    font-weight: 300 !important;
+    line-height: 1.8 !important;
+}
+
+/* 6. Tombol Minimalis Modern */
+.btn, .rsvp-button, .btn-maps-modern {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    border-radius: 8px !important; /* Tidak terlalu bulat, tidak terlalu tajam */
+    transition: all 0.3s ease !important;
+}
+
+/* Tombol Utama (Warna Emas) */
+.btn-primary, .rsvp-button {
+    background-color: var(--gold-luxury) !important;
+    border: none !important;
+    color: #121212 !important;
+}
+
+/* Tombol Garis (Outline) */
+.btn-outline-auto, .btn-outline-light {
+    border: 1px solid var(--gold-luxury) !important;
+    color: var(--gold-luxury) !important;
+    background: transparent !important;
+}
+
+/* 7. Icon FontAwesome */
+.fa-solid, .fa-regular, .fas {
+    color: var(--gold-luxury) !important;
+}
+
+/* 8. Input Form (RSVP) agar Gelap */
+.form-control, .form-select {
+    background-color: #252525 !important;
+    border: 1px solid #444 !important;
+    color: white !important;
+}
+
+.form-control:focus {
+    border-color: var(--gold-luxury) !important;
+    box-shadow: none !important;
+}
+
+/* 9. Hilangkan Garis Gelombang Putih jika Mengganggu */
+svg.color-theme-svg path {
+    fill: var(--dark-bg) !important;
+}
 
 
