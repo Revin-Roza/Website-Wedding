@@ -1042,6 +1042,34 @@ fetch(csvURL)
     };
 </script>
 
+<script>
+    // Atur tanggal tujuan (Format: Tahun-Bulan-Hari Jam:Menit:Detik)
+    const targetDate = new Date("April 04, 2026 08:00:00").getTime();
+
+    const countdownFunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        // Perhitungan waktu
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Masukkan hasil ke elemen HTML berdasarkan ID
+        document.getElementById("day").innerHTML = days;
+        document.getElementById("hour").innerHTML = hours;
+        document.getElementById("minute").innerHTML = minutes;
+        document.getElementById("second").innerHTML = seconds;
+
+        // Jika hitung mundur selesai
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("wedding-date").innerHTML = "<h3 class='font-esthetic text-gold'>Acara Sedang Berlangsung</h3>";
+        }
+    }, 1000);
+</script>
+
 
 </body>
 </html>
