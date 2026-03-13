@@ -119,14 +119,6 @@ transition: all .35s ease;
 /* =========================
 RSVP 
 ========================= */
-/* --- Background Utama Section --- */
-:root {
-  --primary-gold: #c5a059; /* Warna emas elegan */
-  --soft-bg: #fdfbf8;
-  --text-dark: #4a4a4a;
-  --white: #ffffff;
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
 
 body {
   background-color: var(--soft-bg);
@@ -140,41 +132,78 @@ body {
 }
 
 /* --- RSVP Section --- */
+/* --- Global Variables (Pastikan ini ada di atas) --- */
+:root {
+  --primary-gold: #c5a059;
+  --dark-bg: #121212;
+  --card-bg: #1e1e1e;
+  --text-muted: #aaaaaa;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- RSVP Section --- */
 .rsvp-section {
-  padding: 60px 0;
+  padding: 80px 0;
+  background-color: var(--dark-bg);
+}
+
+.rsvp-title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: var(--primary-gold);
+}
+
+.rsvp-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted); /* Diubah agar cocok dengan tema gelap */
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-inline: auto; /* Shorhand untuk margin-left & right: auto */
 }
 
 .rsvp-form {
-  max-width: 500px;
-  background: var(--white);
+  max-width: 550px;
+  background: var(--card-bg); /* Diubah ke warna gelap */
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  margin-inline: auto;
+  border: 1px solid var(--border-color);
 }
 
 .rsvp-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: left;
 }
 
 .rsvp-label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
   display: block;
   color: var(--primary-gold);
 }
 
 .rsvp-input {
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: white !important;
   transition: all 0.3s ease;
 }
 
+.rsvp-input::placeholder {
+  color: #555;
+}
+
 .rsvp-input:focus {
+  background-color: rgba(255, 255, 255, 0.08) !important;
   border-color: var(--primary-gold);
-  box-shadow: 0 0 0 0.2rem rgba(197, 160, 89, 0.1);
+  box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.15);
   outline: none;
 }
 
@@ -182,133 +211,93 @@ body {
   background-color: var(--primary-gold);
   color: white;
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 50px; /* Lebih modern dengan bentuk pill */
   border: none;
   font-weight: bold;
-  letter-spacing: 1px;
-  transition: transform 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .rsvp-button:hover {
-  background-color: #b38f4d;
-  transform: translateY(-2px);
-  color: white;
+  background-color: #d4af37;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
 }
 
-/* Styling khusus untuk memperjelas subtitle */
-.rsvp-subtitle {
-  font-size: 1.05rem;          /* Ukuran pas, tidak kekecilan */
-  line-height: 1.6;            /* Jarak antar baris agar tidak sesak */
-  color: #555;                 /* Warna abu gelap yang lembut (kontras tinggi) */
-  margin-bottom: 35px;         /* Jarak ke formulir di bawahnya */
-  max-width: 600px;            /* Menjaga teks tidak terlalu lebar di layar PC */
-  margin-left: auto;           /* Tengah secara horizontal */
-  margin-right: auto;          /* Tengah secara horizontal */
-  font-weight: 400;            /* Ketebalan standar agar bersih */
-  letter-spacing: 0.3px;       /* Sedikit jarak antar huruf agar modern */
-}
-
-/* Tambahan untuk Judul (Title) agar serasi */
-.rsvp-title {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-  color: var(--primary-gold);
-}
-
-
-
-/* --- Guestbook Section (Instagram Style) --- */
+/* --- Guestbook Section (Instagram Style Dark) --- */
 .guestbook-section {
-  background-color: #fff;
+  background-color: var(--dark-bg);
+  padding-bottom: 80px;
 }
 
 .ucapan-box {
-  max-width: 600px;
-  background: #fafafa;
-  border: 1px solid #efefef;
-  border-radius: 8px;
-  height: 500px; /* Tinggi box scroll */
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  height: 500px; 
   overflow-y: auto;
-  padding: 15px;
+  padding: 20px;
+  margin-inline: auto;
 }
 
-/* Desain Card ala Instagram */
-/* Pastikan parent memiliki posisi relative */
-/* Container kartu harus relatif */
 .ucapan-item {
   position: relative; 
-  padding: 15px;      /* Jarak isi dengan tepi box */
-  margin-bottom: 12px;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  background: #fff;
+  padding: 18px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.2s ease;
 }
 
-/* CSS untuk memindah status ke pojok kanan atas */
+.ucapan-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .status-label {
-  position: absolute;   /* Posisi bebas terhadap container */
-  top: 12px;           /* Jarak dari atas */
-  right: 12px;         /* Jarak dari kanan */
-  font-size: 0.7rem;    /* Ukuran kecil agar elegan */
-  color: #c5a059;       /* Warna senada tema emas */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.65rem;
+  color: var(--primary-gold);
   font-weight: 600;
-  background-color: #f9f6f0; /* Background tipis agar terlihat seperti badge */
-  padding: 2px 8px;
-  border-radius: 20px;
+  background-color: rgba(197, 160, 89, 0.1);
+  padding: 4px 10px;
+  border-radius: 30px;
+  border: 1px solid rgba(197, 160, 89, 0.2);
 }
 
-/* Merapikan nama tamu agar tidak tertutup status */
 .guest-name {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 6px;
   display: block;
-  max-width: 70%; /* Agar nama panjang tidak menabrak label status */
+  max-width: 65%;
 }
 
 .guest-message {
   font-size: 0.85rem;
-  color: #666;
-}
-
-
-.ucapan-box {
-  max-width: 450px; /* Diperkecil agar fokus ke tengah */
-  height: 400px;    /* Tinggi box dikurangi sedikit */
-  background: #fdfdfd;
-  border: 1px solid #eeeeee;
-  border-radius: 12px;
-  padding: 12px;
-  overflow-y: auto;
-}
-
-.avatar-circle {
-  width: 30px;  /* Ukuran avatar diperkecil */
-  height: 30px;
-  font-size: 0.75rem;
-}
-
-.status-kehadiran {
-  font-size: 0.6rem; /* Badge status lebih mungil di pojok */
-  top: 8px;
-  right: 8px;
-  padding: 2px 6px;
-}
-
-.attendance-badge {
-  font-size: 0.7rem;
-  padding: 2px 8px;
-  border-radius: 12px;
-  background: #f0f0f0;
-  margin-left: 10px;
-  color: #666;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* Custom Scrollbar */
 .ucapan-box::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
+}
+
+.ucapan-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ucapan-box::-webkit-scrollbar-thumb {
+  background: var(--primary-gold);
+  border-radius: 10px;
 }
 
 
