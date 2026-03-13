@@ -653,6 +653,33 @@ Countdown wedding date
     }
 }
 
+/* =========================
+Tampilan Gallery
+========================= */
+
+.carousel-item img {
+    height: 450px; /* Atur tinggi tetap agar seragam */
+    object-fit: cover; /* Memastikan foto terpotong rapi tanpa merusak rasio */
+    border-radius: 1rem;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #c5a059; /* Warna indikator emas */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: sepia(100%) saturate(200%) hue-rotate(10deg); /* Memberi efek emas pada panah */
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px; /* Tinggi lebih pendek untuk tampilan HP */
+    }
+}
 
 
 
