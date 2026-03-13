@@ -845,31 +845,33 @@
     </div>
 
   <!-- Welcome Page -->
- <div class="loading-page" id="welcome" style="opacity: 1; background-color: #000000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1050;">
-    <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-        <div class="d-flex flex-column text-center px-4">
+<div class="loading-page" id="welcome" style="opacity: 1; background-color: #000000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1050; display: flex;">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex flex-column text-center px-4 w-100">
             
-            <h2 class="font-esthetic mb-4" style="font-size: 2rem; color: rgba(255,255,255,0.8);">The Wedding Of</h2>
+            <h2 class="font-esthetic mb-4" style="font-size: 1.8rem; color: rgba(255,255,255,0.7); letter-spacing: 2px;">The Wedding Of</h2>
 
             <div class="position-relative mx-auto mb-4">
-                <img src="./assets/images/bg.webp" 
-                     alt="Revin & Roza" 
-                     class="img-fluid rounded-circle border border-3 shadow-lg"
-                     style="width: 160px; height: 160px; object-fit: cover; border-color: #c5a059 !important;">
+                <div style="padding: 5px; border: 2px solid #c5a059; border-radius: 50%;">
+                    <img src="./assets/images/bg.webp" 
+                         alt="Revin & Roza" 
+                         class="rounded-circle shadow-lg"
+                         style="width: 150px; height: 150px; object-fit: cover; display: block;">
+                </div>
             </div>
 
-            <h2 class="font-esthetic mb-4" style="font-size: 3rem; color: #c5a059;">Revin &amp; Roza</h2>
+            <h2 class="font-esthetic mb-4" style="font-size: 3.2rem; color: #c5a059; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Revin &amp; Roza</h2>
             
             <div class="guest-area mb-3 text-light">
-                <p class="mb-1 opacity-75" style="font-size: 0.9rem; letter-spacing: 1px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 id="guest-name" class="fw-bold" style="color: #ffffff; font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Tamu Undangan</h3>
+                <p class="mb-1 opacity-75" style="font-size: 0.9rem; letter-spacing: 1px; font-style: italic;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h3 id="guest-name" class="fw-bold mt-2" style="color: #ffffff; font-size: 1.5rem; min-height: 1.8rem; text-transform: capitalize;"></h3>
             </div>
 
             <button type="button" 
-                    class="btn shadow-lg rounded-pill mt-3 mx-auto px-4 py-2" 
-                    onclick="undangan.guest.open(this)"
-                    style="background-color: #c5a059; color: #000; border: none; font-weight: 600;">
-                <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Buka Undangan
+                    class="btn shadow-lg rounded-pill mt-3 mx-auto px-5 py-2" 
+                    onclick="openInvitation(this)"
+                    style="background-color: #c5a059; color: #000; border: none; font-weight: 700; letter-spacing: 1px; transition: 0.3s;">
+                <i class="fa-solid fa-envelope-open me-2"></i>BUKA UNDANGAN
             </button>
 
         </div>
@@ -1132,21 +1134,46 @@ fetch(csvURL)
 </style>
 
 <script>
-    // Fungsi untuk mengambil nama dari URL
-    function getGuestName() {
+    /**
+     * Manajemen Nama Tamu & Pembersihan URL
+     */
+    function initWelcomePage() {
         const urlParams = new URLSearchParams(window.location.search);
-        let guestName = urlParams.get('to'); // Mengambil parameter ?to=
+        let guestName = urlParams.get('to'); 
+        const displayElement = document.getElementById('guest-name');
 
         if (guestName) {
-            // Mengganti tanda plus (+) atau %20 menjadi spasi
-            guestName = decodeURIComponent(guestName.replace(/\+/g, ' '));
-            // Menampilkan nama di elemen id="guest-name"
-            document.getElementById('guest-name').innerText = guestName;
+            // Decode nama, hapus tanda + dan hapus spasi berlebih
+            guestName = decodeURIComponent(guestName.replace(/\+/g, ' ')).trim();
+            displayElement.innerText = guestName;
+        } else {
+            // Teks cadangan jika link dibuka tanpa ?to=
+            displayElement.innerText = "Tamu Undangan";
         }
     }
 
-    // Jalankan fungsi saat halaman dimuat
-    window.addEventListener('DOMContentLoaded', getGuestName);
+    /**
+     * Fungsi Menutup Welcome Page
+     */
+    function openInvitation(button) {
+        const welcomePage = document.getElementById('welcome');
+        
+        // Tambahkan efek fade out sederhana
+        welcomePage.style.transition = "opacity 0.8s ease, visibility 0.8s";
+        welcomePage.style.opacity = "0";
+        welcomePage.style.visibility = "hidden";
+
+        // Jalankan audio jika Anda memiliki musik latar
+        // document.getElementById('audio-wedding').play();
+        
+        // Hapus elemen dari DOM setelah animasi selesai agar tidak menghalangi klik
+        setTimeout(() => {
+            welcomePage.style.display = "none";
+        }, 800);
+    }
+
+    // Jalankan inisialisasi saat halaman siap
+    window.addEventListener('DOMContentLoaded', initWelcomePage);
 </script>
 
 
