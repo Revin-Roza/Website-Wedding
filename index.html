@@ -133,34 +133,58 @@
 
              
         <!-- Home -->
-<section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
-                    <img src="./assets/images/placeholder.webp" data-src="./assets/images/Cover_rr.webp" alt="bg" class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home">
+<section id="home" class="p-0 m-0 position-relative overflow-hidden" style="background-color: #000; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start;">
+    
+    <img src="./assets/images/Cover_rr.webp" 
+         alt="Background" 
+         class="position-absolute start-50 translate-middle-x"
+         style="
+            z-index: 0; 
+            width: 100%; 
+            height: 80%; /* Batasi tinggi gambar agar tidak terlalu ke bawah */
+            object-fit: cover; 
+            top: 0; 
+            opacity: 0.4;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+         "
+         loading="lazy">
 
-                    <div class="position-relative text-center bg-overlay-auto" style="background-color: unset;">
-                        <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
+    <div class="position-relative text-center text-light" style="z-index: 1; padding-top: 4rem;">
+        
+        <h1 class="font-esthetic pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
 
-                        <img src="./assets/images/placeholder.webp" data-src="./assets/images/Cover_rr.webp" alt="bg" onclick="undangan.guest.modal(this)" class="img-center-crop rounded-circle border border-3 border-light shadow my-4 mx-auto cursor-pointer">
+        <div class="d-flex justify-content-center">
+            <img src="./assets/images/Cover_rr.webp" 
+                 alt="Foto Profil"
+                 onclick="undangan.guest.modal(this)" 
+                 class="img-center-crop rounded-circle border border-3 border-light shadow my-4 cursor-pointer"
+                 style="width: 160px; height: 160px; object-fit: cover;">
+        </div>
 
-                        <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">Revin &amp; Roza</h2>
-                        <p class="my-2" style="font-size: 1.25rem;">Sabtu, 04 April 2026</p>
+        <h2 class="font-esthetic my-4" style="color: #d4af37; font-size: 2.5rem;">Revin &amp; Roza</h2>
+        <p class="my-2 opacity-75" style="font-size: 1.25rem;">Sabtu, 04 April 2026</p>
 
-                        <button class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem;">
-                            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
-                        </button>
+        <a href="#" class="btn btn-outline-warning btn-sm shadow rounded-pill px-4 py-2 mt-3" style="font-size: 0.825rem; text-decoration: none; border-color: #d4af37; color: #d4af37;">
+            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
+        </a>
 
-                        <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
-                            <div class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
-                                <div class="scroll-animation rounded-4 bg-secondary"></div>
-                            </div>
-                        </div>
+        <div class="d-flex flex-column align-items-center" style="margin-top: 6rem;">
+            <div class="mouse-animation border border-light border-1 rounded-5 opacity-50" style="width: 20px; height: 30px;">
+                <div style="width: 3px; height: 6px; background-color: white; margin: 5px auto; border-radius: 2px;"></div>
+            </div>
+            <p class="mt-2 m-0 text-light opacity-50" style="font-size: 0.7rem; letter-spacing: 1px;">Scroll Down</p>
+        </div>
+    </div>
+</section>
 
-                        <p class="pb-4 m-0 text-secondary" style="font-size: 0.825rem;">Scroll Down</p>
-                    </div>
-                </section>
-
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,96L21.8,101.3C43.6,107,87,117,131,128C174.5,139,218,149,262,165.3C305.5,181,349,203,393,218.7C436.4,235,480,245,524,229.3C567.3,213,611,171,655,176C698.2,181,742,235,785,245.3C829.1,256,873,224,916,224C960,224,1004,256,1047,240C1090.9,224,1135,160,1178,138.7C1221.8,117,1265,139,1309,133.3C1352.7,128,1396,96,1418,80L1440,64L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>        
-                <!-- Bride -->
+<div class="svg-wrapper p-0 m-0" style="line-height: 0; background-color: #000; margin-top: -50px; position: relative; z-index: 2;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="d-block w-100">
+        <path fill="#000000" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,165.3C672,160,768,96,864,96C960,96,1056,160,1152,154.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+</div>
+                
+                   <!-- Bride -->
                 <section class="bg-white-black text-center" id="bride">
                     <h2 class="font-arabic py-4 m-0" style="font-size: 2rem;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
                     <h2 class="font-esthetic py-4 m-0" style="font-size: 2rem;">Assalamualaikum Warahmatullahi Wabarakatuh</h2>
