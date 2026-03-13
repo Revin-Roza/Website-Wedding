@@ -303,66 +303,81 @@ body {
 
 /* Lokasi nikah */
 /* Background Seksi Hitam */
+/* --- Agenda Section (Modern Dark Theme) --- */
 .agenda-section {
-  background-color: #0c0c0c; /* Hitam pekat modern */
+  background-color: #0c0c0c; 
   color: #ffffff;
-  padding: 80px 0;
+  padding: 60px 0; /* Dikurangi sedikit dari 80px agar jarak antar section tidak terlalu jauh */
 }
 
 .opening-text {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.8;
-  color: #d1d1d1;
+  color: #b0b0b0; /* Abu-abu terang agar mata lebih nyaman membaca */
   font-style: italic;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 650px;
+  margin-bottom: 40px !important;
 }
 
 .agenda-card {
-  background: #1a1a1a; /* Hitam sedikit lebih terang agar card terlihat */
-  border: 1px solid #333; /* Outline tipis */
-  border-radius: 20px;
-  padding: 40px 30px;
+  background: linear-gradient(145deg, #1a1a1a, #141414); /* Gradasi halus agar card tidak terlihat 'flat' */
+  border: 1px solid rgba(197, 160, 89, 0.1); /* Border emas sangat tipis agar elegan */
+  border-radius: 25px; /* Lebih bulat agar terlihat modern */
+  padding: 45px 30px;
   height: 100%;
-  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .agenda-card:hover {
-  border-color: #c5a059; /* Berubah jadi emas saat hover */
-  transform: translateY(-10px);
+  border-color: rgba(197, 160, 89, 0.6); 
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(197, 160, 89, 0.15); /* Cahaya emas halus saat hover */
 }
 
 .agenda-header {
   color: #c5a059;
-  letter-spacing: 3px;
-  font-size: 0.75rem;
+  letter-spacing: 4px; /* Sedikit lebih lebar untuk kesan high-end */
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .agenda-type {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .divider {
-  width: 40px;
-  height: 2px;
-  background: #c5a059;
-  margin: 20px auto;
+  width: 60px; /* Sedikit lebih panjang */
+  height: 1px; /* Lebih tipis agar tidak kasar */
+  background: linear-gradient(to right, transparent, #c5a059, transparent); /* Gradasi emas memudar */
+  margin: 25px auto;
 }
 
 .agenda-detail .date {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
+  color: #f1f1f1;
+  display: block;
+}
+
+.agenda-detail .time {
+  color: #c5a059;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
 .agenda-detail .address {
-  font-size: 0.9rem;
-  color: #aaa;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.7;
   margin-top: 15px;
+  padding: 0 10px;
 }
 
 /* Tombol Google Maps Mewah */
@@ -370,24 +385,44 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  padding: 12px 25px;
-  background: transparent;
+  margin-top: 35px;
+  padding: 14px 30px;
+  background: rgba(197, 160, 89, 0.05); /* Fill transparan tipis */
   color: #c5a059;
-  border: 2px solid #c5a059;
+  border: 1px solid #c5a059; /* Border sedikit lebih tipis (1px) */
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
-  gap: 10px; /* Jarak antara ikon dan teks */
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  gap: 12px;
 }
 
 .btn-maps-modern:hover {
   background: #c5a059;
-  color: #000;
-  box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+  color: #0c0c0c;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
 }
+
+/* Ikon Map saat hover */
+.btn-maps-modern:hover i {
+  transform: rotate(15deg);
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 768px) {
+  .agenda-card {
+    padding: 35px 20px;
+  }
+  .agenda-type {
+    font-size: 1.8rem;
+  }
+}
+
+
 
 
 /* Pembatas kado rsvp */
