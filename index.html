@@ -771,49 +771,58 @@ onclick="undangan.util.copy(this)">
 </div>
 
 <!-- RSVP / Konfirmasi Kehadiran -->
-<section id="rsvp" class="rsvp-section py-5">
+<section id="rsvp" class="rsvp-section py-5 bg-dark text-light">
   <div class="container">
-    <div class="rsvp-content text-center">
-      <h2 class="font-esthetic rsvp-title">Konfirmasi Kehadiran</h2>
-      <p class="rsvp-subtitle">
-        Mohon kesediaan Anda untuk mengonfirmasi kehadiran serta memberikan doa terbaik bagi kami.
+    <div class="rsvp-content text-center mx-auto" style="max-width: 600px;">
+      <h2 class="font-esthetic mb-3" style="font-size: 2.5rem;">Konfirmasi Kehadiran</h2>
+      <p class="mb-5" style="color: #ccc; font-size: 0.95rem;">
+        Merupakan suatu kehormatan bagi kami jika Bapak/Ibu/Saudara/i berkenan memberikan konfirmasi kehadiran serta doa restu.
       </p>
 
-      <form id="rsvp-form" class="rsvp-form mx-auto">
-        <div class="rsvp-group">
-          <label for="nama" class="rsvp-label">Nama Anda</label>
-          <input type="text" class="form-control rsvp-input" id="nama" placeholder="Masukkan nama Anda" required>
+      <form id="rsvp-form" class="text-start bg-secondary bg-opacity-10 p-4 rounded-4 shadow-sm">
+        <div class="mb-4">
+          <label for="nama" class="form-label small fw-bold text-uppercase" style="letter-spacing: 1px;">Nama Lengkap</label>
+          <input type="text" class="form-control bg-dark text-light border-secondary py-2" id="nama" placeholder="Contoh: Budi Santoso" required>
         </div>
 
-        <div class="rsvp-group">
-          <label for="hadir" class="rsvp-label">Konfirmasi Kehadiran</label>
-          <select class="form-select rsvp-input" id="hadir">
-            <option value="Hadir">Hadir</option>
-            <option value="Tidak Hadir">Tidak Hadir</option>
-            <option value="Masih Ragu">Masih Ragu</option>
+        <div class="mb-4">
+          <label for="hadir" class="form-label small fw-bold text-uppercase" style="letter-spacing: 1px;">Konfirmasi Kehadiran</label>
+          <select class="form-select bg-dark text-light border-secondary py-2" id="hadir">
+            <option value="Hadir" selected>Berkenan Hadir</option>
+            <option value="Tidak Hadir">Mohon Maaf, Berhalangan Hadir</option>
+            <option value="Masih Ragu">Masih Dalam Konfirmasi</option>
           </select>
         </div>
 
-        <div class="rsvp-group">
-          <label for="ucapan" class="rsvp-label">Ucapan & Doa</label>
-          <textarea class="form-control rsvp-input rsvp-textarea" id="ucapan" rows="4" placeholder="Tuliskan ucapan terbaik Anda"></textarea>
+        <div class="mb-4">
+          <label for="ucapan" class="form-label small fw-bold text-uppercase" style="letter-spacing: 1px;">Ucapan & Doa Setulus Hati</label>
+          <textarea class="form-control bg-dark text-light border-secondary" id="ucapan" rows="4" placeholder="Tuliskan ucapan atau doa Anda di sini..."></textarea>
         </div>
 
-        <button class="btn rsvp-button" type="submit">
-          Kirim Konfirmasi
-        </button>
+        <div class="text-center">
+          <button class="btn btn-light px-5 py-2 fw-bold" type="submit" style="border-radius: 50px; transition: 0.3s;">
+            Kirim Konfirmasi
+          </button>
+        </div>
       </form>
     </div>
   </div>
 </section>
 
-<section id="guestbook" class="py-5 guestbook-section">
-  <div class="container"> <h2 class="font-esthetic guestbook-title text-center">Ucapan & Doa</h2>
-    <p class="ucapan-subtitle text-center">Terima kasih atas doa dan ucapan yang diberikan</p>
+<hr class="m-0" style="opacity: 0.1;">
+
+<section id="guestbook" class="py-5 bg-dark text-light">
+  <div class="container"> 
+    <h2 class="font-esthetic text-center mb-2" style="font-size: 2.5rem;">Ucapan & Doa</h2>
+    <p class="text-center mb-5" style="color: #ccc;">Terima kasih atas segala cinta dan doa yang Anda berikan</p>
     
-    <div class="ucapan-box mt-4 mx-auto">
-      <div id="ucapan-container" class="ucapan-list">
-        </div>
+    <div class="mx-auto" style="max-width: 700px;">
+      <div id="ucapan-container" class="p-3 rounded" style="max-height: 500px; overflow-y: auto; background: rgba(255,255,255,0.03);">
+          <div class="mb-3 border-bottom border-secondary pb-3">
+              <h6 class="mb-1 text-info">Nama Tamu</h6>
+              <p class="small mb-0 text-secondary italic">"Semoga menjadi keluarga yang Sakinah Mawaddah Warahmah."</p>
+          </div>
+      </div>
     </div>
   </div>
 </section>
