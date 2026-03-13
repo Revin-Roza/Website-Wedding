@@ -133,7 +133,7 @@
 
              
         <!-- Home -->
-<section id="home" class="p-0 m-0 position-relative overflow-hidden" style="background-color: #000000; min-height: 100vh; display: flex; flex-direction: column;">
+<section id="home" class="p-0 m-0 position-relative overflow-hidden" style="background-color: #000000; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
     
     <img src="./assets/images/Cover_rr.webp" 
          alt="Background" 
@@ -141,48 +141,56 @@
          style="
             z-index: 0; 
             width: 100%; 
-            height: 95%; 
+            height: 100%; 
             object-fit: cover; 
             top: 0; 
-            opacity: 0.185; /* Sedikit lebih terang agar detail terlihat */
+            opacity: 0.3; 
+            filter: grayscale(20%);
             -webkit-mask-image: linear-gradient(to bottom, 
                 rgba(0,0,0,1) 0%, 
-                rgba(0,0,0,1) 40%, 
-                rgba(0,0,0,0) 80%);
+                rgba(0,0,0,1) 50%, 
+                rgba(0,0,0,0) 100%);
             mask-image: linear-gradient(to bottom, 
                 rgba(0,0,0,1) 0%, 
-                rgba(0,0,0,1) 40%, 
-                rgba(0,0,0,0) 80%);
+                rgba(0,0,0,1) 50%, 
+                rgba(0,0,0,0) 100%);
          "
          loading="lazy">
 
-    <div class="position-relative text-center text-light" style="z-index: 1; padding-top: 7vh;"> 
+    <div class="position-relative text-center text-light w-100" style="z-index: 1; padding: 2rem 0;"> 
         
-        <h1 class="font-esthetic pb-4 fw-medium" style="font-size: 2.1rem;">Undangan Pernikahan</h1>
+        <h1 class="font-esthetic fw-medium mb-0" style="font-size: 1.8rem; letter-spacing: 2px; color: rgba(255,255,255,0.8);">Undangan Pernikahan</h1>
 
-        <div class="d-flex justify-content-center">
-            <img src="./assets/images/Cover_rr.webp" 
-                 alt="Foto Profil"
-                 onclick="undangan.guest.modal(this)" 
-                 class="img-center-crop rounded-circle border border-3 border-light shadow my-4 cursor-pointer"
-                 style="width: 160px; height: 160px; object-fit: cover;">
+        <div class="d-flex justify-content-center my-4">
+            <div style="padding: 5px; border: 2px solid #c5a059; border-radius: 50%;">
+                <img src="./assets/images/Cover_rr.webp" 
+                     alt="Foto Profil"
+                     onclick="undangan.guest.modal(this)" 
+                     class="rounded-circle shadow-lg cursor-pointer"
+                     style="width: 150px; height: 150px; object-fit: cover; display: block;">
+            </div>
         </div>
 
-        <h2 class="font-esthetic my-4" style="color: #d4af37; font-size: 2.5rem;">Revin &amp; Roza</h2>
-        <p class="my-2 opacity-75" style="font-size: 1.25rem;">Sabtu, 04 April 2026</p>
+        <h2 class="font-esthetic mt-4 mb-2" style="color: #c5a059; font-size: 3.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Revin &amp; Roza</h2>
+        
+        <p class="mb-4 fw-light" style="font-size: 1.1rem; letter-spacing: 3px; color: rgba(255,255,255,0.7);">Sabtu, 04 April 2026</p>
 
-        <a href="#" class="btn btn-outline-warning btn-sm shadow rounded-pill px-4 py-2 mt-3" style="font-size: 0.825rem; text-decoration: none; border-color: #d4af37; color: #d4af37;">
-            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Revin+%26+Roza&dates=20260404T010000Z/20260404T120000Z" 
+           target="_blank"
+           class="btn btn-sm shadow rounded-pill px-4 py-2 mt-2" 
+           style="font-size: 0.75rem; border: 1px solid #c5a059; color: #c5a059; background: transparent; transition: 0.3s;">
+            <i class="fa-solid fa-calendar-check me-2"></i>SAVE TO CALENDAR
         </a>
 
-        <div class="d-flex flex-column align-items-center" style="margin-top: 2rem;">
-            <div class="mouse-animation border border-light border-1 rounded-5 opacity-50" style="width: 20px; height: 30px;">
-                <div style="width: 3px; height: 6px; background-color: white; margin: 5px auto; border-radius: 2px;"></div>
+        <div class="d-flex flex-column align-items-center" style="margin-top: 4rem;">
+            <div class="mouse-animation border border-light border-1 rounded-5 opacity-25" style="width: 20px; height: 32px; position: relative;">
+                <div style="width: 2px; height: 6px; background-color: white; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); border-radius: 2px; animation: scroll-dot 2s infinite;"></div>
             </div>
-            <p class="mt-2 m-0 text-light opacity-50" style="font-size: 0.7rem; letter-spacing: 1.5px;">Scroll Down</p>
+            <p class="mt-2 m-0 text-light opacity-25" style="font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;">Scroll Down</p>
         </div>
     </div>
 </section>
+
                        
                    <!-- Bride -->
                 <section class="bg-white-black text-center" id="bride">
@@ -1085,6 +1093,15 @@ fetch(csvURL)
 
     }, 1000);
 </script>
+
+<style>
+/* Tambahkan animasi untuk titik mouse agar bergerak */
+@keyframes scroll-dot {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    50% { opacity: 1; transform: translate(-50%, 8px); }
+    100% { opacity: 0; transform: translate(-50%, 15px); }
+}
+</style>
 
 
 </body>
