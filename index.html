@@ -993,35 +993,61 @@ fetch(csvURL)
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        Swal.fire({
-            title: 'Tersalin!',
-            text: text,
-            icon: 'success',
-            background: '#1a1a1a', // Warna background dark
-            color: '#ffffff',       // Warna teks putih
-            iconColor: '#c5a059',   // Warna icon emas
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-            toast: true,            // Membuat notifikasi melayang kecil (tidak menutupi layar)
-            position: 'bottom',     // Muncul dari bawah agar tidak mengganggu pandangan
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            },
-            customClass: {
-                popup: 'my-swal-popup',
-                timerProgressBar: 'my-swal-progress'
+<script>
+    function copyText(text) {
+        // Fungsi cadangan agar tetap jalan di HTTP atau HP lama
+        const fallbackCopy = (val) => {
+            const textArea = document.createElement("textarea");
+            textArea.value = val;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        };
+
+        const performCopy = () => {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(text);
+            } else {
+                fallbackCopy(text);
+                return Promise.resolve();
             }
+        };
+
+        performCopy().then(() => {
+            if (typeof Swal !== 'undefined') {
+                Swal.fire({
+                    title: 'Tersalin!',
+                    text: text,
+                    icon: 'success',
+                    background: '#1a1a1a',
+                    color: '#ffffff',
+                    iconColor: '#c5a059',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    toast: true,
+                    position: 'bottom'
+                });
+            } else {
+                alert('Tersalin: ' + text);
+            }
+        }).catch(err => {
+            console.error('Gagal menyalin: ', err);
         });
-    }).catch(err => {
-        // Fallback jika gagal
-        console.error('Gagal menyalin: ', err);
-    });
-}
+    }
+
+    // Pastikan fungsi ini juga ada jika Anda memakai fitur "Kirim Kado"
+    if (typeof undangan === 'undefined') var undangan = {};
+    undangan.util = {
+        copy: function(button) {
+            const textToCopy = button.getAttribute('data-copy');
+            copyText(textToCopy);
+        }
+    };
+</script>
 
 
 </body>
