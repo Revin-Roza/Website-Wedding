@@ -133,44 +133,31 @@
 
              
         <!-- Home -->
-<section id="home" class="bg-light-dark position-relative overflow-hidden p-0 m-0">
+<section id="home" class="position-relative overflow-hidden p-0 m-0" style="background-color: #000; min-height: 100vh;">
+    
     <img src="./assets/images/Cover_rr.webp" 
-         alt="Background Pernikahan Revin dan Roza" 
+         alt="Background" 
          class="position-absolute opacity-25 top-50 start-50 translate-middle bg-cover-home"
-         style="object-fit: cover; width: 100%; height: 100%;"
-         loading="lazy">
+         style="z-index: 0;">
 
-    <div class="position-relative text-center bg-overlay-auto" style="background-color: transparent;">
+    <div class="position-relative text-center" style="z-index: 1; color: white;">
         <h1 class="font-esthetic pt-5 pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
-
-        <div class="d-flex justify-content-center">
-            <img src="./assets/images/Cover_rr.webp" 
-                 alt="Foto Revin dan Roza" 
-                 onclick="undangan.guest.modal(this)" 
-                 class="img-center-crop rounded-circle border border-3 border-light shadow my-4 cursor-pointer"
-                 style="width: 150px; height: 150px; object-fit: cover;"
-                 loading="lazy">
-        </div>
-
-        <h2 class="font-esthetic my-4" style="font-size: 2.25rem;">Revin &amp; Roza</h2>
-        <p class="my-2" style="font-size: 1.25rem;">Sabtu, 04 April 2026</p>
-
-        <a href="URL_GOOGLE_CALENDAR_ANDA" target="_blank" class="btn btn-outline-auto btn-sm shadow rounded-pill px-3 py-1" style="font-size: 0.825rem; text-decoration: none;">
-            <i class="fa-solid fa-calendar-check me-2"></i>Save Google Calendar
-        </a>
-
-        <div class="d-flex flex-column align-items-center mt-4 mb-2">
-            <div class="mouse-animation border border-secondary border-2 rounded-5 px-2 py-1 opacity-50">
-                <div class="scroll-animation rounded-4 bg-secondary"></div>
+        
+        <div class="d-flex flex-column align-items-center mt-5 mb-0 pb-3">
+            <div class="mouse-animation border border-light border-2 rounded-5 px-2 py-1 opacity-50">
+                <div class="scroll-animation rounded-4 bg-light"></div>
             </div>
-            <p class="mt-2 m-0 text-secondary" style="font-size: 0.825rem;">Scroll Down</p>
+            <p class="mt-2 m-0 text-light opacity-75" style="font-size: 0.825rem;">Scroll Down</p>
         </div>
     </div>
 </section>
 
+<section id="bride" class="p-0 m-0" style="background-color: #000; color: white;">
+    <h2 class="font-arabic py-5 m-0 text-center">بِسْمِ اللّٰهِ ...</h2>
+</section>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,96L21.8,101.3C43.6,107,87,117,131,128C174.5,139,218,149,262,165.3C305.5,181,349,203,393,218.7C436.4,235,480,245,524,229.3C567.3,213,611,171,655,176C698.2,181,742,235,785,245.3C829.1,256,873,224,916,224C960,224,1004,256,1047,240C1090.9,224,1135,160,1178,138.7C1221.8,117,1265,139,1309,133.3C1352.7,128,1396,96,1418,80L1440,64L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>
-          
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,96L21.8,101.3C43.6,107,87,117,131,128C174.5,139,218,149,262,165.3C305.5,181,349,203,393,218.7C436.4,235,480,245,524,229.3C567.3,213,611,171,655,176C698.2,181,742,235,785,245.3C829.1,256,873,224,916,224C960,224,1004,256,1047,240C1090.9,224,1135,160,1178,138.7C1221.8,117,1265,139,1309,133.3C1352.7,128,1396,96,1418,80L1440,64L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>        
                 <!-- Bride -->
                 <section class="bg-white-black text-center" id="bride">
                     <h2 class="font-arabic py-4 m-0" style="font-size: 2rem;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h2>
