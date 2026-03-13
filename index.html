@@ -993,5 +993,36 @@ fetch(csvURL)
 </script>
 
 
+
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        Swal.fire({
+            title: 'Tersalin!',
+            text: text,
+            icon: 'success',
+            background: '#1a1a1a', // Warna background dark
+            color: '#ffffff',       // Warna teks putih
+            iconColor: '#c5a059',   // Warna icon emas
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            toast: true,            // Membuat notifikasi melayang kecil (tidak menutupi layar)
+            position: 'bottom',     // Muncul dari bawah agar tidak mengganggu pandangan
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            },
+            customClass: {
+                popup: 'my-swal-popup',
+                timerProgressBar: 'my-swal-progress'
+            }
+        });
+    }).catch(err => {
+        // Fallback jika gagal
+        console.error('Gagal menyalin: ', err);
+    });
+}
+
+
 </body>
 </html>
