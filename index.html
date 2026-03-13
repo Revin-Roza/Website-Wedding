@@ -862,7 +862,7 @@
             
             <div class="guest-area mb-3 text-light">
                 <p class="mb-1 opacity-75" style="font-size: 0.9rem; letter-spacing: 1px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 id="guest-name" class="fw-bold" style="color: #ffffff; font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Tamu Undangan</h3>
+                <h3 id="guest-name" class="fw-bold" style="color: #ffffff; font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); min-height: 1.5rem;"></h3>
             </div>
 
             <button type="button" 
@@ -875,6 +875,7 @@
         </div>
     </div>
 </div>
+
 
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
@@ -1131,22 +1132,20 @@ fetch(csvURL)
 </style>
 
 <script>
- <script>
-    // Fungsi untuk mengambil nama dari URL
-    function getGuestName() {
+    // Fungsi khusus untuk menangani nama tamu agar tidak null dan tidak double
+    (function() {
         const urlParams = new URLSearchParams(window.location.search);
-        let guestName = urlParams.get('to'); // Mengambil parameter ?to=
+        let guestName = urlParams.get('to');
+        const nameElement = document.getElementById('guest-name');
 
-        if (guestName) {
-            // Mengganti tanda plus (+) atau %20 menjadi spasi
-            guestName = decodeURIComponent(guestName.replace(/\+/g, ' '));
-            // Menampilkan nama di elemen id="guest-name"
-            document.getElementById('guest-name').innerText = guestName;
+        if (guestName && guestName.trim() !== "") {
+            // Jika ada nama di URL, bersihkan dan tampilkan
+            nameElement.innerText = decodeURIComponent(guestName.replace(/\+/g, ' '));
+        } else {
+            // Jika TIDAK ADA nama atau param kosong, tampilkan default (mencegah tulisan 'null')
+            nameElement.innerText = "Tamu Undangan";
         }
-    }
-
-    // Jalankan fungsi saat halaman dimuat
-    window.addEventListener('DOMContentLoaded', getGuestName);
+    })();
 </script>
 
 
