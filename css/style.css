@@ -533,9 +533,17 @@ body {
 }
 
 /* 1. Reset Font Global (Mata tidak sakit & Modern) */
-* {
+/* Ganti selektor * dengan body dan input agar tidak menabrak ikon */
+body, input, textarea, select, button, p, span {
     font-family: 'Montserrat', sans-serif !important;
 }
+
+/* Pastikan FontAwesome tetap menggunakan font aslinya */
+.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands {
+    font-family: "Font Awesome 6 Free" !important; /* Sesuaikan versi FA Anda */
+    font-weight: 900; /* Penting untuk icon solid */
+}
+
 
 /* 2. Judul & Nama Mempelai (Elegan & Mewah) */
 h1, h2, h3, .font-esthetic, .nama-mempelai {
