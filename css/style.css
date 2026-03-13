@@ -461,42 +461,6 @@ body {
 }
 
 
-/* Pembatas gallery kado */
-/* Container Pembatas Gallery-Gift */
-#divider-gallery-gift {
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  /* Background menggunakan warna BAWAH (#0e1720) */
-  background-color: #0e1720; 
-  margin: 0;
-  padding: 1;
-}
-
-#divider-gallery-gift svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 60px; /* Tinggi gelombang bisa Anda sesuaikan */
-  /* Tarik sedikit ke atas untuk memastikan tidak ada garis bocor */
-  margin-top: -1px;
-}
-
-/* Penyesuaian Section Gallery */
-#gallery { 
-  background-color: #000000 !important;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Penyesuaian Section Love Gift */
-#love-gift { 
-  background-color: #0e1720 !important;
-  margin-top: 0 !important;
-  padding-top: 30px; 
-}
-
-
 /* Pembatas CSS Glassmorphin countdown agenda */
 /* Elemen transisi mandiri */
 .transition-linear-clean {
