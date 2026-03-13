@@ -601,9 +601,5 @@ p, span, small, .parent-name, .rsvp-subtitle {
     box-shadow: none !important;
 }
 
-/* 9. Hilangkan Garis Gelombang Putih jika Mengganggu */
-svg.color-theme-svg path {
-    fill: var(--dark-bg) !important;
-}
 
 
