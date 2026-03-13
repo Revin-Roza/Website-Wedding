@@ -470,7 +470,7 @@ body {
   /* Background menggunakan warna BAWAH (#0e1720) */
   background-color: #0e1720; 
   margin: 0;
-  padding: 0;
+  padding: 1;
 }
 
 #divider-gallery-gift svg {
