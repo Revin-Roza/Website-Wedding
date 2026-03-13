@@ -590,11 +590,6 @@ p, span, small, .parent-name, .rsvp-subtitle {
     background: transparent !important;
 }
 
-/* 7. Icon FontAwesome */
-.fa-solid, .fa-regular, .fas {
-    color: var(--gold-luxury) !important;
-}
-
 /* 8. Input Form (RSVP) agar Gelap */
 .form-control, .form-select {
     background-color: #252525 !important;
