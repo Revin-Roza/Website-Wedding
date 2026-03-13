@@ -281,78 +281,72 @@
 
             
           <!-- Love Story -->
-    <section class="bg-light-dark pt-3 pb-5">
+ <section class="bg-light-dark pt-2 pb-4">
     <div class="container">
-        <div class="bg-theme-auto rounded-5 shadow-lg p-4">
-            <h2 class="font-esthetic text-center py-3 mb-3" style="font-size: 2.25rem; color: #c5a059;">Kisah Cinta</h2>
+        <div class="bg-theme-auto rounded-5 shadow p-3">
+            <h2 class="font-esthetic text-center py-2 mb-2" style="font-size: 2.125rem; color: #c5a059;">Kisah Cinta</h2>
 
-            <div id="video-love-stroy" class="position-relative rounded-4 mb-4 shadow-sm overflow-hidden" 
-                 data-src="./assets/video/video_rr.mp4" 
-                 data-vid-class="w-100 rounded-4 m-0 p-0">
-                
-                <div class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto z-3" id="video-love-stroy-loading">
-                    <div class="progress w-25" role="progressbar" style="height: 0.4rem;" aria-label="progress bar">
-                        <div class="progress-bar bg-warning" id="progress-bar-video-love-stroy" style="width: 0%;"></div>
+            <div id="video-love-stroy" class="position-relative rounded-4 mb-2 pb-0" data-src="./assets/video/video_rr.mp4" data-vid-class="w-100 rounded-4 shadow-sm m-0 p-0">
+                <div class="position-absolute d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto rounded-4 z-3" id="video-love-stroy-loading">
+                    <div class="progress w-25" role="progressbar" style="height: 0.5rem;" aria-label="progress bar">
+                        <div class="progress-bar" id="progress-bar-video-love-stroy" style="width: 0%;"></div>
                     </div>
-                    <small class="mt-2 text-theme-auto bg-theme-auto py-1 px-2 rounded-pill" id="progress-info-video-love-stroy" style="font-size: 0.7rem;"></small>
+                    <small class="mt-1 text-theme-auto bg-theme-auto py-0 px-2 rounded-4" id="progress-info-video-love-stroy" style="font-size: 0.7rem;"></small>
                 </div>
             </div>
 
             <div class="position-relative">
-                <div class="position-absolute d-flex justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto z-3 rounded-4" style="background-color: rgba(0,0,0,0.15);">
-                    <button class="btn shadow-sm rounded-pill px-4 py-2" 
-                            onclick="undangan.guest.showStory(this.parentNode)"
-                            style="background-color: #c5a059; color: #000; border: none; font-weight: 600;">
-                        <i class="fa-solid fa-heart fa-bounce me-2"></i>Lihat Kisah Kami
+                <div class="position-absolute d-flex justify-content-center align-items-center top-50 start-50 translate-middle w-100 h-100 bg-overlay-auto z-3" style="opacity: 100%; background-color: unset;">
+                    <button class="btn btn-outline-auto btn-sm rounded-4 shadow-sm" onclick="undangan.guest.showStory(this.parentNode)">
+                        <i class="fa-solid fa-heart fa-bounce me-2"></i>Lihat Story
                     </button>
                 </div>
 
-                <div class="overflow-y-scroll overflow-x-hidden p-2 with-scrollbar" style="height: 18rem; scroll-behavior: smooth;">
-                    
-                    <div class="row mb-4">
+                <div class="overflow-y-scroll overflow-x-hidden p-2 with-scrollbar" style="height: 15rem;">
+                    <div class="row mb-3">
                         <div class="col-auto position-relative">
-                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-warning border-2 rounded-circle fw-bold m-0 p-0 z-1" style="width: 2.2rem; height: 2.2rem; color: #c5a059;">1</p>
-                            <hr class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-25 m-0">
+                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1" style="width: 2rem; height: 2rem; font-weight: bold;">1</p>
+                            <hr class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
                         </div>
-                        <div class="col mt-1 ps-2">
+                        <div class="col mt-1 ps-0 text-start">
                             <p class="fw-bold mb-1" style="color: #c5a059;">Awal Pertemuan</p>
-                            <p class="small mb-0 text-justify opacity-75">
-                                Kisah kami bermula dari bangku SMA. Berawal dari teman satu sekolah, kedekatan itu tumbuh seiring waktu melalui kebersamaan dalam satu lingkaran pertemanan yang hangat bernama “Our”.
+                            <p class="small mb-0 opacity-75">
+                                Pertemuan kami bermula saat menjadi teman di satu sekolah yang sama, di bangku SMA. Kedekatan itu tumbuh seiring waktu, terlebih saat kami berada dalam satu lingkaran pertemanan yang sama, yaitu “Our”.
                             </p>
                         </div>
                     </div>
 
-                    <div class="row mb-4">
+                    <div class="row mb-3">
                         <div class="col-auto position-relative">
-                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-warning border-2 rounded-circle fw-bold m-0 p-0 z-1" style="width: 2.2rem; height: 2.2rem; color: #c5a059;">2</p>
-                            <hr class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-25 m-0">
+                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1" style="width: 2rem; height: 2rem; font-weight: bold;">2</p>
+                            <hr class="position-absolute top-0 start-50 translate-middle-x border border-secondary h-100 z-0 opacity-100 m-0 rounded-4 shadow-none">
                         </div>
-                        <div class="col mt-1 ps-2">
-                            <p class="fw-bold mb-1" style="color: #c5a059;">Tumbuhnya Perasaan</p>
-                            <p class="small mb-0 text-justify opacity-75">
-                                Seringnya menghabiskan waktu bersama memunculkan rasa yang berbeda. Kami pun meyakini perasaan ini pada tanggal 20 Maret 2019, yang kemudian menjadi titik awal perjalanan kisah kasih kami.
+                        <div class="col mt-1 ps-0 text-start">
+                            <p class="fw-bold mb-1" style="color: #c5a059;">Benih Cinta</p>
+                            <p class="small mb-0 opacity-75">
+                                Seiring berjalannya waktu dan seringnya kebersamaan, tumbuhlah perasaan di antara kami. Sebuah perasaan yang kemudian kami yakini bersama pada tanggal 20 Maret 2019, sebagai awal perjalanan kisah kami.
                             </p>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-auto position-relative">
-                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-warning border-2 rounded-circle fw-bold m-0 p-0 z-1" style="width: 2.2rem; height: 2.2rem; color: #c5a059;">3</p>
+                            <p class="position-relative d-flex justify-content-center align-items-center bg-theme-auto border border-secondary border-2 opacity-100 rounded-circle m-0 p-0 z-1" style="width: 2rem; height: 2rem; font-weight: bold;">3</p>
                         </div>
-                        <div class="col mt-1 ps-2">
+                        <div class="col mt-1 ps-0 text-start">
                             <p class="fw-bold mb-1" style="color: #c5a059;">Langkah Menuju Ridha Allah</p>
-                            <p class="small mb-0 text-justify opacity-75">
-                                Perjalanan menuju tahap ini tentu tidak selalu mudah. Namun dengan niat tulus dan restu keluarga, pada 26 Agustus 2025 Revin beserta orang tua datang menemui keluarga Roza untuk menyampaikan niat serius. <br><br>
-                                Pada 02 Januari 2026, keluarga kembali berkumpul untuk membicarakan rencana hari bahagia. Dengan memohon ridha Allah SWT, kami memilih 04 April 2026 sebagai awal perjalanan baru dalam ikatan suci pernikahan.
+                            <p class="small mb-0 opacity-75">
+                                Perjalanan menuju tahap ini tentu tidak selalu mudah. Namun dengan niat baik dan restu keluarga, pada tanggal 26 Agustus 2025 Revin bersama kedua orang tuanya datang menemui keluarga Roza untuk menyampaikan niat serius. <br><br>
+                                Pada 02 Januari 2026, keluarga kembali berkumpul untuk membicarakan rencana hari bahagia. Dengan memohon ridha Allah SWT, kami memilih 04 April 2026 sebagai awal perjalanan baru bagi kami berdua dalam ikatan suci pernikahan.
                             </p>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 
          
