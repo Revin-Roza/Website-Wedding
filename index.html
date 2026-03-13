@@ -351,32 +351,45 @@
 
 
 <!-- Wedding Date -->
-<section class="bg-dark py-5" id="wedding-date" style="background-color: #121212;">
+<section class="bg-dark py-5" id="wedding-date-section" style="background-color: #121212;">
     <div class="container text-center text-light">
-        <h2 class="font-esthetic mb-4" style="font-size: 2.8rem; color: #c5a059; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Moment Bahagia</h2>
+        <h2 class="font-esthetic mb-4" style="font-size: 2.8rem; color: #c5a059;">Moment Bahagia</h2>
 
-        <div class="border rounded-pill shadow-lg py-3 px-2 mt-2 mb-4 mx-auto" style="max-width: 500px;">
-            <div class="row g-0 justify-content-center align-items-center text-center">
+        <div class="countdown-wrapper border rounded-pill shadow-lg py-3 px-2 mt-2 mb-4 mx-auto" style="max-width: 500px; border-color: rgba(197, 160, 89, 0.3) !important; background: rgba(255,255,255,0.03);">
+            <div class="row g-0 align-items-center">
+                
                 <div class="col-3">
-                    <h3 class="m-0 fw-bold" id="day" style="color: #c5a059;">0</h3>
-                    <small class="text-uppercase text-muted" style="font-size: 0.65rem; letter-spacing: 2px;">Hari</small>
+                    <div class="d-flex flex-column">
+                        <h3 class="m-0 fw-bold" id="day" style="color: #c5a059; font-size: 1.8rem;">0</h3>
+                        <small class="text-uppercase text-muted" style="font-size: 0.6rem; letter-spacing: 1px;">Hari</small>
+                    </div>
                 </div>
+
                 <div class="col-3 border-start border-secondary" style="border-color: rgba(255,255,255,0.1) !important;">
-                    <h3 class="m-0 fw-bold" id="hour">0</h3>
-                    <small class="text-uppercase text-muted" style="font-size: 0.65rem; letter-spacing: 2px;">Jam</small>
+                    <div class="d-flex flex-column">
+                        <h3 class="m-0 fw-bold" id="hour" style="font-size: 1.8rem;">0</h3>
+                        <small class="text-uppercase text-muted" style="font-size: 0.6rem; letter-spacing: 1px;">Jam</small>
+                    </div>
                 </div>
+
                 <div class="col-3 border-start border-secondary" style="border-color: rgba(255,255,255,0.1) !important;">
-                    <h3 class="m-0 fw-bold" id="minute">0</h3>
-                    <small class="text-uppercase text-muted" style="font-size: 0.65rem; letter-spacing: 2px;">Menit</small>
+                    <div class="d-flex flex-column">
+                        <h3 class="m-0 fw-bold" id="minute" style="font-size: 1.8rem;">0</h3>
+                        <small class="text-uppercase text-muted" style="font-size: 0.6rem; letter-spacing: 1px;">Menit</small>
+                    </div>
                 </div>
+
                 <div class="col-3 border-start border-secondary" style="border-color: rgba(255,255,255,0.1) !important;">
-                    <h3 class="m-0 fw-bold" id="second">0</h3>
-                    <small class="text-uppercase text-muted" style="font-size: 0.65rem; letter-spacing: 2px;">Detik</small>
+                    <div class="d-flex flex-column">
+                        <h3 class="m-0 fw-bold" id="second" style="font-size: 1.8rem;">0</h3>
+                        <small class="text-uppercase text-muted" style="font-size: 0.6rem; letter-spacing: 1px;">Detik</small>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 </section>
+
 
 <section id="agenda" class="py-5 bg-dark text-light" style="background-color: #0c0c0c;">
     <div class="container text-center">
@@ -1043,30 +1056,39 @@ fetch(csvURL)
 </script>
 
 <script>
-    // Atur tanggal tujuan (Format: Tahun-Bulan-Hari Jam:Menit:Detik)
-    const targetDate = new Date("April 04, 2026 08:00:00").getTime();
+    // Bersihkan interval jika sebelumnya sudah ada (mencegah bentrok)
+    if (typeof weddingTimer !== 'undefined') {
+        clearInterval(weddingTimer);
+    }
 
-    const countdownFunction = setInterval(function() {
+    const targetWeddingDate = new Date("April 04, 2026 08:00:00").getTime();
+
+    const weddingTimer = setInterval(function() {
         const now = new Date().getTime();
-        const distance = targetDate - now;
+        const distance = targetWeddingDate - now;
 
-        // Perhitungan waktu
+        if (distance < 0) {
+            clearInterval(weddingTimer);
+            document.querySelector(".countdown-wrapper").innerHTML = "<h4 class='py-2 m-0 text-gold font-esthetic'>Acara Sedang Berlangsung</h4>";
+            return;
+        }
+
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Masukkan hasil ke elemen HTML berdasarkan ID
-        document.getElementById("day").innerHTML = days;
-        document.getElementById("hour").innerHTML = hours;
-        document.getElementById("minute").innerHTML = minutes;
-        document.getElementById("second").innerHTML = seconds;
+        // Update dengan pengecekan elemen untuk menghindari error console
+        const d = document.getElementById("day");
+        const h = document.getElementById("hour");
+        const m = document.getElementById("minute");
+        const s = document.getElementById("second");
 
-        // Jika hitung mundur selesai
-        if (distance < 0) {
-            clearInterval(countdownFunction);
-            document.getElementById("wedding-date").innerHTML = "<h3 class='font-esthetic text-gold'>Acara Sedang Berlangsung</h3>";
-        }
+        if(d) d.innerHTML = days;
+        if(h) h.innerHTML = hours;
+        if(m) m.innerHTML = minutes;
+        if(s) s.innerHTML = seconds;
+
     }, 1000);
 </script>
 
