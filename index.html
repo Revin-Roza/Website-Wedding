@@ -1132,18 +1132,17 @@ fetch(csvURL)
 </style>
 
 <script>
-    // Fungsi khusus untuk menangani nama tamu agar tidak null dan tidak double
+    // Script ini diletakkan tepat di bawah HTML agar langsung tereksekusi
     (function() {
         const urlParams = new URLSearchParams(window.location.search);
-        let guestName = urlParams.get('to');
-        const nameElement = document.getElementById('guest-name');
+        let to = urlParams.get('to');
+        const nameDisplay = document.getElementById('guest-name');
 
-        if (guestName && guestName.trim() !== "") {
-            // Jika ada nama di URL, bersihkan dan tampilkan
-            nameElement.innerText = decodeURIComponent(guestName.replace(/\+/g, ' '));
+        // Logika utama: Jika 'to' ada dan tidak null, tampilkan. Jika tidak, tampilkan default.
+        if (to && to !== 'null' && to.trim() !== '') {
+            nameDisplay.innerText = decodeURIComponent(to.replace(/\+/g, ' '));
         } else {
-            // Jika TIDAK ADA nama atau param kosong, tampilkan default (mencegah tulisan 'null')
-            nameElement.innerText = "Tamu Undangan";
+            nameDisplay.innerText = "Tamu Undangan";
         }
     })();
 </script>
