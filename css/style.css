@@ -605,25 +605,3 @@ p, span, small, .parent-name, .rsvp-subtitle {
 svg.color-theme-svg path {
     fill: var(--dark-bg) !important;
 }
-
-
-
-/* menghilangkan batas home*/
-/* Menghilangkan celah di bawah SVG */
-.svg-wrapper svg {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* Memastikan warna path SVG sesuai dengan background section Bride */
-.color-theme-svg path {
-    fill: #ffffff; /* Sesuaikan dengan warna background section 'bride' Anda */
-}
-
-/* Reset margin untuk section yang berurutan */
-section + .svg-wrapper, 
-.svg-wrapper + section {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
