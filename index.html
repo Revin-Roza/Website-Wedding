@@ -144,20 +144,19 @@
             height: 100%; 
             object-fit: cover; 
             top: 0; 
-            opacity: 0.2;
-            /* PERUBAHAN DI SINI: Titik mulai pudar (70%) dan hilang total (90%) digeser lebih rendah */
+            opacity: 0.2; /* Sedikit lebih terang agar detail terlihat */
             -webkit-mask-image: linear-gradient(to bottom, 
                 rgba(0,0,0,1) 0%, 
-                rgba(0,0,0,1) 70%,  /* Gambar terlihat jelas sampai 70% layar */
-                rgba(0,0,0,0) 90%); /* Gambar hilang total di 90% layar */
+                rgba(0,0,0,1) 40%, 
+                rgba(0,0,0,0) 80%);
             mask-image: linear-gradient(to bottom, 
                 rgba(0,0,0,1) 0%, 
-                rgba(0,0,0,1) 70%, 
-                rgba(0,0,0,0) 90%);
+                rgba(0,0,0,1) 40%, 
+                rgba(0,0,0,0) 80%);
          "
          loading="lazy">
 
-    <div class="position-relative text-center text-light" style="z-index: 1; padding-top: 15vh;">
+    <div class="position-relative text-center text-light" style="z-index: 1; padding-top: 12vh;"> 
         
         <h1 class="font-esthetic pb-4 fw-medium" style="font-size: 2.25rem;">Undangan Pernikahan</h1>
 
