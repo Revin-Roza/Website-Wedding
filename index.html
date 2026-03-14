@@ -863,38 +863,41 @@
     </div>
 
   <!-- Welcome Page -->
-<div class="loading-page" id="welcome" style="opacity: 1; background-color: #000000; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1050;">
-    <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto">
-        <div class="d-flex flex-column text-center px-4">
+<div class="loading-page" id="welcome" style="opacity: 1; background-color: #0f1720; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1050; background-image: linear-gradient(to bottom, rgba(15, 23, 32, 0.7), rgba(15, 23, 32, 0.9)), url('./assets/images/Cover_rr.webp'); background-size: cover; background-position: center;">
+    
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle, transparent 20%, #0f1720 100%);"></div>
+
+    <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-auto position-relative z-3">
+        <div class="d-flex flex-column text-center px-4" data-aos="fade-up" data-aos-duration="2000">
             
-            <h2 class="font-esthetic mb-4" style="font-size: 2rem; color: rgba(255,255,255,0.8);">The Wedding Of</h2>
+            <p class="mb-2 text-uppercase" style="font-size: 0.75rem; color: #c5a059; letter-spacing: 4px; font-weight: 500;">The Wedding Of</p>
 
             <div class="position-relative mx-auto mb-4">
+                <div class="position-absolute top-50 start-50 translate-middle rounded-circle border border-warning opacity-25" style="width: 180px; height: 180px; animation: pulse 2s infinite;"></div>
                 <img src="./assets/images/Cover_rr.webp" 
                      alt="Revin & Roza" 
-                     class="img-fluid rounded-circle border border-3 shadow-lg"
-                     style="width: 160px; height: 160px; object-fit: cover; border-color: #c5a059 !important;">
+                     class="img-fluid rounded-circle shadow-lg position-relative"
+                     style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #c5a059;">
             </div>
 
-            <h2 class="font-esthetic mb-4" style="font-size: 3rem; color: #c5a059;">Revin &amp; Roza</h2>
+            <h2 class="font-esthetic mb-4" style="font-size: 3.5rem; color: #c5a059; text-shadow: 2px 2px 15px rgba(0,0,0,0.5);">Revin &amp; Roza</h2>
             
-              <div class="guest-area mb-3 text-light">
-            <p class="mb-1 opacity-75" style="font-size: 0.9rem; letter-spacing: 1px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-            <h3 id="penerima-tamu" class="fw-bold" style="color: #ffffff; font-size: 1.4rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); min-height: 1.5rem;"></h3>
-        </div>
-
+            <div class="guest-area mb-4 text-light p-3 rounded-4" style="background-color: rgba(255,255,255,0.05); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.1);">
+                <p class="mb-2 opacity-75" style="font-size: 0.85rem; letter-spacing: 1px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h3 id="penerima-tamu" class="fw-bold m-0" style="color: #ffffff; font-size: 1.5rem; letter-spacing: 0.5px; min-height: 1.8rem;"></h3>
+            </div>
 
             <button type="button" 
-                    class="btn shadow-lg rounded-pill mt-3 mx-auto px-4 py-2" 
+                    class="btn shadow-lg rounded-pill mx-auto px-5 py-2 transition-all" 
                     onclick="undangan.guest.open(this)"
-                    style="background-color: #c5a059; color: #000; border: none; font-weight: 600;">
-                <i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Buka Undangan
+                    id="btn-open-invitation"
+                    style="background-color: #c5a059; color: #000; border: none; font-weight: 600; letter-spacing: 1px; transition: 0.3s;">
+                <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan
             </button>
 
         </div>
     </div>
 </div>
-
 
     <!-- Button Group -->
     <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
@@ -1181,6 +1184,18 @@ fetch(csvURL)
         }
     })();
 </script>
+
+<style>
+    /* Tambahan animasi pulse untuk ring foto agar lebih hidup */
+    @keyframes pulse {
+        0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+        100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0; }
+    }
+    #btn-open-invitation:hover {
+        transform: scale(1.05);
+        background-color: #d4b375 !important;
+    }
+</style>
 
 
 </body>
