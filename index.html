@@ -933,17 +933,17 @@
             </div>
 
             <!-- Button -->
-            <button id="btn-open-invitation"
-                    type="button"
-                    onclick="undangan.guest.open(this)"
-                    class="btn shadow-lg rounded-pill mx-auto px-5 py-2 w-100 transition-all"
-                    aria-label="Buka Undangan"
-                    style="background-color:#c5a059; color:#000; border:none; font-weight:600; letter-spacing:1px; transition:.3s; font-size:0.95rem;">
+       <button id="btn-open-invitation"
+        type="button"
+        onclick="undangan.guest.open(this); startAutoScroll();"
+        class="btn shadow-lg rounded-pill mx-auto px-5 py-2 w-100 transition-all"
+        aria-label="Buka Undangan"
+        style="background-color:#c5a059; color:#000; border:none; font-weight:600; letter-spacing:1px; transition:.3s; font-size:0.95rem;">
 
-                <i class="fa-solid fa-envelope-open me-2" aria-hidden="true"></i>
-                Buka Undangan
+    <i class="fa-solid fa-envelope-open me-2" aria-hidden="true"></i>
+    Buka Undangan
 
-            </button>
+</button>
 
         </div>
     </div>
@@ -1298,6 +1298,36 @@ fetch(csvURL)
     }
 </style>
 
+
+<script>
+let scrollInterval;
+let isScrolling = false;
+
+function startAutoScroll() {
+    if (isScrolling) return;
+    isScrolling = true;
+
+    // Angka 35 adalah kecepatan (semakin besar semakin lambat/smooth)
+    scrollInterval = setInterval(() => {
+        window.scrollBy(0, 1);
+        
+        // Berhenti jika sudah sampai paling bawah
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            stopAutoScroll();
+        }
+    }, 35);
+}
+
+function stopAutoScroll() {
+    clearInterval(scrollInterval);
+    isScrolling = false;
+}
+
+// Berhenti otomatis jika tamu menyentuh atau klik layar (Manual Override)
+window.addEventListener("mousedown", stopAutoScroll);
+window.addEventListener("touchstart", stopAutoScroll);
+window.addEventListener("wheel", stopAutoScroll);
+</script>
 
 
 </body>
