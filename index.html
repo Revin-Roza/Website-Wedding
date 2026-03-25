@@ -1309,6 +1309,8 @@ fetch(csvURL)
     }
 </style>
 
+
+<style>
 let scrollInterval;
 let isScrolling = false;
 
@@ -1360,7 +1362,8 @@ function toggleScroll() {
 
 // Berhenti otomatis kalau layar disentuh tamu
 window.addEventListener("touchstart", () => { if(isScrolling) stopAutoScroll(); }, {passive: true});
-
+}
+</style>
 
 
 </body>
