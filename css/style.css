@@ -615,5 +615,43 @@ Tampilan Gallery
 ========================= */
 
 
+/* --- FITUR AUTO SCROLL REVIN & ROZA --- */
+
+/* Memastikan pergerakan scroll layar sangat halus */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Desain Tombol Pause/Play Melayang */
+#scroll-control {
+    position: fixed;
+    bottom: 90px; /* Letak di atas tombol musik (atur angka ini jika bertumpukan) */
+    right: 20px;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(197, 160, 89, 0.85); /* Warna emas transparan */
+    backdrop-filter: blur(8px);           /* Efek kaca (blur) */
+    -webkit-backdrop-filter: blur(8px);    /* Dukungan untuk Safari/iPhone */
+    color: #1a1a1a;
+    display: none; /* Awalnya sembunyi, muncul otomatis saat undangan dibuka */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Efek saat tombol ditekan */
+#scroll-control:active {
+    transform: scale(0.9);
+}
+
+/* Ukuran ikon di dalam tombol */
+#scroll-control i {
+    font-size: 1.1rem;
+}
 
 
