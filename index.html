@@ -932,8 +932,8 @@
 
             </div>
 
-            <!-- Button -->
- <button id="btn-open-invitation"
+   <!-- Button -->
+            <button id="btn-open-invitation"
         type="button"
         onclick="undangan.guest.open(this); handleOpenInvitation();"
         class="btn shadow-lg rounded-pill mx-auto px-5 py-2 w-100 transition-all"
@@ -942,26 +942,24 @@
     Buka Undangan
 </button>
 
-<div id="scroll-control" onclick="toggleScroll()">
-    <i id="scroll-icon" class="fa-solid fa-pause"></i>
-            </div>
-        </div>
-    </div>
+<div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 9999;">
+    
+    <button type="button" id="scroll-control" 
+            onclick="toggleScroll()" 
+            class="btn bg-light-dark border btn-sm rounded-circle shadow-sm mt-3" 
+            style="display: none; background-color: #c5a059 !important; color: #000; width: 35px; height: 35px; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.3) !important;">
+        <i id="scroll-icon" class="fa-solid fa-pause"></i>
+    </button>
+
+    <button type="button" id="button-theme" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" onclick="undangan.theme.change()">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+
+    <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3">
+        <i class="fa-solid fa-circle-pause spin-button"></i>
+    </button>
 </div>
 
-
-    <!-- Button Group -->
-    <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
-        <!-- Theme Button -->
-        <button type="button" id="button-theme" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" aria-label="Change theme" onclick="undangan.theme.change()">
-            <i class="fa-solid fa-circle-half-stroke"></i>
-        </button>
-
-        <!-- Audio Button -->
-        <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" aria-label="Change audio" data-offline-disabled="false">
-            <i class="fa-solid fa-circle-pause spin-button"></i>
-        </button>
-    </div>
 
     <!-- Loading Page -->
 <div class="loading-page" id="loading" style="opacity: 1; background-color: #0f1720; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; transition: opacity 0.8s ease-in-out;">
@@ -1336,42 +1334,55 @@ fetch(csvURL)
 <script>
 let scrollInterval;
 let isScrolling = false;
-const scrollBtn = document.getElementById('scroll-control');
-const scrollIcon = document.getElementById('scroll-icon');
 
+// 1. Fungsi yang dipicu saat klik "Buka Undangan"
 function handleOpenInvitation() {
-    // MEMAKSA LAYAR TERBUKA (Solusi agar auto scroll jalan)
+    const scrollBtn = document.getElementById('scroll-control');
+    
+    // Munculkan tombol pause (dengan !important via JS)
+    if (scrollBtn) {
+        scrollBtn.style.setProperty('display', 'flex', 'important');
+    }
+
+    // PAKSA buka kunci scroll layar (Solusi jika auto-scroll diam)
     document.body.style.overflow = 'auto';
     document.documentElement.style.overflow = 'auto';
     document.body.style.height = 'auto';
 
-    // Munculkan tombol pause dengan jeda halus
+    // Beri jeda 1.5 detik agar animasi cover selesai baru mulai scroll
     setTimeout(() => {
-        if(scrollBtn) scrollBtn.style.display = 'flex';
         startAutoScroll();
-    }, 1200); // Jeda 1.2 detik agar animasi cover selesai
+    }, 1500);
 }
 
+// 2. Fungsi untuk menjalankan gulir otomatis
 function startAutoScroll() {
     if (isScrolling) return;
     isScrolling = true;
-    if(scrollIcon) scrollIcon.className = 'fa-solid fa-pause';
+    
+    const icon = document.getElementById('scroll-icon');
+    if(icon) icon.className = 'fa-solid fa-pause';
     
     scrollInterval = setInterval(() => {
         window.scrollBy(0, 1);
-        // Berhenti jika sudah mentok bawah
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+        
+        // Berhenti otomatis jika sudah sampai paling bawah halaman
+        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 5)) {
             stopAutoScroll();
         }
-    }, 45); // Kecepatan 45ms (Sangat tenang dan elegan)
+    }, 45); // Kecepatan: 45ms (Sangat halus dan elegan)
 }
 
+// 3. Fungsi untuk menghentikan gulir
 function stopAutoScroll() {
     clearInterval(scrollInterval);
     isScrolling = false;
-    if(scrollIcon) scrollIcon.className = 'fa-solid fa-play';
+    
+    const icon = document.getElementById('scroll-icon');
+    if(icon) icon.className = 'fa-solid fa-play';
 }
 
+// 4. Fungsi tombol Play/Pause manual
 function toggleScroll() {
     if (isScrolling) {
         stopAutoScroll();
@@ -1380,15 +1391,16 @@ function toggleScroll() {
     }
 }
 
-// Berhenti jika tamu scroll manual agar tidak tarik-menarik
-window.addEventListener("touchstart", stopAutoScroll, {passive: true});
-window.addEventListener("mousedown", stopAutoScroll);
-window.addEventListener("wheel", stopAutoScroll);
+// 5. Fitur Cerdas: Berhenti jika tamu menyentuh layar secara manual
+// Agar script tidak "berantem" dengan jari tamu saat ingin membaca detail
+const stopEvents = ["touchstart", "mousedown", "wheel", "keydown"];
+stopEvents.forEach(eventType => {
+    window.addEventListener(eventType, () => {
+        if(isScrolling) stopAutoScroll();
+    }, {passive: true});
+});
 </script>
 
-    <div id="scroll-control" onclick="toggleScroll()">
-        <i id="scroll-icon" class="fa-solid fa-pause"></i>
-    </div>
 
 </body>
 </html>
