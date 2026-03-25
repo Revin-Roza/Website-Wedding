@@ -118,3 +118,19 @@ html[data-bs-theme="light"] .bg-overlay-auto {
 .gif-image {
     max-height: 10rem;
 }
+
+/* Tambahan untuk Tombol Pause Revin & Roza */
+#scroll-control {
+    display: none; /* Sembunyi dulu sebelum dibuka */
+    width: 35px !important;
+    height: 35px !important;
+    background-color: #c5a059 !important;
+    color: #000 !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+    margin-bottom: 10px; /* Jarak agar tidak menempel tombol musik */
+}
