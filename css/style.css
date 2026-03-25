@@ -615,43 +615,34 @@ Tampilan Gallery
 ========================= */
 
 
-/* --- FITUR AUTO SCROLL REVIN & ROZA --- */
-
-/* Memastikan pergerakan scroll layar sangat halus */
+/* --- FINAL AUTO SCROLL REVIN & ROZA --- */
 html {
     scroll-behavior: smooth !important;
 }
 
-/* Desain Tombol Pause/Play Melayang */
 #scroll-control {
     position: fixed;
-    bottom: 90px; /* Letak di atas tombol musik (atur angka ini jika bertumpukan) */
+    bottom: 100px; /* Lebih tinggi agar tidak bentrok dengan tombol musik */
     right: 20px;
     z-index: 9999;
-    width: 45px;
-    height: 45px;
+    width: 38px;  /* Ukuran lebih kecil */
+    height: 38px; /* Ukuran lebih kecil */
     border-radius: 50%;
-    background: rgba(197, 160, 89, 0.85); /* Warna emas transparan */
-    backdrop-filter: blur(8px);           /* Efek kaca (blur) */
-    -webkit-backdrop-filter: blur(8px);    /* Dukungan untuk Safari/iPhone */
+    background: rgba(197, 160, 89, 0.85); /* Emas Transparan */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: #1a1a1a;
-    display: none; /* Awalnya sembunyi, muncul otomatis saat undangan dibuka */
+    display: none; /* Muncul otomatis setelah klik buka */
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
-/* Efek saat tombol ditekan */
-#scroll-control:active {
-    transform: scale(0.9);
-}
-
-/* Ukuran ikon di dalam tombol */
 #scroll-control i {
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* Ikon lebih kecil */
 }
 
 
