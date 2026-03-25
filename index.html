@@ -818,42 +818,40 @@
             </main>
 
             <!-- Navbar Bottom -->
-            <nav class="navbar navbar-expand sticky-bottom rounded-top-4 border-top p-0" id="navbar-menu">
-                <ul class="navbar-nav nav-justified w-100 align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">
-                            <i class="fa-solid fa-house"></i>
-                            <span class="d-block" style="font-size: 0.7rem;">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#bride">
-                            <i class="fa-solid fa-user-group"></i>
-                            <span class="d-block" style="font-size: 0.7rem;">Mempelai</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#wedding-date">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <span class="d-block" style="font-size: 0.7rem;">Tanggal</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">
-                            <i class="fa-solid fa-images"></i>
-                            <span class="d-block" style="font-size: 0.7rem;">Galeri</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#comment">
-                            <i class="fa-solid fa-comments"></i>
-                            <span class="d-block" style="font-size: 0.7rem;">Ucapan</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+          <nav class="navbar navbar-expand sticky-bottom rounded-top-4 border-top p-0" id="navbar-menu" style="z-index: 1050;">
+    <ul class="navbar-nav nav-justified w-100 align-items-center">
+        <li class="nav-item">
+            <a class="nav-link" href="#home">
+                <i class="fa-solid fa-house"></i>
+                <span class="d-block" style="font-size: 0.7rem;">Home</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#bride">
+                <i class="fa-solid fa-user-group"></i>
+                <span class="d-block" style="font-size: 0.7rem;">Mempelai</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#wedding-date">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span class="d-block" style="font-size: 0.7rem;">Tanggal</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#gallery">
+                <i class="fa-solid fa-images"></i>
+                <span class="d-block" style="font-size: 0.7rem;">Galeri</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#comment">
+                <i class="fa-solid fa-comments"></i>
+                <span class="d-block" style="font-size: 0.7rem;">Ucapan</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 
   <!-- Welcome Page -->
 <div id="welcome"
@@ -942,8 +940,7 @@
     Buka Undangan
 </button>
 
-<div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 9999;">
-    
+<div class="d-flex position-fixed flex-column" style="bottom: 12vh; right: 2vh; z-index: 9999;">
     <button type="button" id="scroll-control" 
             onclick="toggleScroll()" 
             class="btn bg-light-dark border btn-sm rounded-circle shadow-sm mt-3" 
@@ -1335,70 +1332,51 @@ fetch(csvURL)
 let scrollInterval;
 let isScrolling = false;
 
-// 1. Fungsi yang dipicu saat klik "Buka Undangan"
 function handleOpenInvitation() {
     const scrollBtn = document.getElementById('scroll-control');
+    const navBar = document.getElementById('navbar-menu');
     
-    // Munculkan tombol pause (dengan !important via JS)
-    if (scrollBtn) {
-        scrollBtn.style.setProperty('display', 'flex', 'important');
-    }
+    // Munculkan Navbar dan Tombol Pause
+    if (scrollBtn) scrollBtn.style.setProperty('display', 'flex', 'important');
+    if (navBar) navBar.style.setProperty('display', 'flex', 'important');
 
-    // PAKSA buka kunci scroll layar (Solusi jika auto-scroll diam)
+    // Buka kunci layar agar bisa bergerak
     document.body.style.overflow = 'auto';
     document.documentElement.style.overflow = 'auto';
-    document.body.style.height = 'auto';
 
-    // Beri jeda 1.5 detik agar animasi cover selesai baru mulai scroll
+    // Jalankan Auto Scroll setelah 2 detik
     setTimeout(() => {
         startAutoScroll();
-    }, 1500);
+    }, 2000);
 }
 
-// 2. Fungsi untuk menjalankan gulir otomatis
 function startAutoScroll() {
     if (isScrolling) return;
     isScrolling = true;
-    
-    const icon = document.getElementById('scroll-icon');
-    if(icon) icon.className = 'fa-solid fa-pause';
+    document.getElementById('scroll-icon').className = 'fa-solid fa-pause';
     
     scrollInterval = setInterval(() => {
         window.scrollBy(0, 1);
-        
-        // Berhenti otomatis jika sudah sampai paling bawah halaman
-        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 5)) {
+        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2)) {
             stopAutoScroll();
         }
-    }, 45); // Kecepatan: 45ms (Sangat halus dan elegan)
+    }, 45); 
 }
 
-// 3. Fungsi untuk menghentikan gulir
 function stopAutoScroll() {
     clearInterval(scrollInterval);
     isScrolling = false;
-    
     const icon = document.getElementById('scroll-icon');
     if(icon) icon.className = 'fa-solid fa-play';
 }
 
-// 4. Fungsi tombol Play/Pause manual
 function toggleScroll() {
-    if (isScrolling) {
-        stopAutoScroll();
-    } else {
-        startAutoScroll();
-    }
+    isScrolling ? stopAutoScroll() : startAutoScroll();
 }
 
-// 5. Fitur Cerdas: Berhenti jika tamu menyentuh layar secara manual
-// Agar script tidak "berantem" dengan jari tamu saat ingin membaca detail
-const stopEvents = ["touchstart", "mousedown", "wheel", "keydown"];
-stopEvents.forEach(eventType => {
-    window.addEventListener(eventType, () => {
-        if(isScrolling) stopAutoScroll();
-    }, {passive: true});
-});
+// Berhenti jika layar disentuh jari
+window.addEventListener("touchstart", () => { if(isScrolling) stopAutoScroll(); }, {passive: true});
+window.addEventListener("mousedown", () => { if(isScrolling) stopAutoScroll(); });
 </script>
 
 
