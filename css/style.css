@@ -614,55 +614,50 @@ Countdown wedding date
 Tampilan Gallery
 ========================= */
 
+/* --- CSS BERSIH UNTUK REVIN & ROZA --- */
 
-/* --- KODE FINAL CSS AUTO SCROLL REVIN & ROZA --- */
-
-/* 1. Menjamin pergerakan scroll layar terasa halus (tidak patah-patah) */
+/* 1. Paksa scroll halus agar tidak patah-patah */
 html {
     scroll-behavior: smooth !important;
 }
 
-/* 2. Desain Tombol Pause Melayang (Grup Tombol) */
+/* 2. Pastikan body tidak terkunci saat undangan dibuka */
+body {
+    overflow-x: hidden !important; /* Mencegah layar goyang ke samping */
+}
+
+/* 3. Atur Button Group agar selalu di depan (Z-Index) */
+.position-fixed.flex-column {
+    z-index: 999999 !important; /* Pastikan di atas semua elemen dekorasi */
+    bottom: 12vh !important;
+    right: 2vh !important;
+}
+
+/* 4. Style Tombol Pause (Hanya jika belum ada di inline HTML) */
 #scroll-control {
-    /* Ukuran sesuai permintaan: sedikit dikecilkan */
     width: 35px !important;
     height: 35px !important;
-    
-    /* Warna Emas sesuai tema */
     background-color: #c5a059 !important;
     color: #000 !important;
-    
-    /* Bentuk Bulat Sempurna */
     border-radius: 50% !important;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    
-    /* Layout Ikon di Tengah */
-    display: none; /* Akan dimunculkan oleh JavaScript saat klik Buka Undangan */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+    display: none; /* Default sembunyi, akan dimunculkan JS */
     align-items: center;
     justify-content: center;
-    
-    /* Efek Mewah & Bayangan */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
     cursor: pointer;
-    transition: all 0.3s ease;
-    
-    /* Agar ikon di dalam tidak terlalu besar */
-    font-size: 0.85rem !important;
+    transition: transform 0.2s ease;
 }
 
-/* 3. Efek saat tombol ditekan (Interaksi) */
 #scroll-control:active {
     transform: scale(0.9);
-    background-color: #b08d4a !important; /* Warna sedikit lebih gelap saat ditekan */
 }
 
-/* 4. Pastikan Button Group memiliki posisi yang benar */
-.position-fixed.flex-column {
-    /* Jarak dari bawah disesuaikan agar tidak menempel ke pinggir layar */
-    bottom: 10vh !important; 
-    right: 2vh !important;
-    z-index: 9999 !important;
+/* 5. Pastikan Navbar tidak tertutup */
+.navbar {
+    z-index: 1000 !important;
 }
+
 
 
 
