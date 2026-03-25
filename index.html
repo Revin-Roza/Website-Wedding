@@ -1299,34 +1299,58 @@ fetch(csvURL)
 </style>
 
 
+<style>
+    /* Menjamin pergerakan scroll sangat halus */
+    html {
+        scroll-behavior: smooth !important;
+    }
+</style>
+
 <script>
-let scrollInterval;
-let isScrolling = false;
+    let scrollInterval;
+    let isAutoScrolling = false;
 
-function startAutoScroll() {
-    if (isScrolling) return;
-    isScrolling = true;
+    // Fungsi Utama Gerakan Scroll
+    function startAutoScroll() {
+        if (isAutoScrolling) return;
+        isAutoScrolling = true;
 
-    // Angka 35 adalah kecepatan (semakin besar semakin lambat/smooth)
-    scrollInterval = setInterval(() => {
-        window.scrollBy(0, 1);
+        // Angka 40 adalah kecepatan (semakin besar semakin lambat/elegan)
+        scrollInterval = setInterval(() => {
+            window.scrollBy(0, 1); 
+            
+            // Berhenti otomatis jika sudah mencapai dasar halaman
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+                stopAutoScroll();
+            }
+        }, 40); 
+    }
+
+    function stopAutoScroll() {
+        clearInterval(scrollInterval);
+        isAutoScrolling = false;
+    }
+
+    // Mendeteksi Klik pada Tombol "Buka Undangan"
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnOpen = document.getElementById('btn-open-invitation');
         
-        // Berhenti jika sudah sampai paling bawah
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            stopAutoScroll();
+        if (btnOpen) {
+            btnOpen.addEventListener('click', function() {
+                // Jeda 1 detik agar animasi buka undangan selesai dulu baru jalan
+                setTimeout(() => {
+                    startAutoScroll();
+                    console.log("Auto scroll dimulai...");
+                }, 1000);
+            });
         }
-    }, 35);
-}
+    });
 
-function stopAutoScroll() {
-    clearInterval(scrollInterval);
-    isScrolling = false;
-}
-
-// Berhenti otomatis jika tamu menyentuh atau klik layar (Manual Override)
-window.addEventListener("mousedown", stopAutoScroll);
-window.addEventListener("touchstart", stopAutoScroll);
-window.addEventListener("wheel", stopAutoScroll);
+    // Fitur Manual Override: Berhenti jika tamu menyentuh/scroll sendiri
+    window.addEventListener("mousedown", stopAutoScroll);
+    window.addEventListener("touchstart", stopAutoScroll);
+    window.addEventListener("wheel", stopAutoScroll);
+    window.addEventListener("keydown", stopAutoScroll); // Berhenti jika tekan tombol keyboard
 </script>
 
 
