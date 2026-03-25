@@ -933,18 +933,18 @@
             </div>
 
             <!-- Button -->
-      <button id="btn-open-invitation"
+ <button id="btn-open-invitation"
         type="button"
         onclick="undangan.guest.open(this); handleOpenInvitation();"
         class="btn shadow-lg rounded-pill mx-auto px-5 py-2 w-100 transition-all"
-        aria-label="Buka Undangan"
-        style="background-color:#c5a059; color:#000; border:none; font-weight:600; letter-spacing:1px; transition:.3s; font-size:0.95rem; cursor: pointer;">
-
-    <i class="fa-solid fa-envelope-open me-2" aria-hidden="true"></i>
+        style="background-color:#c5a059; color:#000; border:none; font-weight:600; letter-spacing:1px; transition:.3s; font-size:0.95rem;">
+    <i class="fa-solid fa-envelope-open me-2"></i>
     Buka Undangan
-
 </button>
 
+<div id="scroll-control" onclick="toggleScroll()">
+    <i id="scroll-icon" class="fa-solid fa-pause"></i>
+            </div>
         </div>
     </div>
 </div>
@@ -1332,9 +1332,6 @@ fetch(csvURL)
     }
 </style>
 
-<div id="scroll-control" onclick="toggleScroll()">
-    <i id="scroll-icon" class="fa-solid fa-pause"></i>
-</div>
 
 <script>
 let scrollInterval;
@@ -1343,15 +1340,16 @@ const scrollBtn = document.getElementById('scroll-control');
 const scrollIcon = document.getElementById('scroll-icon');
 
 function handleOpenInvitation() {
-    // Paksa buka kunci scroll jika terkunci oleh script lama
+    // MEMAKSA LAYAR TERBUKA (Solusi agar auto scroll jalan)
     document.body.style.overflow = 'auto';
     document.documentElement.style.overflow = 'auto';
-    
-    // Jeda agar animasi amplop terbuka selesai dulu
+    document.body.style.height = 'auto';
+
+    // Munculkan tombol pause dengan jeda halus
     setTimeout(() => {
-        startAutoScroll();
         if(scrollBtn) scrollBtn.style.display = 'flex';
-    }, 1500);
+        startAutoScroll();
+    }, 1200); // Jeda 1.2 detik agar animasi cover selesai
 }
 
 function startAutoScroll() {
@@ -1361,11 +1359,11 @@ function startAutoScroll() {
     
     scrollInterval = setInterval(() => {
         window.scrollBy(0, 1);
-        // Berhenti otomatis jika mentok bawah
+        // Berhenti jika sudah mentok bawah
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
             stopAutoScroll();
         }
-    }, 40); // Kecepatan: 40ms (Sangat Smooth)
+    }, 45); // Kecepatan 45ms (Sangat tenang dan elegan)
 }
 
 function stopAutoScroll() {
@@ -1382,12 +1380,11 @@ function toggleScroll() {
     }
 }
 
-// Berhenti jika layar disentuh manual (Manual Override)
-window.addEventListener("mousedown", stopAutoScroll);
+// Berhenti jika tamu scroll manual agar tidak tarik-menarik
 window.addEventListener("touchstart", stopAutoScroll, {passive: true});
+window.addEventListener("mousedown", stopAutoScroll);
 window.addEventListener("wheel", stopAutoScroll);
 </script>
-
 
 
 
