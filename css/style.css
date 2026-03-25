@@ -616,20 +616,7 @@ Tampilan Gallery
 
 
 /* --- CSS BERSIH UNTUK REVIN & ROZA --- */
-/* Pastikan scroll halus */
-html {
-    scroll-behavior: smooth !important;
-}
 
-/* Memastikan layar bisa di-scroll setelah buka undangan */
-body {
-    overflow-x: hidden !important;
-}
-
-/* Menjaga Navbar agar tidak hilang */
-#navbar-menu {
-    display: none; /* Akan dimunculkan JS saat Buka Undangan */
-}
 
 
 
