@@ -614,49 +614,23 @@ Countdown wedding date
 Tampilan Gallery
 ========================= */
 
-/* --- CSS BERSIH UNTUK REVIN & ROZA --- */
 
-/* 1. Paksa scroll halus agar tidak patah-patah */
+/* --- CSS BERSIH UNTUK REVIN & ROZA --- */
+/* Pastikan scroll halus */
 html {
     scroll-behavior: smooth !important;
 }
 
-/* 2. Pastikan body tidak terkunci saat undangan dibuka */
+/* Memastikan layar bisa di-scroll setelah buka undangan */
 body {
-    overflow-x: hidden !important; /* Mencegah layar goyang ke samping */
+    overflow-x: hidden !important;
 }
 
-/* 3. Atur Button Group agar selalu di depan (Z-Index) */
-.position-fixed.flex-column {
-    z-index: 999999 !important; /* Pastikan di atas semua elemen dekorasi */
-    bottom: 12vh !important;
-    right: 2vh !important;
+/* Menjaga Navbar agar tidak hilang */
+#navbar-menu {
+    display: none; /* Akan dimunculkan JS saat Buka Undangan */
 }
 
-/* 4. Style Tombol Pause (Hanya jika belum ada di inline HTML) */
-#scroll-control {
-    width: 35px !important;
-    height: 35px !important;
-    background-color: #c5a059 !important;
-    color: #000 !important;
-    border-radius: 50% !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
-    display: none; /* Default sembunyi, akan dimunculkan JS */
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-#scroll-control:active {
-    transform: scale(0.9);
-}
-
-/* 5. Pastikan Navbar tidak tertutup */
-.navbar {
-    z-index: 1000 !important;
-}
 
 
 
