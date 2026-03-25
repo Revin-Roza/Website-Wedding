@@ -615,34 +615,54 @@ Tampilan Gallery
 ========================= */
 
 
-/* --- FINAL AUTO SCROLL REVIN & ROZA --- */
+/* --- KODE FINAL CSS AUTO SCROLL REVIN & ROZA --- */
+
+/* 1. Menjamin pergerakan scroll layar terasa halus (tidak patah-patah) */
 html {
     scroll-behavior: smooth !important;
 }
 
+/* 2. Desain Tombol Pause Melayang (Grup Tombol) */
 #scroll-control {
-    position: fixed;
-    bottom: 100px; /* Lebih tinggi agar tidak bentrok dengan tombol musik */
-    right: 20px;
-    z-index: 9999;
-    width: 38px;  /* Ukuran lebih kecil */
-    height: 38px; /* Ukuran lebih kecil */
-    border-radius: 50%;
-    background: rgba(197, 160, 89, 0.85); /* Emas Transparan */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #1a1a1a;
-    display: none; /* Muncul otomatis setelah klik buka */
+    /* Ukuran sesuai permintaan: sedikit dikecilkan */
+    width: 35px !important;
+    height: 35px !important;
+    
+    /* Warna Emas sesuai tema */
+    background-color: #c5a059 !important;
+    color: #000 !important;
+    
+    /* Bentuk Bulat Sempurna */
+    border-radius: 50% !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    
+    /* Layout Ikon di Tengah */
+    display: none; /* Akan dimunculkan oleh JavaScript saat klik Buka Undangan */
     align-items: center;
     justify-content: center;
+    
+    /* Efek Mewah & Bayangan */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    
+    /* Agar ikon di dalam tidak terlalu besar */
+    font-size: 0.85rem !important;
 }
 
-#scroll-control i {
-    font-size: 0.9rem; /* Ikon lebih kecil */
+/* 3. Efek saat tombol ditekan (Interaksi) */
+#scroll-control:active {
+    transform: scale(0.9);
+    background-color: #b08d4a !important; /* Warna sedikit lebih gelap saat ditekan */
 }
+
+/* 4. Pastikan Button Group memiliki posisi yang benar */
+.position-fixed.flex-column {
+    /* Jarak dari bawah disesuaikan agar tidak menempel ke pinggir layar */
+    bottom: 10vh !important; 
+    right: 2vh !important;
+    z-index: 9999 !important;
+}
+
 
 
