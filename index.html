@@ -817,41 +817,44 @@
 
             </main>
 
-            <!-- Navbar Bottom -->
-          <nav class="navbar navbar-expand sticky-bottom rounded-top-4 border-top p-0" id="navbar-menu" style="z-index: 1050;">
-    <ul class="navbar-nav nav-justified w-100 align-items-center">
-        <li class="nav-item">
-            <a class="nav-link" href="#home">
-                <i class="fa-solid fa-house"></i>
-                <span class="d-block" style="font-size: 0.7rem;">Home</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#bride">
-                <i class="fa-solid fa-user-group"></i>
-                <span class="d-block" style="font-size: 0.7rem;">Mempelai</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#wedding-date">
-                <i class="fa-solid fa-calendar-check"></i>
-                <span class="d-block" style="font-size: 0.7rem;">Tanggal</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#gallery">
-                <i class="fa-solid fa-images"></i>
-                <span class="d-block" style="font-size: 0.7rem;">Galeri</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#comment">
-                <i class="fa-solid fa-comments"></i>
-                <span class="d-block" style="font-size: 0.7rem;">Ucapan</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+        <!-- Navbar Bottom -->
+            <nav class="navbar navbar-expand sticky-bottom rounded-top-4 border-top p-0" id="navbar-menu">
+                <ul class="navbar-nav nav-justified w-100 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="d-block" style="font-size: 0.7rem;">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bride">
+                            <i class="fa-solid fa-user-group"></i>
+                            <span class="d-block" style="font-size: 0.7rem;">Mempelai</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wedding-date">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span class="d-block" style="font-size: 0.7rem;">Tanggal</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">
+                            <i class="fa-solid fa-images"></i>
+                            <span class="d-block" style="font-size: 0.7rem;">Galeri</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comment">
+                            <i class="fa-solid fa-comments"></i>
+                            <span class="d-block" style="font-size: 0.7rem;">Ucapan</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
 
   <!-- Welcome Page -->
 <div id="welcome"
@@ -932,30 +935,34 @@
 
    <!-- Button -->
             <button id="btn-open-invitation"
-        type="button"
-        onclick="undangan.guest.open(this); handleOpenInvitation();"
-        class="btn shadow-lg rounded-pill mx-auto px-5 py-2 w-100 transition-all"
-        style="background-color:#c5a059; color:#000; border:none; font-weight:600; letter-spacing:1px; transition:.3s; font-size:0.95rem;">
-    <i class="fa-solid fa-envelope-open me-2"></i>
-    Buka Undangan
-</button>
+                    type="button"
+                    onclick="undangan.guest.open(this)"
+                    class="btn shadow-lg rounded-pill mx-auto px-5 py-2 w-100 transition-all"
+                    aria-label="Buka Undangan"
+                    style="background-color:#c5a059; color:#000; border:none; font-weight:600; letter-spacing:1px; transition:.3s; font-size:0.95rem;">
 
-<div class="d-flex position-fixed flex-column" style="bottom: 12vh; right: 2vh; z-index: 9999;">
-    <button type="button" id="scroll-control" 
-            onclick="toggleScroll()" 
-            class="btn bg-light-dark border btn-sm rounded-circle shadow-sm mt-3" 
-            style="display: none; background-color: #c5a059 !important; color: #000; width: 35px; height: 35px; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.3) !important;">
-        <i id="scroll-icon" class="fa-solid fa-pause"></i>
-    </button>
+                <i class="fa-solid fa-envelope-open me-2" aria-hidden="true"></i>
+                Buka Undangan
 
-    <button type="button" id="button-theme" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" onclick="undangan.theme.change()">
-        <i class="fa-solid fa-circle-half-stroke"></i>
-    </button>
+            </button>
 
-    <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3">
-        <i class="fa-solid fa-circle-pause spin-button"></i>
-    </button>
+        </div>
+    </div>
 </div>
+
+
+    <!-- Button Group -->
+    <div class="d-flex position-fixed flex-column" style="bottom: 10vh; right: 2vh; z-index: 1030;">
+        <!-- Theme Button -->
+        <button type="button" id="button-theme" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" aria-label="Change theme" onclick="undangan.theme.change()">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+
+        <!-- Audio Button -->
+        <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" aria-label="Change audio" data-offline-disabled="false">
+            <i class="fa-solid fa-circle-pause spin-button"></i>
+        </button>
+    </div>
 
 
     <!-- Loading Page -->
@@ -1326,58 +1333,6 @@ fetch(csvURL)
         transition: all 0.3s ease;
     }
 </style>
-
-
-<script>
-let scrollInterval;
-let isScrolling = false;
-
-function handleOpenInvitation() {
-    const scrollBtn = document.getElementById('scroll-control');
-    const navBar = document.getElementById('navbar-menu');
-    
-    // Munculkan Navbar dan Tombol Pause
-    if (scrollBtn) scrollBtn.style.setProperty('display', 'flex', 'important');
-    if (navBar) navBar.style.setProperty('display', 'flex', 'important');
-
-    // Buka kunci layar agar bisa bergerak
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-
-    // Jalankan Auto Scroll setelah 2 detik
-    setTimeout(() => {
-        startAutoScroll();
-    }, 2000);
-}
-
-function startAutoScroll() {
-    if (isScrolling) return;
-    isScrolling = true;
-    document.getElementById('scroll-icon').className = 'fa-solid fa-pause';
-    
-    scrollInterval = setInterval(() => {
-        window.scrollBy(0, 1);
-        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2)) {
-            stopAutoScroll();
-        }
-    }, 45); 
-}
-
-function stopAutoScroll() {
-    clearInterval(scrollInterval);
-    isScrolling = false;
-    const icon = document.getElementById('scroll-icon');
-    if(icon) icon.className = 'fa-solid fa-play';
-}
-
-function toggleScroll() {
-    isScrolling ? stopAutoScroll() : startAutoScroll();
-}
-
-// Berhenti jika layar disentuh jari
-window.addEventListener("touchstart", () => { if(isScrolling) stopAutoScroll(); }, {passive: true});
-window.addEventListener("mousedown", () => { if(isScrolling) stopAutoScroll(); });
-</script>
 
 
 </body>
