@@ -958,6 +958,15 @@
             <i class="fa-solid fa-circle-half-stroke"></i>
         </button>
 
+<div id="scroll-control" onclick="toggleScroll()">
+    <i id="scroll-icon" class="fa-solid fa-pause"></i>
+</div>
+
+<button type="button" id="button-music" ...>
+    <i class="fa-solid fa-circle-pause spin-button"></i>
+</button>
+
+
         <!-- Audio Button -->
         <button type="button" id="button-music" class="btn bg-light-dark border btn-sm rounded-circle d-none btn-transparent shadow-sm mt-3" aria-label="Change audio" data-offline-disabled="false">
             <i class="fa-solid fa-circle-pause spin-button"></i>
@@ -1299,6 +1308,59 @@ fetch(csvURL)
         }
     }
 </style>
+
+let scrollInterval;
+let isScrolling = false;
+
+// Fungsi ini WAJIB dipanggil saat tombol "Buka Undangan" diklik
+function handleOpenInvitation() {
+    const scrollBtn = document.getElementById('scroll-control');
+    
+    // Munculkan tombolnya
+    if (scrollBtn) {
+        scrollBtn.style.setProperty('display', 'flex', 'important');
+    }
+
+    // Paksa browser mengizinkan scroll
+    document.documentElement.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
+
+    // Mulai jalan setelah 2 detik
+    setTimeout(() => {
+        startAutoScroll();
+    }, 2000);
+}
+
+function startAutoScroll() {
+    if (isScrolling) return;
+    isScrolling = true;
+    document.getElementById('scroll-icon').className = 'fa-solid fa-pause';
+    
+    scrollInterval = setInterval(() => {
+        // Menggunakan window.scrollBy agar sinkron dengan smooth scroll di commons.css
+        window.scrollBy(0, 1);
+        
+        // Berhenti kalau sudah mentok bawah
+        if ((window.innerHeight + window.pageYOffset) >= document.documentElement.scrollHeight - 2) {
+            stopAutoScroll();
+        }
+    }, 45); 
+}
+
+function stopAutoScroll() {
+    clearInterval(scrollInterval);
+    isScrolling = false;
+    const icon = document.getElementById('scroll-icon');
+    if(icon) icon.className = 'fa-solid fa-play';
+}
+
+function toggleScroll() {
+    isScrolling ? stopAutoScroll() : startAutoScroll();
+}
+
+// Berhenti otomatis kalau layar disentuh tamu
+window.addEventListener("touchstart", () => { if(isScrolling) stopAutoScroll(); }, {passive: true});
+
 
 
 </body>
